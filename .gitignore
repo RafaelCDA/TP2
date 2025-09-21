@@ -1,0 +1,13 @@
+# build e binários
+build/
+*.o
+tests
+*.exe
+
+# cobertura
+*.gcov
+*.gcda
+*.gcno
+
+# outros
+.DS_Store
