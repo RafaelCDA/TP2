@@ -5,7 +5,7 @@
 #include "third_party/catch.hpp"
 #include "velha.hpp"
 
-TEST_CASE("X vence por coluna", "[coluna]")
+TEST_CASE("X vence por coluna", "[colx]")
 {
   int t[3][3] = {
       {2, 0, 1},
@@ -15,7 +15,7 @@ TEST_CASE("X vence por coluna", "[coluna]")
   REQUIRE(VerificaVelha(t) == 1);
 }
 
-TEST_CASE("X vence por linha", "[linha]")
+TEST_CASE("X vence por linha", "[linx]")
 {
   int t[3][3] = {
       {1, 1, 1},
@@ -25,7 +25,7 @@ TEST_CASE("X vence por linha", "[linha]")
   REQUIRE(VerificaVelha(t) == 1);
 }
 
-TEST_CASE("X vence por diagonal", "[diagonal]")
+TEST_CASE("X vence por diagonal", "[diagx]")
 {
   int t[3][3] = {
       {1, 2, 1},
@@ -33,4 +33,33 @@ TEST_CASE("X vence por diagonal", "[diagonal]")
       {0, 2, 1},
   };
   REQUIRE(VerificaVelha(t) == 1);
+}
+TEST_CASE("0 vence por coluna", "[colo]")
+{
+  int t[3][3] = {
+      {2, 2, 1},
+      {2, 1, 0},
+      {2, 1, 1},
+  };
+  REQUIRE(VerificaVelha(t) == 2);
+}
+
+TEST_CASE("0 vence por linha", "[lino]")
+{
+  int t[3][3] = {
+      {2, 2, 2},
+      {2, 0, 1},
+      {0, 1, 1},
+  };
+  REQUIRE(VerificaVelha(t) == 2);
+}
+
+TEST_CASE("0 vence por diagonal", "[diago]")
+{
+  int t[3][3] = {
+      {1, 2, 2},
+      {1, 2, 0},
+      {2, 1, 1},
+  };
+  REQUIRE(VerificaVelha(t) == 2);
 }
