@@ -237,3 +237,22 @@ TEST_CASE("Jogo impossível", "[Impossível]")
   };
   REQUIRE(VerificaVelha(t) == -2);
 }
+TEST_CASE("Jogo impossível - O a mais", "[Impossível2]")
+{
+  int t[3][3] = {
+      {2, 2, 2},
+      {2, 2, 2},
+      {2, 2, 2},
+  };
+  REQUIRE(VerificaVelha(t) == -2);
+}
+
+TEST_CASE("Jogo impossível - diferença maior que 1", "[Impossível3]")
+{
+  int t[3][3] = {
+      {1, 1, 1},
+      {1, 1, 0},
+      {1, 0, 0},
+  };
+  REQUIRE(VerificaVelha(t) == -2);
+}
