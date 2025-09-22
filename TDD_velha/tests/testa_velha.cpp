@@ -14,6 +14,25 @@ TEST_CASE("X vence por coluna", "[colx]")
   };
   REQUIRE(VerificaVelha(t) == 1);
 }
+TEST_CASE("X vence por coluna - caso 2", "[colx2]")
+{
+  int t[3][3] = {
+      {1, 2, 0},
+      {1, 0, 2},
+      {1, 0, 0},
+  };
+  REQUIRE(VerificaVelha(t) == 1);
+}
+
+TEST_CASE("X vence por coluna - caso 3", "[colx3]")
+{
+  int t[3][3] = {
+      {0, 1, 2},
+      {2, 1, 0},
+      {0, 1, 2},
+  };
+  REQUIRE(VerificaVelha(t) == 1);
+}
 
 TEST_CASE("X vence por linha", "[linx]")
 {
