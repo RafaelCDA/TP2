@@ -170,6 +170,26 @@ TEST_CASE("empate", "[empate]")
   };
   REQUIRE(VerificaVelha(t) == 0);
 }
+TEST_CASE("empate - tabuleiro cheio", "[empate2]")
+{
+  int t[3][3] = {
+      {1, 2, 1},
+      {2, 1, 2},
+      {2, 1, 2},
+  };
+  REQUIRE(VerificaVelha(t) == 0);
+}
+
+TEST_CASE("empate - bloqueio mútuo", "[empate3]")
+{
+  int t[3][3] = {
+      {1, 1, 2},
+      {2, 2, 1},
+      {1, 2, 1},
+  };
+  REQUIRE(VerificaVelha(t) == 0);
+}
+
 TEST_CASE("Jogo em andamento", "[Indeterminado]")
 {
   int t[3][3] = {
