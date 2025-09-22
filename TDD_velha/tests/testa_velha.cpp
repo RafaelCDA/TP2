@@ -82,3 +82,12 @@ TEST_CASE("Jogo em andamento", "[Indeterminado]")
   };
   REQUIRE(VerificaVelha(t) == -1);
 }
+TEST_CASE("Jogo impossível", "[Impossível]")
+{
+  int t[3][3] = {
+      {1, 2, 1},
+      {0, 1, 1},
+      {2, 0, 1},
+  };
+  REQUIRE(VerificaVelha(t) == -2);
+}
