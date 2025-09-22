@@ -63,3 +63,13 @@ TEST_CASE("0 vence por diagonal", "[diago]")
   };
   REQUIRE(VerificaVelha(t) == 2);
 }
+
+TEST_CASE("empate", "[empate]")
+{
+  int t[3][3] = {
+      {1, 2, 0},
+      {0, 1, 0},
+      {2, 0, 0},
+  };
+  REQUIRE(VerificaVelha(t) == 0);
+}
