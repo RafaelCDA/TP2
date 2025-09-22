@@ -142,7 +142,16 @@ TEST_CASE("0 vence por linha - caso 3", "[lino3]")
   REQUIRE(VerificaVelha(t) == 2);
 }
 
-TEST_CASE("0 vence por diagonal", "[diago]")
+TEST_CASE("0 vence por diagonal principal", "[diago]")
+{
+  int t[3][3] = {
+      {2, 2, 1},
+      {1, 2, 0},
+      {1, 1, 2},
+  };
+  REQUIRE(VerificaVelha(t) == 2);
+}
+TEST_CASE("0 vence por diagonal secundária", "[diago2]")
 {
   int t[3][3] = {
       {1, 2, 2},
