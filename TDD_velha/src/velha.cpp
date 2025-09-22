@@ -23,14 +23,28 @@ int VerificaVelha(int tab[3][3])
 			return tab[r][0];
 		}
 	}
-	// Diagonais
+	// Diagonal principal
 	if (tab[0][0] != 0 && tab[0][0] == tab[1][1] && tab[1][1] == tab[2][2])
 	{
 		return tab[0][0];
 	}
+
+	// Diagonal secundária
 	if (tab[0][2] != 0 && tab[0][2] == tab[1][1] && tab[1][1] == tab[2][0])
 	{
 		return tab[0][2];
 	}
-	return 0; // ninguém venceu
+
+	// Se existe pelo menos uma casa vazia => jogo indefinido
+	for (int r = 0; r < 3; ++r)
+	{
+		for (int c = 0; c < 3; ++c)
+		{
+			if (tab[r][c] == 0)
+				return -1;
+		}
+	}
+
+	// Se não há casas vazias e ninguém venceu => empate
+	return 0;
 }
