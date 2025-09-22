@@ -43,7 +43,7 @@ TEST_CASE("X vence por linha", "[linx]")
   };
   REQUIRE(VerificaVelha(t) == 1);
 }
-TEST_CASE("X vence por linha - caso 2", "[linx]")
+TEST_CASE("X vence por linha - caso 2", "[linx2]")
 {
   int t[3][3] = {
       {2, 0, 2},
@@ -53,7 +53,7 @@ TEST_CASE("X vence por linha - caso 2", "[linx]")
   REQUIRE(VerificaVelha(t) == 1);
 }
 
-TEST_CASE("X vence por linha - caso 3", "[linx]")
+TEST_CASE("X vence por linha - caso 3", "[linx3]")
 {
   int t[3][3] = {
       {0, 2, 0},
@@ -63,15 +63,26 @@ TEST_CASE("X vence por linha - caso 3", "[linx]")
   REQUIRE(VerificaVelha(t) == 1);
 }
 
-TEST_CASE("X vence por diagonal", "[diagx]")
+TEST_CASE("X vence por diagonal principal", "[diagx]")
 {
   int t[3][3] = {
-      {1, 2, 1},
+      {1, 0, 2},
       {2, 1, 0},
       {0, 2, 1},
   };
   REQUIRE(VerificaVelha(t) == 1);
 }
+
+TEST_CASE("X vence por diagonal secundária", "[diagx2]")
+{
+  int t[3][3] = {
+      {0, 2, 1},
+      {2, 1, 0},
+      {1, 0, 2},
+  };
+  REQUIRE(VerificaVelha(t) == 1);
+}
+
 TEST_CASE("0 vence por coluna", "[colo]")
 {
   int t[3][3] = {
