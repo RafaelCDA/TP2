@@ -4,12 +4,10 @@
 
 TEST_CASE("Coluna 1: Backup impossível quando não existe backup.parm", "[backup][decisao]")
 {
-    // Arrange
+
     std::string dispositivo = "/mnt/pendrive";
 
-    // Act
     bool resultado = executarBackup(dispositivo);
 
-    // Assert
     REQUIRE(resultado == false);
 }
