@@ -71,20 +71,41 @@ TEST_CASE("Sistema deve inicializar corretamente", "[inicializacao]")
  *
  * @see Tabela de Decisão - Coluna 2
  */
+/**
+ * @test Coluna 2 da tabela de decisão
+ * @brief Backup quando arquivo existe em ambos mas pendrive está desatualizado
+ *
+ * Condições:
+ * - Tem backup.parm: V (SIM)
+ * - Faz backup: V (SIM)
+ * - ArqX ∈ HD: V (SIM)
+ * - ArqX ∈ Pen-drive: V (SIM)
+ * - Data PenD < HD: V (SIM) - Pendrive desatualizado
+ *
+ * Ação esperada: HD para Pen-drive (fazer backup)
+ *
+ * @see Tabela de Decisão - Coluna 2
+ */
 TEST_CASE("Coluna 2: Backup quando pendrive está desatualizado", "[backup][decisao]")
 {
-    // Arrange - Cenário da Coluna 2
+    // Arrange - Cenário ESPECÍFICO da Coluna 2
     SistemaBackup sistema;
     std::string dispositivo = "/mnt/pendrive";
 
-    // Garantir que backup.parm EXISTE (condição V)
+    // Garantir que backup.parm EXISTE
     std::ofstream arquivo("Backup.parm");
     arquivo << "arquivo.txt" << std::endl;
     arquivo.close();
+
+    // TODO: Precisamos simular as condições ESPECÍFICAS da Coluna 2:
+    // - Arquivo existe no HD ✓ (já temos)
+    // - Arquivo existe no pendrive ✓ (precisa simular)
+    // - Data do pendrive < Data do HD ✓ (precisa simular)
 
     // Act - Executar backup
     bool resultado = sistema.executarBackup(dispositivo);
 
     // Assert - Deve retornar true (backup realizado)
+    // MAS AGORA DEVE FALHAR porque não implementamos as verificações de data!
     REQUIRE(resultado == true);
 }
