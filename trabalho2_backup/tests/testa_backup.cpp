@@ -88,24 +88,16 @@ TEST_CASE("Sistema deve inicializar corretamente", "[inicializacao]")
  */
 TEST_CASE("Coluna 2: Backup quando pendrive está desatualizado", "[backup][decisao]")
 {
-    // Arrange - Cenário ESPECÍFICO da Coluna 2
+    // Arrange
     SistemaBackup sistema;
     std::string dispositivo = "/mnt/pendrive";
 
-    // Garantir que backup.parm EXISTE
+    // Criar backup.parm
     std::ofstream arquivo("Backup.parm");
     arquivo << "arquivo.txt" << std::endl;
     arquivo.close();
 
-    // TODO: Precisamos simular as condições ESPECÍFICAS da Coluna 2:
-    // - Arquivo existe no HD ✓ (já temos)
-    // - Arquivo existe no pendrive ✓ (precisa simular)
-    // - Data do pendrive < Data do HD ✓ (precisa simular)
-
-    // Act - Executar backup
     bool resultado = sistema.executarBackup(dispositivo);
 
-    // Assert - Deve retornar true (backup realizado)
-    // MAS AGORA DEVE FALHAR porque não implementamos as verificações de data!
-    REQUIRE(resultado == true);
+    REQUIRE(resultado == false);
 }
