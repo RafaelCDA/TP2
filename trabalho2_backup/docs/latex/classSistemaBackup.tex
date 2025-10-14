@@ -1,0 +1,139 @@
+\doxysection{Sistema\+Backup Class Reference}
+\hypertarget{classSistemaBackup}{}\label{classSistemaBackup}\index{SistemaBackup@{SistemaBackup}}
+
+
+Classe principal do sistema de backup.  
+
+
+
+
+{\ttfamily \#include $<$backup.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSistemaBackup_a516984b3bd9b50b793b5c566587d2287}{Sistema\+Backup}} ()
+\begin{DoxyCompactList}\small\item\em Construtor do sistema de backup. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classSistemaBackup_a8edb551bb70b41403a21d266bb1ac63a}{executar\+Backup}} (const std\+::string \&dispositivo)
+\begin{DoxyCompactList}\small\item\em Executa procedimento de backup. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classSistemaBackup_aad7126e9a06ce7bf1eda9e67bd42e94a}{executar\+Restauracao}} (const std\+::string \&dispositivo)
+\begin{DoxyCompactList}\small\item\em Executa procedimento de restauração. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classSistemaBackup_a579d6b90b0e03f29bbf42ccb1d5fba00}{existe\+Configuracao}} () const
+\begin{DoxyCompactList}\small\item\em Verifica existência do arquivo de configuração. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classSistemaBackup_a06aac2cc27b282e8366af52cb9d11c33}{listar\+Arquivos\+Backup}} () const
+\begin{DoxyCompactList}\small\item\em Lista arquivos configurados para backup. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe principal do sistema de backup. 
+
+Responsável por gerenciar operações de backup e restauração baseadas na tabela de decisão fornecida no trabalho.
+
+Desenvolvido seguindo TDD com Catch2 e com cobertura mínima de 80\%.
+
+@assertiva\+\_\+geral Todas as funções seguem a tabela de decisão 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classSistemaBackup_a516984b3bd9b50b793b5c566587d2287}\label{classSistemaBackup_a516984b3bd9b50b793b5c566587d2287} 
+\index{SistemaBackup@{SistemaBackup}!SistemaBackup@{SistemaBackup}}
+\index{SistemaBackup@{SistemaBackup}!SistemaBackup@{SistemaBackup}}
+\doxysubsubsection{\texorpdfstring{SistemaBackup()}{SistemaBackup()}}
+{\footnotesize\ttfamily Sistema\+Backup\+::\+Sistema\+Backup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construtor do sistema de backup. 
+
+Inicializa o sistema verificando a existência do arquivo de configuração Backup.\+parm.
+
+@assertiva\+\_\+entrada Nenhuma @assertiva\+\_\+saida Sistema pronto para operar 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classSistemaBackup_a8edb551bb70b41403a21d266bb1ac63a}\label{classSistemaBackup_a8edb551bb70b41403a21d266bb1ac63a} 
+\index{SistemaBackup@{SistemaBackup}!executarBackup@{executarBackup}}
+\index{executarBackup@{executarBackup}!SistemaBackup@{SistemaBackup}}
+\doxysubsubsection{\texorpdfstring{executarBackup()}{executarBackup()}}
+{\footnotesize\ttfamily bool Sistema\+Backup\+::executar\+Backup (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{dispositivo }\end{DoxyParamCaption})}
+
+
+
+Executa procedimento de backup. 
+
+Implementa a lógica da tabela de decisão para determinar se o backup pode ser executado baseado nas condições\+:
+\begin{DoxyItemize}
+\item Existência do backup.\+parm
+\item Disponibilidade do dispositivo
+\item Estado dos arquivos
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em dispositivo} & Caminho do dispositivo de backup (pendrive/diretório) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se backup foi executado com sucesso 
+
+false se houve erro ou condição impossível
+\end{DoxyReturn}
+@assertiva\+\_\+entrada dispositivo não é string vazia @assertiva\+\_\+saida Retorna true apenas se backup foi realizado conforme tabela
+
+\begin{DoxyRefDesc}{Test}
+\item[\mbox{\hyperlink{test__test000003}{Test}}]Testado em \doxylink{testa__backup_8cpp}{testa\+\_\+backup.\+cpp} -\/ Coluna 1 da tabela \end{DoxyRefDesc}
+\Hypertarget{classSistemaBackup_aad7126e9a06ce7bf1eda9e67bd42e94a}\label{classSistemaBackup_aad7126e9a06ce7bf1eda9e67bd42e94a} 
+\index{SistemaBackup@{SistemaBackup}!executarRestauracao@{executarRestauracao}}
+\index{executarRestauracao@{executarRestauracao}!SistemaBackup@{SistemaBackup}}
+\doxysubsubsection{\texorpdfstring{executarRestauracao()}{executarRestauracao()}}
+{\footnotesize\ttfamily bool Sistema\+Backup\+::executar\+Restauracao (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{dispositivo }\end{DoxyParamCaption})}
+
+
+
+Executa procedimento de restauração. 
+
+Restaura arquivos do dispositivo de backup para o HD seguindo as regras da tabela de decisão.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dispositivo} & Caminho do dispositivo de restauração \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se restauração foi bem-\/sucedida 
+
+false se houve erro na restauração
+\end{DoxyReturn}
+@assertiva\+\_\+entrada dispositivo contém backup válido @assertiva\+\_\+saida Arquivos são restaurados mantendo integridade \Hypertarget{classSistemaBackup_a579d6b90b0e03f29bbf42ccb1d5fba00}\label{classSistemaBackup_a579d6b90b0e03f29bbf42ccb1d5fba00} 
+\index{SistemaBackup@{SistemaBackup}!existeConfiguracao@{existeConfiguracao}}
+\index{existeConfiguracao@{existeConfiguracao}!SistemaBackup@{SistemaBackup}}
+\doxysubsubsection{\texorpdfstring{existeConfiguracao()}{existeConfiguracao()}}
+{\footnotesize\ttfamily bool Sistema\+Backup\+::existe\+Configuracao (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Verifica existência do arquivo de configuração. 
+
+\begin{DoxyReturn}{Returns}
+true se backup.\+parm existe e é legível 
+
+false se arquivo não existe ou não pode ser lido
+\end{DoxyReturn}
+@assertiva\+\_\+entrada Nenhuma @assertiva\+\_\+saida Retorna estado atual do arquivo \Hypertarget{classSistemaBackup_a06aac2cc27b282e8366af52cb9d11c33}\label{classSistemaBackup_a06aac2cc27b282e8366af52cb9d11c33} 
+\index{SistemaBackup@{SistemaBackup}!listarArquivosBackup@{listarArquivosBackup}}
+\index{listarArquivosBackup@{listarArquivosBackup}!SistemaBackup@{SistemaBackup}}
+\doxysubsubsection{\texorpdfstring{listarArquivosBackup()}{listarArquivosBackup()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ Sistema\+Backup\+::listar\+Arquivos\+Backup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Lista arquivos configurados para backup. 
+
+Lê o arquivo Backup.\+parm e retorna a lista de arquivos que devem ser incluídos no backup.
+
+\begin{DoxyReturn}{Returns}
+Vector com paths absolutos dos arquivos
+\end{DoxyReturn}
+@assertiva\+\_\+entrada Arquivo Backup.\+parm existe @assertiva\+\_\+saida Retorna lista não vazia se arquivo existe e é válido 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{backup_8h}{backup.\+h}}\end{DoxyCompactItemize}

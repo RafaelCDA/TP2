@@ -1,0 +1,143 @@
+\doxysection{cpplint.\+\_\+\+Function\+State Class Reference}
+\hypertarget{classcpplint_1_1__FunctionState}{}\label{classcpplint_1_1__FunctionState}\index{cpplint.\_FunctionState@{cpplint.\_FunctionState}}
+
+
+Inheritance diagram for cpplint.\+\_\+\+Function\+State\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{classcpplint_1_1__FunctionState__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for cpplint.\+\_\+\+Function\+State\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{classcpplint_1_1__FunctionState__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcpplint_1_1__FunctionState_acceb061f08da54243d49c460982f752e}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self)
+\item 
+\mbox{\hyperlink{classcpplint_1_1__FunctionState_aa63967ef152c709966b9b27331e9412d}{Begin}} (self, function\+\_\+name)
+\item 
+\mbox{\hyperlink{classcpplint_1_1__FunctionState_ac94f884412b6562e18bc2675f43d0fc3}{Count}} (self)
+\item 
+\mbox{\hyperlink{classcpplint_1_1__FunctionState_a4e5216b1ab48431e1313390d47628029}{Check}} (self, error, filename, linenum)
+\item 
+\mbox{\hyperlink{classcpplint_1_1__FunctionState_a75b7061b8541080c21002191b8110584}{End}} (self)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcpplint_1_1__FunctionState_a8362d472591f60462184bf68b49c0efb}{in\+\_\+a\+\_\+function}}
+\item 
+\mbox{\hyperlink{classcpplint_1_1__FunctionState_a886f5d476adc81f499a711750a399aa2}{lines\+\_\+in\+\_\+function}}
+\item 
+\mbox{\hyperlink{classcpplint_1_1__FunctionState_a320674f54bd75087febc8f0d83620569}{current\+\_\+function}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classcpplint_1_1__FunctionState_ae2f376f56543b11b1f7401ee114ccdda}{\+\_\+\+NORMAL\+\_\+\+TRIGGER}} = 250
+\item 
+int \mbox{\hyperlink{classcpplint_1_1__FunctionState_abf36a858161d5f1cac149e2dcad09946}{\+\_\+\+TEST\+\_\+\+TRIGGER}} = 400
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Tracks current function name and the number of lines in its body.\end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classcpplint_1_1__FunctionState_acceb061f08da54243d49c460982f752e}\label{classcpplint_1_1__FunctionState_acceb061f08da54243d49c460982f752e} 
+\index{cpplint.\_FunctionState@{cpplint.\_FunctionState}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!cpplint.\_FunctionState@{cpplint.\_FunctionState}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily cpplint.\+\_\+\+Function\+State.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcpplint_1_1__FunctionState_aa63967ef152c709966b9b27331e9412d}\label{classcpplint_1_1__FunctionState_aa63967ef152c709966b9b27331e9412d} 
+\index{cpplint.\_FunctionState@{cpplint.\_FunctionState}!Begin@{Begin}}
+\index{Begin@{Begin}!cpplint.\_FunctionState@{cpplint.\_FunctionState}}
+\doxysubsubsection{\texorpdfstring{Begin()}{Begin()}}
+{\footnotesize\ttfamily cpplint.\+\_\+\+Function\+State.\+Begin (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{function\+\_\+name }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Start analyzing function body.
+
+Args:
+  function_name: The name of the function being tracked.
+\end{DoxyVerb}
+ \Hypertarget{classcpplint_1_1__FunctionState_a4e5216b1ab48431e1313390d47628029}\label{classcpplint_1_1__FunctionState_a4e5216b1ab48431e1313390d47628029} 
+\index{cpplint.\_FunctionState@{cpplint.\_FunctionState}!Check@{Check}}
+\index{Check@{Check}!cpplint.\_FunctionState@{cpplint.\_FunctionState}}
+\doxysubsubsection{\texorpdfstring{Check()}{Check()}}
+{\footnotesize\ttfamily cpplint.\+\_\+\+Function\+State.\+Check (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{error,  }\item[{}]{filename,  }\item[{}]{linenum }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Report if too many lines in function body.
+
+Args:
+  error: The function to call with any errors found.
+  filename: The name of the current file.
+  linenum: The number of the line to check.
+\end{DoxyVerb}
+ \Hypertarget{classcpplint_1_1__FunctionState_ac94f884412b6562e18bc2675f43d0fc3}\label{classcpplint_1_1__FunctionState_ac94f884412b6562e18bc2675f43d0fc3} 
+\index{cpplint.\_FunctionState@{cpplint.\_FunctionState}!Count@{Count}}
+\index{Count@{Count}!cpplint.\_FunctionState@{cpplint.\_FunctionState}}
+\doxysubsubsection{\texorpdfstring{Count()}{Count()}}
+{\footnotesize\ttfamily cpplint.\+\_\+\+Function\+State.\+Count (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Count line in current function body.\end{DoxyVerb}
+ \Hypertarget{classcpplint_1_1__FunctionState_a75b7061b8541080c21002191b8110584}\label{classcpplint_1_1__FunctionState_a75b7061b8541080c21002191b8110584} 
+\index{cpplint.\_FunctionState@{cpplint.\_FunctionState}!End@{End}}
+\index{End@{End}!cpplint.\_FunctionState@{cpplint.\_FunctionState}}
+\doxysubsubsection{\texorpdfstring{End()}{End()}}
+{\footnotesize\ttfamily cpplint.\+\_\+\+Function\+State.\+End (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Stop analyzing function body.\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classcpplint_1_1__FunctionState_ae2f376f56543b11b1f7401ee114ccdda}\label{classcpplint_1_1__FunctionState_ae2f376f56543b11b1f7401ee114ccdda} 
+\index{cpplint.\_FunctionState@{cpplint.\_FunctionState}!\_NORMAL\_TRIGGER@{\_NORMAL\_TRIGGER}}
+\index{\_NORMAL\_TRIGGER@{\_NORMAL\_TRIGGER}!cpplint.\_FunctionState@{cpplint.\_FunctionState}}
+\doxysubsubsection{\texorpdfstring{\_NORMAL\_TRIGGER}{\_NORMAL\_TRIGGER}}
+{\footnotesize\ttfamily int cpplint.\+\_\+\+Function\+State.\+\_\+\+NORMAL\+\_\+\+TRIGGER = 250\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\Hypertarget{classcpplint_1_1__FunctionState_abf36a858161d5f1cac149e2dcad09946}\label{classcpplint_1_1__FunctionState_abf36a858161d5f1cac149e2dcad09946} 
+\index{cpplint.\_FunctionState@{cpplint.\_FunctionState}!\_TEST\_TRIGGER@{\_TEST\_TRIGGER}}
+\index{\_TEST\_TRIGGER@{\_TEST\_TRIGGER}!cpplint.\_FunctionState@{cpplint.\_FunctionState}}
+\doxysubsubsection{\texorpdfstring{\_TEST\_TRIGGER}{\_TEST\_TRIGGER}}
+{\footnotesize\ttfamily int cpplint.\+\_\+\+Function\+State.\+\_\+\+TEST\+\_\+\+TRIGGER = 400\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\Hypertarget{classcpplint_1_1__FunctionState_a320674f54bd75087febc8f0d83620569}\label{classcpplint_1_1__FunctionState_a320674f54bd75087febc8f0d83620569} 
+\index{cpplint.\_FunctionState@{cpplint.\_FunctionState}!current\_function@{current\_function}}
+\index{current\_function@{current\_function}!cpplint.\_FunctionState@{cpplint.\_FunctionState}}
+\doxysubsubsection{\texorpdfstring{current\_function}{current\_function}}
+{\footnotesize\ttfamily cpplint.\+\_\+\+Function\+State.\+current\+\_\+function}
+
+\Hypertarget{classcpplint_1_1__FunctionState_a8362d472591f60462184bf68b49c0efb}\label{classcpplint_1_1__FunctionState_a8362d472591f60462184bf68b49c0efb} 
+\index{cpplint.\_FunctionState@{cpplint.\_FunctionState}!in\_a\_function@{in\_a\_function}}
+\index{in\_a\_function@{in\_a\_function}!cpplint.\_FunctionState@{cpplint.\_FunctionState}}
+\doxysubsubsection{\texorpdfstring{in\_a\_function}{in\_a\_function}}
+{\footnotesize\ttfamily cpplint.\+\_\+\+Function\+State.\+in\+\_\+a\+\_\+function}
+
+\Hypertarget{classcpplint_1_1__FunctionState_a886f5d476adc81f499a711750a399aa2}\label{classcpplint_1_1__FunctionState_a886f5d476adc81f499a711750a399aa2} 
+\index{cpplint.\_FunctionState@{cpplint.\_FunctionState}!lines\_in\_function@{lines\_in\_function}}
+\index{lines\_in\_function@{lines\_in\_function}!cpplint.\_FunctionState@{cpplint.\_FunctionState}}
+\doxysubsubsection{\texorpdfstring{lines\_in\_function}{lines\_in\_function}}
+{\footnotesize\ttfamily cpplint.\+\_\+\+Function\+State.\+lines\+\_\+in\+\_\+function}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+tests/\mbox{\hyperlink{cpplint_8py}{cpplint.\+py}}\end{DoxyCompactItemize}

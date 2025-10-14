@@ -1,0 +1,43 @@
+<map id="Catch::Matchers::Impl::MatcherUntypedBase" name="Catch::Matchers::Impl::MatcherUntypedBase">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,197,176,237"/>
+<area shape="rect" id="Node000002" href="$structCatch_1_1Matchers_1_1Impl_1_1MatcherBase.html" title=" " alt="" coords="224,5,461,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="108,184,154,118,186,84,223,55,246,43,248,48,225,60,190,88,158,122,112,187"/>
+<area shape="rect" id="Node000003" href="$structCatch_1_1Matchers_1_1Impl_1_1MatcherBase.html" title=" " alt="" coords="248,69,437,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="123,186,168,151,223,119,253,107,255,112,225,124,171,156,126,191"/>
+<area shape="rect" id="Node000004" href="$structCatch_1_1Matchers_1_1Impl_1_1MatcherBase.html" title=" " alt="" coords="255,133,430,173"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="183,191,263,171,264,176,184,196"/>
+<area shape="rect" id="Node000008" href="$structCatch_1_1Matchers_1_1Impl_1_1MatcherBase.html" title=" " alt="" coords="237,197,448,237"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="190,215,237,215,237,220,190,220"/>
+<area shape="rect" id="Node000009" href="$structCatch_1_1Matchers_1_1Impl_1_1MatcherBase.html" title=" " alt="" coords="243,262,442,317"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="175,239,247,259,246,265,174,244"/>
+<area shape="rect" id="Node000010" href="$structCatch_1_1Matchers_1_1Impl_1_1MatcherBase.html" title=" " alt="" coords="243,341,442,395"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="123,245,169,286,225,326,251,338,248,343,223,330,166,291,119,249"/>
+<area shape="rect" id="Node000011" href="$structCatch_1_1Matchers_1_1Impl_1_1MatcherBase.html" title=" " alt="" coords="261,420,425,460"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="109,249,128,286,154,328,186,369,226,404,262,423,259,427,222,409,183,373,149,331,123,289,104,252"/>
+<area shape="rect" id="Node000005" href="$structCatch_1_1Matchers_1_1Impl_1_1MatchAllOf.html" title=" " alt="" coords="541,69,705,109"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="443,128,540,105,542,111,444,133"/>
+<area shape="rect" id="Node000006" href="$structCatch_1_1Matchers_1_1Impl_1_1MatchAnyOf.html" title=" " alt="" coords="538,133,709,173"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="444,151,538,151,538,156,444,156"/>
+<area shape="rect" id="Node000007" href="$structCatch_1_1Matchers_1_1Impl_1_1MatchNotOf.html" title=" " alt="" coords="539,197,707,237"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="444,174,540,196,539,201,443,179"/>
+<area shape="rect" id="Node000012" href="$classCatch_1_1Matchers_1_1Exception_1_1ExceptionMessageMatcher.html" title=" " alt="" coords="521,269,726,323"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="436,418,460,405,475,388,483,371,491,352,508,334,528,321,530,326,511,338,496,355,488,373,480,391,463,409,439,422"/>
+<area shape="rect" id="Node000013" href="$structCatch_1_1Matchers_1_1Floating_1_1WithinAbsMatcher.html" title=" " alt="" coords="512,348,735,388"/>
+<area shape="poly" id="edge12_Node000011_Node000013" title=" " alt="" coords="434,414,544,385,545,391,435,419"/>
+<area shape="rect" id="Node000014" href="$structCatch_1_1Matchers_1_1Floating_1_1WithinRelMatcher.html" title=" " alt="" coords="513,412,733,452"/>
+<area shape="poly" id="edge13_Node000011_Node000014" title=" " alt="" coords="438,435,513,432,513,438,438,440"/>
+<area shape="rect" id="Node000015" href="$structCatch_1_1Matchers_1_1Floating_1_1WithinUlpsMatcher.html" title=" " alt="" coords="509,476,737,516"/>
+<area shape="poly" id="edge14_Node000011_Node000015" title=" " alt="" coords="438,456,523,473,522,479,437,462"/>
+<area shape="rect" id="Node000016" href="$structCatch_1_1Matchers_1_1StdString_1_1RegexMatcher.html" title=" " alt="" coords="514,540,733,580"/>
+<area shape="poly" id="edge15_Node000011_Node000016" title=" " alt="" coords="390,465,446,496,510,526,544,537,542,542,508,530,444,501,387,469"/>
+<area shape="rect" id="Node000017" href="$structCatch_1_1Matchers_1_1StdString_1_1StringMatcherBase.html" title=" " alt="" coords="526,605,721,659"/>
+<area shape="poly" id="edge16_Node000011_Node000017" title=" " alt="" coords="372,469,432,530,470,562,511,590,535,602,532,607,508,594,467,566,429,533,368,473"/>
+<area shape="rect" id="Node000018" href="$structCatch_1_1Matchers_1_1StdString_1_1ContainsMatcher.html" title=" " alt="" coords="785,516,980,556"/>
+<area shape="poly" id="edge17_Node000017_Node000018" title=" " alt="" coords="717,597,736,590,784,566,816,554,818,559,786,570,738,594,719,602"/>
+<area shape="rect" id="Node000019" href="$structCatch_1_1Matchers_1_1StdString_1_1EndsWithMatcher.html" title=" " alt="" coords="785,580,980,620"/>
+<area shape="poly" id="edge18_Node000017_Node000019" title=" " alt="" coords="734,616,785,609,785,615,735,621"/>
+<area shape="rect" id="Node000020" href="$structCatch_1_1Matchers_1_1StdString_1_1EqualsMatcher.html" title=" " alt="" coords="785,644,980,684"/>
+<area shape="poly" id="edge19_Node000017_Node000020" title=" " alt="" coords="735,643,785,649,785,655,734,648"/>
+<area shape="rect" id="Node000021" href="$structCatch_1_1Matchers_1_1StdString_1_1StartsWithMatcher.html" title=" " alt="" coords="785,708,980,748"/>
+<area shape="poly" id="edge20_Node000017_Node000021" title=" " alt="" coords="705,662,786,693,820,705,818,710,784,699,703,667"/>
+</map>

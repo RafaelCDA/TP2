@@ -1,0 +1,364 @@
+\doxysection{tests/cpplint.py File Reference}
+\hypertarget{cpplint_8py}{}\label{cpplint_8py}\index{tests/cpplint.py@{tests/cpplint.py}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classcpplint_1_1__IncludeState}{cpplint.\+\_\+\+Include\+State}}
+\item 
+class \mbox{\hyperlink{classcpplint_1_1__CppLintState}{cpplint.\+\_\+\+Cpp\+Lint\+State}}
+\item 
+class \mbox{\hyperlink{classcpplint_1_1__FunctionState}{cpplint.\+\_\+\+Function\+State}}
+\item 
+class \mbox{\hyperlink{classcpplint_1_1__IncludeError}{cpplint.\+\_\+\+Include\+Error}}
+\item 
+class \mbox{\hyperlink{classcpplint_1_1FileInfo}{cpplint.\+File\+Info}}
+\item 
+class \mbox{\hyperlink{classcpplint_1_1CleansedLines}{cpplint.\+Cleansed\+Lines}}
+\item 
+class \mbox{\hyperlink{classcpplint_1_1__BlockInfo}{cpplint.\+\_\+\+Block\+Info}}
+\item 
+class \mbox{\hyperlink{classcpplint_1_1__ExternCInfo}{cpplint.\+\_\+\+Extern\+CInfo}}
+\item 
+class \mbox{\hyperlink{classcpplint_1_1__ClassInfo}{cpplint.\+\_\+\+Class\+Info}}
+\item 
+class \mbox{\hyperlink{classcpplint_1_1__NamespaceInfo}{cpplint.\+\_\+\+Namespace\+Info}}
+\item 
+class \mbox{\hyperlink{classcpplint_1_1__PreprocessorInfo}{cpplint.\+\_\+\+Preprocessor\+Info}}
+\item 
+class \mbox{\hyperlink{classcpplint_1_1NestingState}{cpplint.\+Nesting\+State}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacecpplint}{cpplint}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacecpplint_a61ea7ddd7fa3d98dbe6f1252803dea0e}{cpplint.\+Process\+Hpp\+Headers\+Option}} (val)
+\item 
+\mbox{\hyperlink{namespacecpplint_a7fa055bc9c71fba8acc4b4e216cc19cd}{cpplint.\+Is\+Header\+Extension}} (file\+\_\+extension)
+\item 
+\mbox{\hyperlink{namespacecpplint_a22a0d25680a41ec23d754425a73e47c5}{cpplint.\+Parse\+Nolint\+Suppressions}} (filename, raw\+\_\+line, linenum, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_a084823b16c0140d867262fd987ab204a}{cpplint.\+Process\+Global\+Suppresions}} (lines)
+\item 
+\mbox{\hyperlink{namespacecpplint_ab57355a5b2189a15ef03ab6bdecd5838}{cpplint.\+Reset\+Nolint\+Suppressions}} ()
+\item 
+\mbox{\hyperlink{namespacecpplint_a236008b9c766ce526ac9dfafeef0a246}{cpplint.\+Is\+Error\+Suppressed\+By\+Nolint}} (category, linenum)
+\item 
+\mbox{\hyperlink{namespacecpplint_aa0db7290fc6bd23f44b6602a6ae22738}{cpplint.\+Match}} (pattern, s)
+\item 
+\mbox{\hyperlink{namespacecpplint_a4524ac0ff2e171cef865a36f535495ed}{cpplint.\+Replace\+All}} (pattern, rep, s)
+\item 
+\mbox{\hyperlink{namespacecpplint_a515e256f8ccda50d15b9b7401f5264f7}{cpplint.\+Search}} (pattern, s)
+\item 
+\mbox{\hyperlink{namespacecpplint_aa418f429ad1c4cbe4a3fcaf4d308d1a9}{cpplint.\+\_\+\+Is\+Source\+Extension}} (s)
+\item 
+\mbox{\hyperlink{namespacecpplint_a0918c2cf1a6d367270c78453a64a4537}{cpplint.\+\_\+\+Output\+Format}} ()
+\item 
+\mbox{\hyperlink{namespacecpplint_a8b4c979cba2f10f233e9be66c575a767}{cpplint.\+\_\+\+Set\+Output\+Format}} (output\+\_\+format)
+\item 
+\mbox{\hyperlink{namespacecpplint_ae40914ab6bdc6321d57574ea838b2857}{cpplint.\+\_\+\+Quiet}} ()
+\item 
+\mbox{\hyperlink{namespacecpplint_ad9bb222f193f2fa6b478e45ef4629247}{cpplint.\+\_\+\+Set\+Quiet}} (quiet)
+\item 
+\mbox{\hyperlink{namespacecpplint_a66473d736ac5e8173d51bc2007c465f4}{cpplint.\+\_\+\+Verbose\+Level}} ()
+\item 
+\mbox{\hyperlink{namespacecpplint_ac555c636192b91d5dc7bb297ec8a8002}{cpplint.\+\_\+\+Set\+Verbose\+Level}} (level)
+\item 
+\mbox{\hyperlink{namespacecpplint_a18027dbca3cce9a7f42da24034c792ef}{cpplint.\+\_\+\+Set\+Counting\+Style}} (level)
+\item 
+\mbox{\hyperlink{namespacecpplint_a579a2c20128b210a3a717c560c5757a7}{cpplint.\+\_\+\+Filters}} ()
+\item 
+\mbox{\hyperlink{namespacecpplint_a00a6e750b3f9b6615136d51b841b4a43}{cpplint.\+\_\+\+Set\+Filters}} (filters)
+\item 
+\mbox{\hyperlink{namespacecpplint_afddd2b6b8a5419d76312738b1b365bf9}{cpplint.\+\_\+\+Add\+Filters}} (filters)
+\item 
+\mbox{\hyperlink{namespacecpplint_a521cce550ec375f406e1bc1c9d340523}{cpplint.\+\_\+\+Backup\+Filters}} ()
+\item 
+\mbox{\hyperlink{namespacecpplint_a596e396989b937bb3c0c88119e51a713}{cpplint.\+\_\+\+Restore\+Filters}} ()
+\item 
+\mbox{\hyperlink{namespacecpplint_a7f821c71233c10095cbb3ad8805b1d17}{cpplint.\+\_\+\+Should\+Print\+Error}} (category, confidence, linenum)
+\item 
+\mbox{\hyperlink{namespacecpplint_aca228b36be5460efe4ace10b0e5d0f7d}{cpplint.\+Error}} (filename, linenum, category, confidence, message)
+\item 
+\mbox{\hyperlink{namespacecpplint_af27826b49df1e5e9c87705ff0c469082}{cpplint.\+Is\+Cpp\+String}} (line)
+\item 
+\mbox{\hyperlink{namespacecpplint_a4fae6fc97d3683e4f74115c09e1f223d}{cpplint.\+Cleanse\+Raw\+Strings}} (raw\+\_\+lines)
+\item 
+\mbox{\hyperlink{namespacecpplint_a3da19fcc995011176b2b3a8a4bc09090}{cpplint.\+Find\+Next\+Multi\+Line\+Comment\+Start}} (lines, lineix)
+\item 
+\mbox{\hyperlink{namespacecpplint_a3e5bc72462a25a21e0d312263901ce01}{cpplint.\+Find\+Next\+Multi\+Line\+Comment\+End}} (lines, lineix)
+\item 
+\mbox{\hyperlink{namespacecpplint_a783d0e506730eb397484525ff9631d09}{cpplint.\+Remove\+Multi\+Line\+Comments\+From\+Range}} (lines, begin, end)
+\item 
+\mbox{\hyperlink{namespacecpplint_acca753613a04062aff9acefc4ce2c78b}{cpplint.\+Remove\+Multi\+Line\+Comments}} (filename, lines, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_ae9566310f2866027f14cc468ad85635a}{cpplint.\+Cleanse\+Comments}} (line)
+\item 
+\mbox{\hyperlink{namespacecpplint_a9cc0677c6efe4f143ce3705136daf4be}{cpplint.\+Find\+End\+Of\+Expression\+In\+Line}} (line, startpos, stack)
+\item 
+\mbox{\hyperlink{namespacecpplint_a1b6021bb43f15b2ba6d35664a529b9b2}{cpplint.\+Close\+Expression}} (clean\+\_\+lines, linenum, pos)
+\item 
+\mbox{\hyperlink{namespacecpplint_a3688a48ada153189003ae1638fba6f59}{cpplint.\+Find\+Start\+Of\+Expression\+In\+Line}} (line, endpos, stack)
+\item 
+\mbox{\hyperlink{namespacecpplint_a6334cf8e2b362b9cc6f28fb84a3cef48}{cpplint.\+Reverse\+Close\+Expression}} (clean\+\_\+lines, linenum, pos)
+\item 
+\mbox{\hyperlink{namespacecpplint_a3210a6bdb9b5e5816bae844438e46175}{cpplint.\+Check\+For\+Copyright}} (filename, lines, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_a24004af01f4dd0d09c9e84971359ef4f}{cpplint.\+Get\+Indent\+Level}} (line)
+\item 
+\mbox{\hyperlink{namespacecpplint_a7ad752dd62ed4ccfed7d956cf1b18f7e}{cpplint.\+Path\+Split\+To\+List}} (path)
+\item 
+\mbox{\hyperlink{namespacecpplint_aceb05c1fabdb84a964be5853de8727c8}{cpplint.\+Get\+Header\+Guard\+CPPVariable}} (filename)
+\item 
+\mbox{\hyperlink{namespacecpplint_a7c35b84495b8a833fbd59b95d73565d4}{cpplint.\+Check\+For\+Header\+Guard}} (filename, clean\+\_\+lines, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_a3d8106f98be69e8a21ecd52b2c1a01ad}{cpplint.\+Check\+Header\+File\+Included}} (filename, include\+\_\+state, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_a39de0ae95d3e2e2ded6fa6a102dc4a87}{cpplint.\+Check\+For\+Bad\+Characters}} (filename, lines, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_a5cc00552ef046cd3108add1d7bac4a0c}{cpplint.\+Check\+For\+Newline\+At\+EOF}} (filename, lines, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_ad01bedd4e81f95d268bd8d57b7a0b25c}{cpplint.\+Check\+For\+Multiline\+Comments\+And\+Strings}} (filename, clean\+\_\+lines, linenum, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_a62a1c760ac463a5cd71f01acafd34b75}{cpplint.\+Check\+Posix\+Threading}} (filename, clean\+\_\+lines, linenum, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_a7ea52ecef1fdc9fe7a212b80fabfcdbe}{cpplint.\+Check\+Vlog\+Arguments}} (filename, clean\+\_\+lines, linenum, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_ad620dc29deab204431ab36e441945c0b}{cpplint.\+Check\+Invalid\+Increment}} (filename, clean\+\_\+lines, linenum, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_a4ef340070fe7644c1ec8a0393aa73385}{cpplint.\+Is\+Macro\+Definition}} (clean\+\_\+lines, linenum)
+\item 
+\mbox{\hyperlink{namespacecpplint_ada57f76d656a29d447f14402bddf667d}{cpplint.\+Is\+Forward\+Class\+Declaration}} (clean\+\_\+lines, linenum)
+\item 
+\mbox{\hyperlink{namespacecpplint_ab89b1ea3024934600c0e44e58c0ee681}{cpplint.\+Check\+For\+Non\+Standard\+Constructs}} (filename, clean\+\_\+lines, linenum, nesting\+\_\+state, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_ac49aad8d30cf3223bb05477fb1cf00b8}{cpplint.\+Check\+Spacing\+For\+Function\+Call}} (filename, clean\+\_\+lines, linenum, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_a98bd45db7f6376b48ba397d1b06df2e7}{cpplint.\+Is\+Blank\+Line}} (line)
+\item 
+\mbox{\hyperlink{namespacecpplint_aa6e33062b311eb8df8b394968bb8e057}{cpplint.\+Check\+For\+Namespace\+Indentation}} (filename, nesting\+\_\+state, clean\+\_\+lines, line, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_a9e87dae35aa33cf4a0db1efd1a6fcb47}{cpplint.\+Check\+For\+Function\+Lengths}} (filename, clean\+\_\+lines, linenum, function\+\_\+state, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_a1d34e1fe4e9d8a2731f55ff44e807580}{cpplint.\+Check\+Comment}} (line, filename, linenum, next\+\_\+line\+\_\+start, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_a92ea46979dfe7a731eedfc00f98e6908}{cpplint.\+Check\+Spacing}} (filename, clean\+\_\+lines, linenum, nesting\+\_\+state, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_afb7a98d5e074f7cd9d9c590a2ae9dc80}{cpplint.\+Check\+Operator\+Spacing}} (filename, clean\+\_\+lines, linenum, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_ad8d88e9f8764caeb59c8159a77126e47}{cpplint.\+Check\+Parenthesis\+Spacing}} (filename, clean\+\_\+lines, linenum, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_ad57c3efecef205ae9ff72ffce99bae18}{cpplint.\+Check\+Comma\+Spacing}} (filename, clean\+\_\+lines, linenum, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_ad6a8485e6da7c69c68d0bee460aa76e1}{cpplint.\+\_\+\+Is\+Type}} (clean\+\_\+lines, nesting\+\_\+state, expr)
+\item 
+\mbox{\hyperlink{namespacecpplint_a07255613814f8e6a67d706c97d579d12}{cpplint.\+Check\+Braces\+Spacing}} (filename, clean\+\_\+lines, linenum, nesting\+\_\+state, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_a204b0fffaabcaccb777da010fb165804}{cpplint.\+Is\+Decltype}} (clean\+\_\+lines, linenum, column)
+\item 
+\mbox{\hyperlink{namespacecpplint_ad02e7ecfbf3d754163caa2c9f48c6746}{cpplint.\+Check\+Section\+Spacing}} (filename, clean\+\_\+lines, class\+\_\+info, linenum, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_a42b46bcf4926559c5b946a0bccef5bf3}{cpplint.\+Get\+Previous\+Non\+Blank\+Line}} (clean\+\_\+lines, linenum)
+\item 
+\mbox{\hyperlink{namespacecpplint_aafc4fb5ea490272ca6a006b9e9a1b21f}{cpplint.\+Check\+Braces}} (filename, clean\+\_\+lines, linenum, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_a2b9c6e28290cdb4f61d1752214e47588}{cpplint.\+Check\+Trailing\+Semicolon}} (filename, clean\+\_\+lines, linenum, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_a32b74d81109669b99567cd6444d8f1d4}{cpplint.\+Check\+Empty\+Block\+Body}} (filename, clean\+\_\+lines, linenum, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_ab120ac0a419e4317d0b5458079946d00}{cpplint.\+Find\+Check\+Macro}} (line)
+\item 
+\mbox{\hyperlink{namespacecpplint_adab121e085a61cd10a0d7697d0ccba48}{cpplint.\+Check\+Check}} (filename, clean\+\_\+lines, linenum, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_ad699a22c8e9221bcc8395d7a47fe30dc}{cpplint.\+Check\+Alt\+Tokens}} (filename, clean\+\_\+lines, linenum, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_a2638d6acb36ef7e352842dfa0bcc2a17}{cpplint.\+Get\+Line\+Width}} (line)
+\item 
+\mbox{\hyperlink{namespacecpplint_a2ce48db291ac037321d21b3ba3f70066}{cpplint.\+Check\+Style}} (filename, clean\+\_\+lines, linenum, file\+\_\+extension, nesting\+\_\+state, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_a308db61b7f969d534458d7ff4199f084}{cpplint.\+\_\+\+Drop\+Common\+Suffixes}} (filename)
+\item 
+\mbox{\hyperlink{namespacecpplint_a1526090ecd95baf21204601e8debe02e}{cpplint.\+\_\+\+Classify\+Include}} (fileinfo, include, is\+\_\+system)
+\item 
+\mbox{\hyperlink{namespacecpplint_a250112a79030e6bfd18609fe46eed793}{cpplint.\+Check\+Include\+Line}} (filename, clean\+\_\+lines, linenum, include\+\_\+state, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_ad9b398db6acf917691203d15dc765d11}{cpplint.\+\_\+\+Get\+Text\+Inside}} (text, start\+\_\+pattern)
+\item 
+\mbox{\hyperlink{namespacecpplint_aeb451d66a076ed2f6bdd4fa4e5189fc5}{cpplint.\+Check\+Language}} (filename, clean\+\_\+lines, linenum, file\+\_\+extension, include\+\_\+state, nesting\+\_\+state, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_a1f3918b9a5d2eeb29c905c2a5f26370e}{cpplint.\+Check\+Global\+Static}} (filename, clean\+\_\+lines, linenum, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_a838fe53c34209d10266e4d74c34bc048}{cpplint.\+Check\+Printf}} (filename, clean\+\_\+lines, linenum, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_aaa385f3280ce7c3f7bf64b52918028ca}{cpplint.\+Is\+Derived\+Function}} (clean\+\_\+lines, linenum)
+\item 
+\mbox{\hyperlink{namespacecpplint_a55f142e3a1b61d2c3b39895bd48c5d94}{cpplint.\+Is\+Out\+Of\+Line\+Method\+Definition}} (clean\+\_\+lines, linenum)
+\item 
+\mbox{\hyperlink{namespacecpplint_a5e7367ed60644c827b59d023706c4b8a}{cpplint.\+Is\+Initializer\+List}} (clean\+\_\+lines, linenum)
+\item 
+\mbox{\hyperlink{namespacecpplint_a35d793d3e6da45146d45569fc82e0350}{cpplint.\+Check\+For\+Non\+Const\+Reference}} (filename, clean\+\_\+lines, linenum, nesting\+\_\+state, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_a4623b4bbd2b8b5e9bd9fb344899dac98}{cpplint.\+Check\+Casts}} (filename, clean\+\_\+lines, linenum, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_a151aed5e7a392c99ead7f0ab4f9004b3}{cpplint.\+Check\+CStyle\+Cast}} (filename, clean\+\_\+lines, linenum, cast\+\_\+type, pattern, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_a161575a5016a22e21e335465a0129000}{cpplint.\+Expecting\+Function\+Args}} (clean\+\_\+lines, linenum)
+\item 
+\mbox{\hyperlink{namespacecpplint_abc0b6c4f2dcd4338c7801f54da4ce480}{cpplint.\+Files\+Belong\+To\+Same\+Module}} (filename\+\_\+cc, filename\+\_\+h)
+\item 
+\mbox{\hyperlink{namespacecpplint_a11bfdc00ed9bd66b16c882b930a6762b}{cpplint.\+Update\+Include\+State}} (filename, include\+\_\+dict, io=codecs)
+\item 
+\mbox{\hyperlink{namespacecpplint_a49b0c080fd4dcf8d6bcbf23ae65ff919}{cpplint.\+Check\+For\+Include\+What\+You\+Use}} (filename, clean\+\_\+lines, include\+\_\+state, error, io=codecs)
+\item 
+\mbox{\hyperlink{namespacecpplint_a160d59a445050df2d3888e2d780e8fef}{cpplint.\+Check\+Make\+Pair\+Uses\+Deduction}} (filename, clean\+\_\+lines, linenum, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_a4ed66a67812b6822f2d63dfa8b8ae2fa}{cpplint.\+Check\+Redundant\+Virtual}} (filename, clean\+\_\+lines, linenum, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_ad7a61c4e3bd44612340ce58923ed3d9a}{cpplint.\+Check\+Redundant\+Override\+Or\+Final}} (filename, clean\+\_\+lines, linenum, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_a57cb8c3332534704b6381c2d75c1d5a3}{cpplint.\+Is\+Block\+In\+Name\+Space}} (nesting\+\_\+state, is\+\_\+forward\+\_\+declaration)
+\item 
+\mbox{\hyperlink{namespacecpplint_a9325611c171591900d6eeeff1daf1cb6}{cpplint.\+Should\+Check\+Namespace\+Indentation}} (nesting\+\_\+state, is\+\_\+namespace\+\_\+indent\+\_\+item, raw\+\_\+lines\+\_\+no\+\_\+comments, linenum)
+\item 
+\mbox{\hyperlink{namespacecpplint_a9f5423d66336a436a8389ddba29f8745}{cpplint.\+Check\+Item\+Indentation\+In\+Namespace}} (filename, raw\+\_\+lines\+\_\+no\+\_\+comments, linenum, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_a60ab7d00cbd976925382b70bbf1fb2cf}{cpplint.\+Process\+Line}} (filename, file\+\_\+extension, clean\+\_\+lines, line, include\+\_\+state, function\+\_\+state, nesting\+\_\+state, error, extra\+\_\+check\+\_\+functions=\mbox{[}$\,$\mbox{]})
+\item 
+\mbox{\hyperlink{namespacecpplint_ab8abca70d25e2e8981eaacecd6b56c1f}{cpplint.\+Flag\+Cxx11\+Features}} (filename, clean\+\_\+lines, linenum, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_ad45b10ccccb163cbc0ccafa25329d459}{cpplint.\+Flag\+Cxx14\+Features}} (filename, clean\+\_\+lines, linenum, error)
+\item 
+\mbox{\hyperlink{namespacecpplint_af49dbbca393312acfa3a46984665eaff}{cpplint.\+Process\+File\+Data}} (filename, file\+\_\+extension, lines, error, extra\+\_\+check\+\_\+functions=\mbox{[}$\,$\mbox{]})
+\item 
+\mbox{\hyperlink{namespacecpplint_a20022b1ac01d93c470fbd25610776a33}{cpplint.\+Process\+Config\+Overrides}} (filename)
+\item 
+\mbox{\hyperlink{namespacecpplint_acecb7a35ccd8dc94f7759b8740496f5f}{cpplint.\+Process\+File}} (filename, vlevel, extra\+\_\+check\+\_\+functions=\mbox{[}$\,$\mbox{]})
+\item 
+\mbox{\hyperlink{namespacecpplint_a909dd459f639e414cbf5ffd91ce8c1a4}{cpplint.\+Print\+Usage}} (message)
+\item 
+\mbox{\hyperlink{namespacecpplint_a3bba987526e2d3e4eb3d0a25cf80f1dc}{cpplint.\+Print\+Categories}} ()
+\item 
+\mbox{\hyperlink{namespacecpplint_a3f8324de8f8a4138491fb973817322da}{cpplint.\+Parse\+Arguments}} (args)
+\item 
+\mbox{\hyperlink{namespacecpplint_acf4a1286bb0905ffa465d24881a5d2e7}{cpplint.\+main}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacecpplint_aa354ba81f1673ed31f2c0d7ce1f05f5e}{cpplint.\+xrange}} = range
+\item 
+str \mbox{\hyperlink{namespacecpplint_a8d7a904fd919fd2a6e2f9d95d129ca5f}{cpplint.\+\_\+\+USAGE}}
+\item 
+list \mbox{\hyperlink{namespacecpplint_a443dd7edd596a47a3973064c86d24474}{cpplint.\+\_\+\+ERROR\+\_\+\+CATEGORIES}}
+\item 
+list \mbox{\hyperlink{namespacecpplint_a57f33bd76a6086498bdad77f4d921fdc}{cpplint.\+\_\+\+LEGACY\+\_\+\+ERROR\+\_\+\+CATEGORIES}}
+\item 
+list \mbox{\hyperlink{namespacecpplint_af698c82fac7cff7d454fd8ca2be35e68}{cpplint.\+\_\+\+DEFAULT\+\_\+\+FILTERS}} = \mbox{[}\textquotesingle{}-\/build/include\+\_\+alpha\textquotesingle{}\mbox{]}
+\item 
+list \mbox{\hyperlink{namespacecpplint_a32c68628f86e9d7c90d1cdb52277dbcc}{cpplint.\+\_\+\+DEFAULT\+\_\+\+C\+\_\+\+SUPPRESSED\+\_\+\+CATEGORIES}}
+\item 
+list \mbox{\hyperlink{namespacecpplint_aa91fc7f951bf23aa73c820508ca6ff7d}{cpplint.\+\_\+\+DEFAULT\+\_\+\+KERNEL\+\_\+\+SUPPRESSED\+\_\+\+CATEGORIES}}
+\item 
+\mbox{\hyperlink{namespacecpplint_a4854144fb2320157db25efaf2fddcdff}{cpplint.\+\_\+\+CPP\+\_\+\+HEADERS}}
+\item 
+\mbox{\hyperlink{namespacecpplint_afd2511b963c71a6c7281f7f85370c808}{cpplint.\+\_\+\+TYPES}}
+\item 
+\mbox{\hyperlink{namespacecpplint_abedff37ffb696f5ee67db5d535f29bcd}{cpplint.\+\_\+\+THIRD\+\_\+\+PARTY\+\_\+\+HEADERS\+\_\+\+PATTERN}}
+\item 
+str \mbox{\hyperlink{namespacecpplint_a2c53db1a273392f2c2d764992b6a81d5}{cpplint.\+\_\+\+TEST\+\_\+\+FILE\+\_\+\+SUFFIX}} = r\textquotesingle{}(\+\_\+test\texorpdfstring{$\vert$}{|}\+\_\+unittest\texorpdfstring{$\vert$}{|}\+\_\+regtest)\$\textquotesingle{}
+\item 
+\mbox{\hyperlink{namespacecpplint_a8cd8b98aa00e581d653067079f82c7ab}{cpplint.\+\_\+\+EMPTY\+\_\+\+CONDITIONAL\+\_\+\+BODY\+\_\+\+PATTERN}} = re.\+compile(r\textquotesingle{}\texorpdfstring{$^\wedge$}{\string^}\textbackslash{}s\texorpdfstring{$\ast$}{*}\$\textquotesingle{}, re.\+DOTALL)
+\item 
+list \mbox{\hyperlink{namespacecpplint_a96865866cf9b608cbe21c0549782e33c}{cpplint.\+\_\+\+CHECK\+\_\+\+MACROS}}
+\item 
+\mbox{\hyperlink{namespacecpplint_aa29e61cc2dc32e1e9f61ecaed2907b48}{cpplint.\+\_\+\+CHECK\+\_\+\+REPLACEMENT}} = dict(\mbox{[}(m, \{\}) for m in \mbox{\hyperlink{namespacecpplint_a96865866cf9b608cbe21c0549782e33c}{\+\_\+\+CHECK\+\_\+\+MACROS}}\mbox{]})
+\item 
+dict \mbox{\hyperlink{namespacecpplint_a81cd42cc4392c8b9176e76e09ac95abe}{cpplint.\+\_\+\+ALT\+\_\+\+TOKEN\+\_\+\+REPLACEMENT}}
+\item 
+\mbox{\hyperlink{namespacecpplint_a06836e29f41961aead03ec8aadd1cecd}{cpplint.\+\_\+\+ALT\+\_\+\+TOKEN\+\_\+\+REPLACEMENT\+\_\+\+PATTERN}}
+\item 
+int \mbox{\hyperlink{namespacecpplint_a845e252934563f3b8dbab7cbbd81929d}{cpplint.\+\_\+\+C\+\_\+\+SYS\+\_\+\+HEADER}} = 1
+\item 
+int \mbox{\hyperlink{namespacecpplint_aa9513a195daca7c7835216243625060d}{cpplint.\+\_\+\+CPP\+\_\+\+SYS\+\_\+\+HEADER}} = 2
+\item 
+int \mbox{\hyperlink{namespacecpplint_a01c68489ef7fc81a65e23ed29a3cc77a}{cpplint.\+\_\+\+LIKELY\+\_\+\+MY\+\_\+\+HEADER}} = 3
+\item 
+int \mbox{\hyperlink{namespacecpplint_a7c70213e94a156b6c861f1e3d18bca48}{cpplint.\+\_\+\+POSSIBLE\+\_\+\+MY\+\_\+\+HEADER}} = 4
+\item 
+int \mbox{\hyperlink{namespacecpplint_a5fad80255610fbd2b1e24d4705806378}{cpplint.\+\_\+\+OTHER\+\_\+\+HEADER}} = 5
+\item 
+int \mbox{\hyperlink{namespacecpplint_a03d7f3e1fb21e3da0a3c4ae1ca9f771a}{cpplint.\+\_\+\+NO\+\_\+\+ASM}} = 0
+\item 
+int \mbox{\hyperlink{namespacecpplint_a5b040d60ab9e1d1e1971996561a620e2}{cpplint.\+\_\+\+INSIDE\+\_\+\+ASM}} = 1
+\item 
+int \mbox{\hyperlink{namespacecpplint_a6b53db7569ac305c328d95092cf45f1a}{cpplint.\+\_\+\+END\+\_\+\+ASM}} = 2
+\item 
+int \mbox{\hyperlink{namespacecpplint_a0f1f8da647bf9ced22d7834e1d27d065}{cpplint.\+\_\+\+BLOCK\+\_\+\+ASM}} = 3
+\item 
+\mbox{\hyperlink{namespacecpplint_a06e1a7cd329c1216de85c4524dbbb21c}{cpplint.\+\_\+\+MATCH\+\_\+\+ASM}}
+\item 
+\mbox{\hyperlink{namespacecpplint_a01ccd489908488cba7973b9a17caa343}{cpplint.\+\_\+\+SEARCH\+\_\+\+C\+\_\+\+FILE}}
+\item 
+\mbox{\hyperlink{namespacecpplint_a0ebfae753fc7e59a9921df1bc576654c}{cpplint.\+\_\+\+SEARCH\+\_\+\+KERNEL\+\_\+\+FILE}} = re.\+compile(r\textquotesingle{}\textbackslash{}b(?\+:LINT\+\_\+\+KERNEL\+\_\+\+FILE)\textquotesingle{})
+\item 
+dict \mbox{\hyperlink{namespacecpplint_ae98f9adf8ab237a162c0eedd32e77323}{cpplint.\+\_\+regexp\+\_\+compile\+\_\+cache}} = \{\}
+\item 
+dict \mbox{\hyperlink{namespacecpplint_a810fc14f92f99cc0127fcb2385e82d6d}{cpplint.\+\_\+error\+\_\+suppressions}} = \{\}
+\item 
+\mbox{\hyperlink{namespacecpplint_aaf6dcfd2e05bfc2a4ec4f758e05d45e2}{cpplint.\+\_\+root}} = None
+\item 
+bool \mbox{\hyperlink{namespacecpplint_a36c55cb9fe6fabd1395a1cd2c6647f35}{cpplint.\+\_\+root\+\_\+debug}} = False
+\item 
+int \mbox{\hyperlink{namespacecpplint_ab59a11cdee470ff44dae2c9a3cf1fa22}{cpplint.\+\_\+line\+\_\+length}} = 80
+\item 
+\mbox{\hyperlink{namespacecpplint_ae969d2ba7b74119c32022cdb60beb15c}{cpplint.\+\_\+valid\+\_\+extensions}} = set(\mbox{[}\textquotesingle{}cc\textquotesingle{}, \textquotesingle{}h\textquotesingle{}, \textquotesingle{}cpp\textquotesingle{}, \textquotesingle{}cu\textquotesingle{}, \textquotesingle{}cuh\textquotesingle{}\mbox{]})
+\item 
+\mbox{\hyperlink{namespacecpplint_aa6c6e506c79bdba0431362eca044f02f}{cpplint.\+\_\+hpp\+\_\+headers}} = set(\mbox{[}\textquotesingle{}h\textquotesingle{}\mbox{]})
+\item 
+dict \mbox{\hyperlink{namespacecpplint_a23fe7f30be8c7055a089d89dc3d5ee29}{cpplint.\+\_\+global\+\_\+error\+\_\+suppressions}} = \{\}
+\item 
+\mbox{\hyperlink{namespacecpplint_a8ea348311551951f3999dc9c8a25842b}{cpplint.\+\_\+cpplint\+\_\+state}} = \mbox{\hyperlink{classcpplint_1_1__CppLintState}{\+\_\+\+Cpp\+Lint\+State}}()
+\item 
+\mbox{\hyperlink{namespacecpplint_acb6f93120f1c7ff091fd9dea38ee89df}{cpplint.\+\_\+\+RE\+\_\+\+PATTERN\+\_\+\+CLEANSE\+\_\+\+LINE\+\_\+\+ESCAPES}}
+\item 
+str \mbox{\hyperlink{namespacecpplint_ab8d20858906e4cac9c2ba5af3439e397}{cpplint.\+\_\+\+RE\+\_\+\+PATTERN\+\_\+\+C\+\_\+\+COMMENTS}} = r\textquotesingle{}/\textbackslash{}\texorpdfstring{$\ast$}{*}(?\+:\mbox{[}\texorpdfstring{$^\wedge$}{\string^}\texorpdfstring{$\ast$}{*}\mbox{]}\texorpdfstring{$\vert$}{|}\textbackslash{}\texorpdfstring{$\ast$}{*}(?!/))\texorpdfstring{$\ast$}{*}\textbackslash{}\texorpdfstring{$\ast$}{*}/\textquotesingle{}
+\item 
+\mbox{\hyperlink{namespacecpplint_a4c7a1f6077a72f4d5b5223cca4823670}{cpplint.\+\_\+\+RE\+\_\+\+PATTERN\+\_\+\+CLEANSE\+\_\+\+LINE\+\_\+\+C\+\_\+\+COMMENTS}}
+\item 
+str \mbox{\hyperlink{namespacecpplint_ad5d9fc525b2cbc3f526144cc750664ba}{cpplint.\+\_\+\+UNSAFE\+\_\+\+FUNC\+\_\+\+PREFIX}} = r\textquotesingle{}(?\+:\mbox{[}-\/+\texorpdfstring{$\ast$}{*}/=\%\texorpdfstring{$^\wedge$}{\string^}\&\texorpdfstring{$\vert$}{|}($<$\mbox{]}\textbackslash{}s\texorpdfstring{$\ast$}{*}\texorpdfstring{$\vert$}{|}$>$\textbackslash{}s+)\textquotesingle{}
+\item 
+tuple \mbox{\hyperlink{namespacecpplint_a35b2c753549d4a10e56d6ff4ff49d52a}{cpplint.\+\_\+\+THREADING\+\_\+\+LIST}}
+\item 
+\mbox{\hyperlink{namespacecpplint_a10f826c497fc61e200b11304e42a2e72}{cpplint.\+\_\+\+RE\+\_\+\+PATTERN\+\_\+\+INVALID\+\_\+\+INCREMENT}}
+\item 
+\mbox{\hyperlink{namespacecpplint_a055d2ef16d7385daba02715dc5da4b70}{cpplint.\+\_\+\+RE\+\_\+\+PATTERN\+\_\+\+TODO}} = re.\+compile(r\textquotesingle{}\texorpdfstring{$^\wedge$}{\string^}//(\textbackslash{}s\texorpdfstring{$\ast$}{*})TODO(\textbackslash{}(.+?\textbackslash{}))?\+:?(\textbackslash{}s\texorpdfstring{$\vert$}{|}\$)?\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespacecpplint_a93521777a401a40fe994240ff3fc570f}{cpplint.\+\_\+\+RE\+\_\+\+PATTERN\+\_\+\+INCLUDE}} = re.\+compile(r\textquotesingle{}\texorpdfstring{$^\wedge$}{\string^}\textbackslash{}s\texorpdfstring{$\ast$}{*}\#\textbackslash{}s\texorpdfstring{$\ast$}{*}include\textbackslash{}s\texorpdfstring{$\ast$}{*}(\mbox{[}$<$"{}\mbox{]})(\mbox{[}\texorpdfstring{$^\wedge$}{\string^}$>$"{}\mbox{]}\texorpdfstring{$\ast$}{*})\mbox{[}$>$"{}\mbox{]}.\texorpdfstring{$\ast$}{*}\$\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespacecpplint_ab0e2ca96162172c16d79a3124d1cb160}{cpplint.\+\_\+\+RE\+\_\+\+FIRST\+\_\+\+COMPONENT}} = re.\+compile(r\textquotesingle{}\texorpdfstring{$^\wedge$}{\string^}\mbox{[}\texorpdfstring{$^\wedge$}{\string^}-\/\+\_\+.\mbox{]}+\textquotesingle{})
+\item 
+str \mbox{\hyperlink{namespacecpplint_a23b90879af44f72febba23c258e4b2de}{cpplint.\+\_\+\+RE\+\_\+\+PATTERN\+\_\+\+IDENT}} = r\textquotesingle{}\mbox{[}\+\_\+a-\/zA-\/Z\mbox{]}\textbackslash{}w\texorpdfstring{$\ast$}{*}\textquotesingle{}
+\item 
+tuple \mbox{\hyperlink{namespacecpplint_afedcf56f0eede3aa5608cbcfd09f56e1}{cpplint.\+\_\+\+RE\+\_\+\+PATTERN\+\_\+\+TYPE}}
+\item 
+\mbox{\hyperlink{namespacecpplint_ab1ef73db80238ad8d42561df04d77920}{cpplint.\+\_\+\+RE\+\_\+\+PATTERN\+\_\+\+REF\+\_\+\+PARAM}}
+\item 
+tuple \mbox{\hyperlink{namespacecpplint_adee0ad93201bfc951bff10a8725c49a1}{cpplint.\+\_\+\+RE\+\_\+\+PATTERN\+\_\+\+CONST\+\_\+\+REF\+\_\+\+PARAM}}
+\item 
+tuple \mbox{\hyperlink{namespacecpplint_a63664d5c5cd3b497c1eacb53048674e3}{cpplint.\+\_\+\+RE\+\_\+\+PATTERN\+\_\+\+REF\+\_\+\+STREAM\+\_\+\+PARAM}}
+\item 
+tuple \mbox{\hyperlink{namespacecpplint_a1741ee2a4dc3f33620d655f246b5162f}{cpplint.\+\_\+\+HEADERS\+\_\+\+CONTAINING\+\_\+\+TEMPLATES}}
+\item 
+tuple \mbox{\hyperlink{namespacecpplint_a0cfde54f6a4bc9c9e2e16019146e2167}{cpplint.\+\_\+\+HEADERS\+\_\+\+MAYBE\+\_\+\+TEMPLATES}}
+\item 
+\mbox{\hyperlink{namespacecpplint_aa9034b4a8066397d074296c6c97b2c01}{cpplint.\+\_\+\+RE\+\_\+\+PATTERN\+\_\+\+STRING}} = re.\+compile(r\textquotesingle{}\textbackslash{}bstring\textbackslash{}b\textquotesingle{})
+\item 
+list \mbox{\hyperlink{namespacecpplint_a0f83c6a36a89cf34d052097249697389}{cpplint.\+\_\+re\+\_\+pattern\+\_\+headers\+\_\+maybe\+\_\+templates}} = \mbox{[}$\,$\mbox{]}
+\item 
+list \mbox{\hyperlink{namespacecpplint_af915642b63638b43de40fda5bc97760b}{cpplint.\+\_\+re\+\_\+pattern\+\_\+templates}} = \mbox{[}$\,$\mbox{]}
+\item 
+\mbox{\hyperlink{namespacecpplint_afe92711322d062e5f8f44cf07607f237}{cpplint.\+\_\+\+RE\+\_\+\+PATTERN\+\_\+\+EXPLICIT\+\_\+\+MAKEPAIR}} = re.\+compile(r\textquotesingle{}\textbackslash{}bmake\+\_\+pair\textbackslash{}s\texorpdfstring{$\ast$}{*}$<$\textquotesingle{})
+\end{DoxyCompactItemize}

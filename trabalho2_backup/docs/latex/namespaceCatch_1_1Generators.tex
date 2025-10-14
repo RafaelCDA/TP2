@@ -1,0 +1,179 @@
+\doxysection{Catch\+::Generators Namespace Reference}
+\hypertarget{namespaceCatch_1_1Generators}{}\label{namespaceCatch_1_1Generators}\index{Catch::Generators@{Catch::Generators}}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceCatch_1_1Generators_1_1pf}{pf}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structCatch_1_1Generators_1_1as}{as}}
+\item 
+class \mbox{\hyperlink{classCatch_1_1Generators_1_1ChunkGenerator}{Chunk\+Generator}}
+\item 
+class \mbox{\hyperlink{classCatch_1_1Generators_1_1FilterGenerator}{Filter\+Generator}}
+\item 
+class \mbox{\hyperlink{classCatch_1_1Generators_1_1FixedValuesGenerator}{Fixed\+Values\+Generator}}
+\item 
+class \mbox{\hyperlink{classCatch_1_1Generators_1_1Generators}{Generators}}
+\item 
+class \mbox{\hyperlink{classCatch_1_1Generators_1_1GeneratorUntypedBase}{Generator\+Untyped\+Base}}
+\item 
+class \mbox{\hyperlink{classCatch_1_1Generators_1_1GeneratorWrapper}{Generator\+Wrapper}}
+\item 
+struct \mbox{\hyperlink{structCatch_1_1Generators_1_1IGenerator}{IGenerator}}
+\item 
+class \mbox{\hyperlink{classCatch_1_1Generators_1_1MapGenerator}{Map\+Generator}}
+\item 
+class \mbox{\hyperlink{classCatch_1_1Generators_1_1RepeatGenerator}{Repeat\+Generator}}
+\item 
+class \mbox{\hyperlink{classCatch_1_1Generators_1_1SingleValueGenerator}{Single\+Value\+Generator}}
+\item 
+class \mbox{\hyperlink{classCatch_1_1Generators_1_1TakeGenerator}{Take\+Generator}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structCatch_1_1true__given}{using}} \mbox{\hyperlink{namespaceCatch_1_1Generators_a1519f304113619d7d18670e2f08276c0}{Generator\+Base\+Ptr}} = std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classCatch_1_1Generators_1_1GeneratorUntypedBase}{Generator\+Untyped\+Base}} $>$
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$\mbox{\hyperlink{structCatch_1_1true__given}{typename}} \mbox{\hyperlink{structCatch_1_1true__given}{T}} $>$ }\\\mbox{\hyperlink{classCatch_1_1Generators_1_1GeneratorWrapper}{Generator\+Wrapper}}$<$ \mbox{\hyperlink{structCatch_1_1true__given}{T}} $>$ \mbox{\hyperlink{namespaceCatch_1_1Generators_a3b2efc97978cf37951b75394aae1a3fb}{value}} (\mbox{\hyperlink{structCatch_1_1true__given}{T}} \&\&value)
+\item 
+{\footnotesize template$<$\mbox{\hyperlink{structCatch_1_1true__given}{typename}} \mbox{\hyperlink{structCatch_1_1true__given}{T}} $>$ }\\\mbox{\hyperlink{classCatch_1_1Generators_1_1GeneratorWrapper}{Generator\+Wrapper}}$<$ \mbox{\hyperlink{structCatch_1_1true__given}{T}} $>$ \mbox{\hyperlink{namespaceCatch_1_1Generators_aff55717239311a0e8352a4de5d29967f}{values}} (std\+::initializer\+\_\+list$<$ \mbox{\hyperlink{structCatch_1_1true__given}{T}} $>$ values)
+\item 
+{\footnotesize template$<$typename... Ts$>$ }\\\mbox{\hyperlink{classCatch_1_1Generators_1_1GeneratorWrapper}{Generator\+Wrapper}}$<$ std\+::tuple$<$ Ts... $>$ $>$ \mbox{\hyperlink{namespaceCatch_1_1Generators_ae980a8b181bc56242a73161a05b312ee}{table}} (std\+::initializer\+\_\+list$<$ std\+::tuple$<$ \mbox{\hyperlink{structCatch_1_1true__given}{typename}} std\+::decay$<$ \mbox{\hyperlink{structCatch_1_1true__given}{Ts}} $>$\+::type... $>$ $>$ \mbox{\hyperlink{structCatch_1_1true__given}{tuples}})
+\item 
+{\footnotesize template$<$\mbox{\hyperlink{structCatch_1_1true__given}{typename}} \mbox{\hyperlink{structCatch_1_1true__given}{T}} , typename... Gs$>$ }\\\mbox{\hyperlink{structCatch_1_1true__given}{auto}} \mbox{\hyperlink{namespaceCatch_1_1Generators_a7cc95d72b060e2819b2edbbdbf8c646b}{make\+Generators}} (\mbox{\hyperlink{classCatch_1_1Generators_1_1GeneratorWrapper}{Generator\+Wrapper}}$<$ \mbox{\hyperlink{structCatch_1_1true__given}{T}} $>$ \&\&\mbox{\hyperlink{structCatch_1_1true__given}{generator}}, \mbox{\hyperlink{structCatch_1_1true__given}{Gs}} \&\&... \mbox{\hyperlink{structCatch_1_1true__given}{more\+Generators}}) -\/$>$ \mbox{\hyperlink{classCatch_1_1Generators_1_1Generators}{Generators}}$<$ \mbox{\hyperlink{structCatch_1_1true__given}{T}} $>$
+\item 
+{\footnotesize template$<$\mbox{\hyperlink{structCatch_1_1true__given}{typename}} \mbox{\hyperlink{structCatch_1_1true__given}{T}} $>$ }\\\mbox{\hyperlink{structCatch_1_1true__given}{auto}} \mbox{\hyperlink{namespaceCatch_1_1Generators_abefb1a0fab3c669b98a53037b3286d22}{make\+Generators}} (\mbox{\hyperlink{classCatch_1_1Generators_1_1GeneratorWrapper}{Generator\+Wrapper}}$<$ \mbox{\hyperlink{structCatch_1_1true__given}{T}} $>$ \&\&\mbox{\hyperlink{structCatch_1_1true__given}{generator}}) -\/$>$ \mbox{\hyperlink{classCatch_1_1Generators_1_1Generators}{Generators}}$<$ \mbox{\hyperlink{structCatch_1_1true__given}{T}} $>$
+\item 
+{\footnotesize template$<$\mbox{\hyperlink{structCatch_1_1true__given}{typename}} \mbox{\hyperlink{structCatch_1_1true__given}{T}} , typename... Gs$>$ }\\\mbox{\hyperlink{structCatch_1_1true__given}{auto}} \mbox{\hyperlink{namespaceCatch_1_1Generators_ab22ab581e83e71530d8bbd1c14f94abc}{make\+Generators}} (\mbox{\hyperlink{structCatch_1_1true__given}{T}} \&\&\mbox{\hyperlink{structCatch_1_1true__given}{val}}, \mbox{\hyperlink{structCatch_1_1true__given}{Gs}} \&\&... \mbox{\hyperlink{structCatch_1_1true__given}{more\+Generators}}) -\/$>$ \mbox{\hyperlink{classCatch_1_1Generators_1_1Generators}{Generators}}$<$ \mbox{\hyperlink{structCatch_1_1true__given}{T}} $>$
+\item 
+{\footnotesize template$<$\mbox{\hyperlink{structCatch_1_1true__given}{typename}} \mbox{\hyperlink{structCatch_1_1true__given}{T}} , \mbox{\hyperlink{structCatch_1_1true__given}{typename}} \mbox{\hyperlink{structCatch_1_1true__given}{U}} , typename... Gs$>$ }\\\mbox{\hyperlink{structCatch_1_1true__given}{auto}} \mbox{\hyperlink{namespaceCatch_1_1Generators_aac8c5682b95d3467b013de492f21e7e2}{make\+Generators}} (\mbox{\hyperlink{structCatch_1_1Generators_1_1as}{as}}$<$ \mbox{\hyperlink{structCatch_1_1true__given}{T}} $>$, \mbox{\hyperlink{structCatch_1_1true__given}{U}} \&\&\mbox{\hyperlink{structCatch_1_1true__given}{val}}, \mbox{\hyperlink{structCatch_1_1true__given}{Gs}} \&\&... \mbox{\hyperlink{structCatch_1_1true__given}{more\+Generators}}) -\/$>$ \mbox{\hyperlink{classCatch_1_1Generators_1_1Generators}{Generators}}$<$ \mbox{\hyperlink{structCatch_1_1true__given}{T}} $>$
+\item 
+\mbox{\hyperlink{structCatch_1_1true__given}{auto}} \mbox{\hyperlink{namespaceCatch_1_1Generators_ac1fe3550c5f97370fc6729e04d7571b8}{acquire\+Generator\+Tracker}} (\mbox{\hyperlink{classCatch_1_1StringRef}{String\+Ref}} \mbox{\hyperlink{structCatch_1_1true__given}{generator\+Name}}, \mbox{\hyperlink{structCatch_1_1SourceLineInfo}{Source\+Line\+Info}} \mbox{\hyperlink{structCatch_1_1true__given}{const}} \&line\+Info) -\/$>$ \mbox{\hyperlink{structCatch_1_1IGeneratorTracker}{IGenerator\+Tracker}} \&
+\item 
+{\footnotesize template$<$\mbox{\hyperlink{structCatch_1_1true__given}{typename}} \mbox{\hyperlink{structCatch_1_1true__given}{L}} $>$ }\\\mbox{\hyperlink{structCatch_1_1true__given}{auto}} \mbox{\hyperlink{namespaceCatch_1_1Generators_a3b0ab1f589b1d1e0e92afcd12cf4ab12}{generate}} (\mbox{\hyperlink{classCatch_1_1StringRef}{String\+Ref}} \mbox{\hyperlink{structCatch_1_1true__given}{generator\+Name}}, \mbox{\hyperlink{structCatch_1_1SourceLineInfo}{Source\+Line\+Info}} \mbox{\hyperlink{structCatch_1_1true__given}{const}} \&line\+Info, \mbox{\hyperlink{structCatch_1_1true__given}{L}} \mbox{\hyperlink{structCatch_1_1true__given}{const}} \&\mbox{\hyperlink{structCatch_1_1true__given}{generator\+Expression}}) -\/$>$ \mbox{\hyperlink{structCatch_1_1true__given}{decltype}}(std\+::declval$<$ \mbox{\hyperlink{structCatch_1_1true__given}{decltype}}(\mbox{\hyperlink{structCatch_1_1true__given}{generator\+Expression}}())$>$().get())
+\item 
+{\footnotesize template$<$\mbox{\hyperlink{structCatch_1_1true__given}{typename}} \mbox{\hyperlink{structCatch_1_1true__given}{T}} $>$ }\\\mbox{\hyperlink{classCatch_1_1Generators_1_1GeneratorWrapper}{Generator\+Wrapper}}$<$ \mbox{\hyperlink{structCatch_1_1true__given}{T}} $>$ \mbox{\hyperlink{namespaceCatch_1_1Generators_adedfdb318219078ce9107690745d2f2f}{take}} (\mbox{\hyperlink{structCatch_1_1true__given}{size\+\_\+t}} \mbox{\hyperlink{structCatch_1_1true__given}{target}}, \mbox{\hyperlink{classCatch_1_1Generators_1_1GeneratorWrapper}{Generator\+Wrapper}}$<$ \mbox{\hyperlink{structCatch_1_1true__given}{T}} $>$ \&\&\mbox{\hyperlink{structCatch_1_1true__given}{generator}})
+\item 
+{\footnotesize template$<$\mbox{\hyperlink{structCatch_1_1true__given}{typename}} \mbox{\hyperlink{structCatch_1_1true__given}{T}} , \mbox{\hyperlink{structCatch_1_1true__given}{typename}} Predicate $>$ }\\\mbox{\hyperlink{classCatch_1_1Generators_1_1GeneratorWrapper}{Generator\+Wrapper}}$<$ \mbox{\hyperlink{structCatch_1_1true__given}{T}} $>$ \mbox{\hyperlink{namespaceCatch_1_1Generators_a4df89be8072a9685ee89b6776a54bb93}{filter}} (Predicate \&\&\mbox{\hyperlink{structCatch_1_1true__given}{pred}}, \mbox{\hyperlink{classCatch_1_1Generators_1_1GeneratorWrapper}{Generator\+Wrapper}}$<$ \mbox{\hyperlink{structCatch_1_1true__given}{T}} $>$ \&\&\mbox{\hyperlink{structCatch_1_1true__given}{generator}})
+\item 
+{\footnotesize template$<$\mbox{\hyperlink{structCatch_1_1true__given}{typename}} \mbox{\hyperlink{structCatch_1_1true__given}{T}} $>$ }\\\mbox{\hyperlink{classCatch_1_1Generators_1_1GeneratorWrapper}{Generator\+Wrapper}}$<$ \mbox{\hyperlink{structCatch_1_1true__given}{T}} $>$ \mbox{\hyperlink{namespaceCatch_1_1Generators_a510cc0d72a7bab8f967827e695b981ba}{repeat}} (\mbox{\hyperlink{structCatch_1_1true__given}{size\+\_\+t}} \mbox{\hyperlink{structCatch_1_1true__given}{repeats}}, \mbox{\hyperlink{classCatch_1_1Generators_1_1GeneratorWrapper}{Generator\+Wrapper}}$<$ \mbox{\hyperlink{structCatch_1_1true__given}{T}} $>$ \&\&\mbox{\hyperlink{structCatch_1_1true__given}{generator}})
+\item 
+{\footnotesize template$<$\mbox{\hyperlink{structCatch_1_1true__given}{typename}} \mbox{\hyperlink{structCatch_1_1true__given}{Func}} , \mbox{\hyperlink{structCatch_1_1true__given}{typename}} \mbox{\hyperlink{structCatch_1_1true__given}{U}} , \mbox{\hyperlink{structCatch_1_1true__given}{typename}} \mbox{\hyperlink{structCatch_1_1true__given}{T}}  = Function\+Return\+Type$<$\+Func, U$>$$>$ }\\\mbox{\hyperlink{classCatch_1_1Generators_1_1GeneratorWrapper}{Generator\+Wrapper}}$<$ \mbox{\hyperlink{structCatch_1_1true__given}{T}} $>$ \mbox{\hyperlink{namespaceCatch_1_1Generators_af33fd06c51ac9173c3bee2ddee2559a6}{map}} (\mbox{\hyperlink{structCatch_1_1true__given}{Func}} \&\&\mbox{\hyperlink{structCatch_1_1true__given}{function}}, \mbox{\hyperlink{classCatch_1_1Generators_1_1GeneratorWrapper}{Generator\+Wrapper}}$<$ \mbox{\hyperlink{structCatch_1_1true__given}{U}} $>$ \&\&\mbox{\hyperlink{structCatch_1_1true__given}{generator}})
+\item 
+{\footnotesize template$<$\mbox{\hyperlink{structCatch_1_1true__given}{typename}} \mbox{\hyperlink{structCatch_1_1true__given}{T}} $>$ }\\\mbox{\hyperlink{classCatch_1_1Generators_1_1GeneratorWrapper}{Generator\+Wrapper}}$<$ std\+::vector$<$ \mbox{\hyperlink{structCatch_1_1true__given}{T}} $>$ $>$ \mbox{\hyperlink{namespaceCatch_1_1Generators_acb4654b4e840e438e3bc204ac4d8e157}{chunk}} (\mbox{\hyperlink{structCatch_1_1true__given}{size\+\_\+t}} size, \mbox{\hyperlink{classCatch_1_1Generators_1_1GeneratorWrapper}{Generator\+Wrapper}}$<$ \mbox{\hyperlink{structCatch_1_1true__given}{T}} $>$ \&\&\mbox{\hyperlink{structCatch_1_1true__given}{generator}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{namespaceCatch_1_1Generators_a1519f304113619d7d18670e2f08276c0}\label{namespaceCatch_1_1Generators_a1519f304113619d7d18670e2f08276c0} 
+\index{Catch::Generators@{Catch::Generators}!GeneratorBasePtr@{GeneratorBasePtr}}
+\index{GeneratorBasePtr@{GeneratorBasePtr}!Catch::Generators@{Catch::Generators}}
+\doxysubsubsection{\texorpdfstring{GeneratorBasePtr}{GeneratorBasePtr}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structCatch_1_1true__given}{using}} \mbox{\hyperlink{namespaceCatch_1_1Generators_a1519f304113619d7d18670e2f08276c0}{Catch\+::\+Generators\+::\+Generator\+Base\+Ptr}} = \mbox{\hyperlink{structCatch_1_1true__given}{typedef}} std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{classCatch_1_1Generators_1_1GeneratorUntypedBase}{Generator\+Untyped\+Base}}$>$}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespaceCatch_1_1Generators_ac1fe3550c5f97370fc6729e04d7571b8}\label{namespaceCatch_1_1Generators_ac1fe3550c5f97370fc6729e04d7571b8} 
+\index{Catch::Generators@{Catch::Generators}!acquireGeneratorTracker@{acquireGeneratorTracker}}
+\index{acquireGeneratorTracker@{acquireGeneratorTracker}!Catch::Generators@{Catch::Generators}}
+\doxysubsubsection{\texorpdfstring{acquireGeneratorTracker()}{acquireGeneratorTracker()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structCatch_1_1true__given}{auto}} Catch\+::\+Generators\+::acquire\+Generator\+Tracker (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCatch_1_1StringRef}{String\+Ref}}}]{generator\+Name,  }\item[{\mbox{\hyperlink{structCatch_1_1SourceLineInfo}{Source\+Line\+Info}} \mbox{\hyperlink{structCatch_1_1true__given}{const}} \&}]{line\+Info }\end{DoxyParamCaption}) -\/$>$  \mbox{\hyperlink{structCatch_1_1IGeneratorTracker}{IGenerator\+Tracker}} \&}
+
+\Hypertarget{namespaceCatch_1_1Generators_acb4654b4e840e438e3bc204ac4d8e157}\label{namespaceCatch_1_1Generators_acb4654b4e840e438e3bc204ac4d8e157} 
+\index{Catch::Generators@{Catch::Generators}!chunk@{chunk}}
+\index{chunk@{chunk}!Catch::Generators@{Catch::Generators}}
+\doxysubsubsection{\texorpdfstring{chunk()}{chunk()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{structCatch_1_1true__given}{typename}} \mbox{\hyperlink{structCatch_1_1true__given}{T}} $>$ \\
+\mbox{\hyperlink{classCatch_1_1Generators_1_1GeneratorWrapper}{Generator\+Wrapper}}$<$ std\+::vector$<$ \mbox{\hyperlink{structCatch_1_1true__given}{T}} $>$ $>$ Catch\+::\+Generators\+::chunk (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCatch_1_1true__given}{size\+\_\+t}}}]{size,  }\item[{\mbox{\hyperlink{classCatch_1_1Generators_1_1GeneratorWrapper}{Generator\+Wrapper}}$<$ \mbox{\hyperlink{structCatch_1_1true__given}{T}} $>$ \&\&}]{generator }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceCatch_1_1Generators_a4df89be8072a9685ee89b6776a54bb93}\label{namespaceCatch_1_1Generators_a4df89be8072a9685ee89b6776a54bb93} 
+\index{Catch::Generators@{Catch::Generators}!filter@{filter}}
+\index{filter@{filter}!Catch::Generators@{Catch::Generators}}
+\doxysubsubsection{\texorpdfstring{filter()}{filter()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{structCatch_1_1true__given}{typename}} \mbox{\hyperlink{structCatch_1_1true__given}{T}} , \mbox{\hyperlink{structCatch_1_1true__given}{typename}} Predicate $>$ \\
+\mbox{\hyperlink{classCatch_1_1Generators_1_1GeneratorWrapper}{Generator\+Wrapper}}$<$ \mbox{\hyperlink{structCatch_1_1true__given}{T}} $>$ Catch\+::\+Generators\+::filter (\begin{DoxyParamCaption}\item[{Predicate \&\&}]{pred,  }\item[{\mbox{\hyperlink{classCatch_1_1Generators_1_1GeneratorWrapper}{Generator\+Wrapper}}$<$ \mbox{\hyperlink{structCatch_1_1true__given}{T}} $>$ \&\&}]{generator }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceCatch_1_1Generators_a3b0ab1f589b1d1e0e92afcd12cf4ab12}\label{namespaceCatch_1_1Generators_a3b0ab1f589b1d1e0e92afcd12cf4ab12} 
+\index{Catch::Generators@{Catch::Generators}!generate@{generate}}
+\index{generate@{generate}!Catch::Generators@{Catch::Generators}}
+\doxysubsubsection{\texorpdfstring{generate()}{generate()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{structCatch_1_1true__given}{typename}} \mbox{\hyperlink{structCatch_1_1true__given}{L}} $>$ \\
+\mbox{\hyperlink{structCatch_1_1true__given}{auto}} Catch\+::\+Generators\+::generate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCatch_1_1StringRef}{String\+Ref}}}]{generator\+Name,  }\item[{\mbox{\hyperlink{structCatch_1_1SourceLineInfo}{Source\+Line\+Info}} \mbox{\hyperlink{structCatch_1_1true__given}{const}} \&}]{line\+Info,  }\item[{\mbox{\hyperlink{structCatch_1_1true__given}{L}} \mbox{\hyperlink{structCatch_1_1true__given}{const}} \&}]{generator\+Expression }\end{DoxyParamCaption}) -\/$>$ \mbox{\hyperlink{structCatch_1_1true__given}{decltype}}(std\+::declval$<$\mbox{\hyperlink{structCatch_1_1true__given}{decltype}}(\mbox{\hyperlink{structCatch_1_1true__given}{generator\+Expression}}())$>$().get()) }
+
+\Hypertarget{namespaceCatch_1_1Generators_aac8c5682b95d3467b013de492f21e7e2}\label{namespaceCatch_1_1Generators_aac8c5682b95d3467b013de492f21e7e2} 
+\index{Catch::Generators@{Catch::Generators}!makeGenerators@{makeGenerators}}
+\index{makeGenerators@{makeGenerators}!Catch::Generators@{Catch::Generators}}
+\doxysubsubsection{\texorpdfstring{makeGenerators()}{makeGenerators()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{structCatch_1_1true__given}{typename}} \mbox{\hyperlink{structCatch_1_1true__given}{T}} , \mbox{\hyperlink{structCatch_1_1true__given}{typename}} \mbox{\hyperlink{structCatch_1_1true__given}{U}} , typename... Gs$>$ \\
+\mbox{\hyperlink{structCatch_1_1true__given}{auto}} Catch\+::\+Generators\+::make\+Generators (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCatch_1_1Generators_1_1as}{as}}$<$ \mbox{\hyperlink{structCatch_1_1true__given}{T}} $>$}]{,  }\item[{\mbox{\hyperlink{structCatch_1_1true__given}{U}} \&\&}]{val,  }\item[{\mbox{\hyperlink{structCatch_1_1true__given}{Gs}} \&\&...}]{more\+Generators }\end{DoxyParamCaption}) -\/$>$ \mbox{\hyperlink{classCatch_1_1Generators_1_1Generators}{Generators}}$<$\mbox{\hyperlink{structCatch_1_1true__given}{T}}$>$ }
+
+\Hypertarget{namespaceCatch_1_1Generators_abefb1a0fab3c669b98a53037b3286d22}\label{namespaceCatch_1_1Generators_abefb1a0fab3c669b98a53037b3286d22} 
+\index{Catch::Generators@{Catch::Generators}!makeGenerators@{makeGenerators}}
+\index{makeGenerators@{makeGenerators}!Catch::Generators@{Catch::Generators}}
+\doxysubsubsection{\texorpdfstring{makeGenerators()}{makeGenerators()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{structCatch_1_1true__given}{typename}} \mbox{\hyperlink{structCatch_1_1true__given}{T}} $>$ \\
+\mbox{\hyperlink{structCatch_1_1true__given}{auto}} Catch\+::\+Generators\+::make\+Generators (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCatch_1_1Generators_1_1GeneratorWrapper}{Generator\+Wrapper}}$<$ \mbox{\hyperlink{structCatch_1_1true__given}{T}} $>$ \&\&}]{generator }\end{DoxyParamCaption}) -\/$>$ \mbox{\hyperlink{classCatch_1_1Generators_1_1Generators}{Generators}}$<$\mbox{\hyperlink{structCatch_1_1true__given}{T}}$>$ }
+
+\Hypertarget{namespaceCatch_1_1Generators_a7cc95d72b060e2819b2edbbdbf8c646b}\label{namespaceCatch_1_1Generators_a7cc95d72b060e2819b2edbbdbf8c646b} 
+\index{Catch::Generators@{Catch::Generators}!makeGenerators@{makeGenerators}}
+\index{makeGenerators@{makeGenerators}!Catch::Generators@{Catch::Generators}}
+\doxysubsubsection{\texorpdfstring{makeGenerators()}{makeGenerators()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{structCatch_1_1true__given}{typename}} \mbox{\hyperlink{structCatch_1_1true__given}{T}} , typename... Gs$>$ \\
+\mbox{\hyperlink{structCatch_1_1true__given}{auto}} Catch\+::\+Generators\+::make\+Generators (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCatch_1_1Generators_1_1GeneratorWrapper}{Generator\+Wrapper}}$<$ \mbox{\hyperlink{structCatch_1_1true__given}{T}} $>$ \&\&}]{generator,  }\item[{\mbox{\hyperlink{structCatch_1_1true__given}{Gs}} \&\&...}]{more\+Generators }\end{DoxyParamCaption}) -\/$>$ \mbox{\hyperlink{classCatch_1_1Generators_1_1Generators}{Generators}}$<$\mbox{\hyperlink{structCatch_1_1true__given}{T}}$>$ }
+
+\Hypertarget{namespaceCatch_1_1Generators_ab22ab581e83e71530d8bbd1c14f94abc}\label{namespaceCatch_1_1Generators_ab22ab581e83e71530d8bbd1c14f94abc} 
+\index{Catch::Generators@{Catch::Generators}!makeGenerators@{makeGenerators}}
+\index{makeGenerators@{makeGenerators}!Catch::Generators@{Catch::Generators}}
+\doxysubsubsection{\texorpdfstring{makeGenerators()}{makeGenerators()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{structCatch_1_1true__given}{typename}} \mbox{\hyperlink{structCatch_1_1true__given}{T}} , typename... Gs$>$ \\
+\mbox{\hyperlink{structCatch_1_1true__given}{auto}} Catch\+::\+Generators\+::make\+Generators (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCatch_1_1true__given}{T}} \&\&}]{val,  }\item[{\mbox{\hyperlink{structCatch_1_1true__given}{Gs}} \&\&...}]{more\+Generators }\end{DoxyParamCaption}) -\/$>$ \mbox{\hyperlink{classCatch_1_1Generators_1_1Generators}{Generators}}$<$\mbox{\hyperlink{structCatch_1_1true__given}{T}}$>$ }
+
+\Hypertarget{namespaceCatch_1_1Generators_af33fd06c51ac9173c3bee2ddee2559a6}\label{namespaceCatch_1_1Generators_af33fd06c51ac9173c3bee2ddee2559a6} 
+\index{Catch::Generators@{Catch::Generators}!map@{map}}
+\index{map@{map}!Catch::Generators@{Catch::Generators}}
+\doxysubsubsection{\texorpdfstring{map()}{map()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{structCatch_1_1true__given}{typename}} \mbox{\hyperlink{structCatch_1_1true__given}{Func}} , \mbox{\hyperlink{structCatch_1_1true__given}{typename}} \mbox{\hyperlink{structCatch_1_1true__given}{U}} , \mbox{\hyperlink{structCatch_1_1true__given}{typename}} \mbox{\hyperlink{structCatch_1_1true__given}{T}}  = Function\+Return\+Type$<$\+Func, U$>$$>$ \\
+\mbox{\hyperlink{classCatch_1_1Generators_1_1GeneratorWrapper}{Generator\+Wrapper}}$<$ \mbox{\hyperlink{structCatch_1_1true__given}{T}} $>$ Catch\+::\+Generators\+::map (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCatch_1_1true__given}{Func}} \&\&}]{function,  }\item[{\mbox{\hyperlink{classCatch_1_1Generators_1_1GeneratorWrapper}{Generator\+Wrapper}}$<$ \mbox{\hyperlink{structCatch_1_1true__given}{U}} $>$ \&\&}]{generator }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceCatch_1_1Generators_a510cc0d72a7bab8f967827e695b981ba}\label{namespaceCatch_1_1Generators_a510cc0d72a7bab8f967827e695b981ba} 
+\index{Catch::Generators@{Catch::Generators}!repeat@{repeat}}
+\index{repeat@{repeat}!Catch::Generators@{Catch::Generators}}
+\doxysubsubsection{\texorpdfstring{repeat()}{repeat()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{structCatch_1_1true__given}{typename}} \mbox{\hyperlink{structCatch_1_1true__given}{T}} $>$ \\
+\mbox{\hyperlink{classCatch_1_1Generators_1_1GeneratorWrapper}{Generator\+Wrapper}}$<$ \mbox{\hyperlink{structCatch_1_1true__given}{T}} $>$ Catch\+::\+Generators\+::repeat (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCatch_1_1true__given}{size\+\_\+t}}}]{repeats,  }\item[{\mbox{\hyperlink{classCatch_1_1Generators_1_1GeneratorWrapper}{Generator\+Wrapper}}$<$ \mbox{\hyperlink{structCatch_1_1true__given}{T}} $>$ \&\&}]{generator }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceCatch_1_1Generators_ae980a8b181bc56242a73161a05b312ee}\label{namespaceCatch_1_1Generators_ae980a8b181bc56242a73161a05b312ee} 
+\index{Catch::Generators@{Catch::Generators}!table@{table}}
+\index{table@{table}!Catch::Generators@{Catch::Generators}}
+\doxysubsubsection{\texorpdfstring{table()}{table()}}
+{\footnotesize\ttfamily template$<$typename... Ts$>$ \\
+\mbox{\hyperlink{classCatch_1_1Generators_1_1GeneratorWrapper}{Generator\+Wrapper}}$<$ std\+::tuple$<$ Ts... $>$ $>$ Catch\+::\+Generators\+::table (\begin{DoxyParamCaption}\item[{std\+::initializer\+\_\+list$<$ std\+::tuple$<$ \mbox{\hyperlink{structCatch_1_1true__given}{typename}} std\+::decay$<$ \mbox{\hyperlink{structCatch_1_1true__given}{Ts}} $>$\+::type... $>$ $>$}]{tuples }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceCatch_1_1Generators_adedfdb318219078ce9107690745d2f2f}\label{namespaceCatch_1_1Generators_adedfdb318219078ce9107690745d2f2f} 
+\index{Catch::Generators@{Catch::Generators}!take@{take}}
+\index{take@{take}!Catch::Generators@{Catch::Generators}}
+\doxysubsubsection{\texorpdfstring{take()}{take()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{structCatch_1_1true__given}{typename}} \mbox{\hyperlink{structCatch_1_1true__given}{T}} $>$ \\
+\mbox{\hyperlink{classCatch_1_1Generators_1_1GeneratorWrapper}{Generator\+Wrapper}}$<$ \mbox{\hyperlink{structCatch_1_1true__given}{T}} $>$ Catch\+::\+Generators\+::take (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCatch_1_1true__given}{size\+\_\+t}}}]{target,  }\item[{\mbox{\hyperlink{classCatch_1_1Generators_1_1GeneratorWrapper}{Generator\+Wrapper}}$<$ \mbox{\hyperlink{structCatch_1_1true__given}{T}} $>$ \&\&}]{generator }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceCatch_1_1Generators_a3b2efc97978cf37951b75394aae1a3fb}\label{namespaceCatch_1_1Generators_a3b2efc97978cf37951b75394aae1a3fb} 
+\index{Catch::Generators@{Catch::Generators}!value@{value}}
+\index{value@{value}!Catch::Generators@{Catch::Generators}}
+\doxysubsubsection{\texorpdfstring{value()}{value()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{structCatch_1_1true__given}{typename}} \mbox{\hyperlink{structCatch_1_1true__given}{T}} $>$ \\
+\mbox{\hyperlink{classCatch_1_1Generators_1_1GeneratorWrapper}{Generator\+Wrapper}}$<$ \mbox{\hyperlink{structCatch_1_1true__given}{T}} $>$ Catch\+::\+Generators\+::value (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCatch_1_1true__given}{T}} \&\&}]{value }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceCatch_1_1Generators_aff55717239311a0e8352a4de5d29967f}\label{namespaceCatch_1_1Generators_aff55717239311a0e8352a4de5d29967f} 
+\index{Catch::Generators@{Catch::Generators}!values@{values}}
+\index{values@{values}!Catch::Generators@{Catch::Generators}}
+\doxysubsubsection{\texorpdfstring{values()}{values()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{structCatch_1_1true__given}{typename}} \mbox{\hyperlink{structCatch_1_1true__given}{T}} $>$ \\
+\mbox{\hyperlink{classCatch_1_1Generators_1_1GeneratorWrapper}{Generator\+Wrapper}}$<$ \mbox{\hyperlink{structCatch_1_1true__given}{T}} $>$ Catch\+::\+Generators\+::values (\begin{DoxyParamCaption}\item[{std\+::initializer\+\_\+list$<$ \mbox{\hyperlink{structCatch_1_1true__given}{T}} $>$}]{values }\end{DoxyParamCaption})}
+

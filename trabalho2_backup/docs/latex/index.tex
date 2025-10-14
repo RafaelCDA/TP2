@@ -1,0 +1,76 @@
+\chapter{Sistema de Backup -\/ Técnicas de Programação 2}
+\hypertarget{index}{}\label{index}\index{Sistema de Backup -\/ Técnicas de Programação 2@{Sistema de Backup -\/ Técnicas de Programação 2}}
+\begin{DoxyAuthor}{Author}
+Rafael Cutrim de Almeida 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2025 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+1.\+0
+\end{DoxyVersion}
+\hypertarget{index_intro_sec}{}\doxysection{\texorpdfstring{Introdução}{Introdução}}\label{index_intro_sec}
+Sistema de backup e restauração desenvolvido para a disciplina de Técnicas de Programação 2, utilizando {\bfseries{TDD (Test-\/\+Driven Development)}} e seguindo uma {\bfseries{tabela de decisão}} fornecida.\hypertarget{index_features_sec}{}\doxysection{\texorpdfstring{Funcionalidades}{Funcionalidades}}\label{index_features_sec}
+
+\begin{DoxyItemize}
+\item Backup de arquivos listados em {\ttfamily Backup.\+parm}
+\item Restauração de arquivos do backup
+\item Verificação de integridade dos arquivos
+\item Suporte a pendrive ou diretório local
+\item Log de operações realizadas
+\end{DoxyItemize}\hypertarget{index_tech_sec}{}\doxysection{\texorpdfstring{Tecnologias e Metodologias}{Tecnologias e Metodologias}}\label{index_tech_sec}
+
+\begin{DoxyItemize}
+\item {\bfseries{Linguagem}}\+: C++11
+\item {\bfseries{Testes}}\+: Catch2 Framework
+\item {\bfseries{Metodologia}}\+: TDD (Test-\/\+Driven Development)
+\item {\bfseries{Cobertura}}\+: ≥80\% (verificado com gcov)
+\item {\bfseries{Qualidade}}\+: cppcheck, cpplint, Valgrind
+\end{DoxyItemize}\hypertarget{index_tdd_sec}{}\doxysection{\texorpdfstring{Desenvolvimento Orientado a Testes}{Desenvolvimento Orientado a Testes}}\label{index_tdd_sec}
+O sistema foi desenvolvido seguindo rigorosamente a metodologia TDD\+:
+
+
+\begin{DoxyEnumerate}
+\item {\bfseries{Criar teste}} (baseado na tabela de decisão)
+\item {\bfseries{Executar teste}} (deve falhar inicialmente)
+\item {\bfseries{Implementar código mínimo}} para passar no teste
+\item {\bfseries{Refatorar}} o código
+\item {\bfseries{Commit}} do ciclo completo
+\end{DoxyEnumerate}\hypertarget{index_structure_sec}{}\doxysection{\texorpdfstring{Estrutura do Projeto}{Estrutura do Projeto}}\label{index_structure_sec}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{trabalho2\_backup/}
+\DoxyCodeLine{├──\ src/\ \ \ \ \ \ \ \ \ \ \ \#\ Código\ fonte}
+\DoxyCodeLine{│\ \ \ ├──\ backup.h\ \ \ \#\ Interface\ \textcolor{keywordflow}{do}\ sistema}
+\DoxyCodeLine{│\ \ \ └──\ backup.cpp\ \#\ Implementação}
+\DoxyCodeLine{├──\ tests/\ \ \ \ \ \ \ \ \ \#\ Testes\ unitários}
+\DoxyCodeLine{│\ \ \ ├──\ \textcolor{keywordflow}{catch}.hpp\ \ \#\ Framework\ de\ testes}
+\DoxyCodeLine{│\ \ \ └──\ testa\_backup.cpp\ \#\ Casos\ de\ teste}
+\DoxyCodeLine{├──\ docs/\ \ \ \ \ \ \ \ \ \ \#\ Documentação}
+\DoxyCodeLine{├──\ bin/\ \ \ \ \ \ \ \ \ \ \ \#\ Executáveis}
+\DoxyCodeLine{├──\ build/\ \ \ \ \ \ \ \ \ \#\ Arquivos\ objeto}
+\DoxyCodeLine{└──\ reports/\ \ \ \ \ \ \ \#\ Relatórios}
+
+\end{DoxyCode}
+\hypertarget{index_usage_sec}{}\doxysection{\texorpdfstring{Como Usar}{Como Usar}}\label{index_usage_sec}
+\hypertarget{index_compile_sec}{}\doxysubsection{\texorpdfstring{Compilação}{Compilação}}\label{index_compile_sec}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make\ \ \ \ \ \ \ \ \ \ \#\ Compilar\ o\ projeto}
+\DoxyCodeLine{make\ test\ \ \ \ \ \#\ Executar\ testes}
+\DoxyCodeLine{make\ coverage\ \#\ Gerar\ relatório\ de\ cobertura}
+\DoxyCodeLine{make\ doc\ \ \ \ \ \ \#\ Gerar\ documentação}
+
+\end{DoxyCode}
+\hypertarget{index_requirements_sec}{}\doxysection{\texorpdfstring{Requisitos Atendidos}{Requisitos Atendidos}}\label{index_requirements_sec}
+
+\begin{DoxyItemize}
+\item ✅ {\bfseries{TDD}} com 30+ commits
+\item ✅ {\bfseries{Tabela de decisão}} -\/ 1 teste por coluna
+\item ✅ {\bfseries{Assertivas}} em todas as funções
+\item ✅ {\bfseries{Cobertura}} ≥80\% com gcov
+\item ✅ {\bfseries{Verificação estática}} com cppcheck
+\item ✅ {\bfseries{Verificação dinâmica}} com Valgrind
+\item ✅ {\bfseries{Documentação}} com Doxygen
+\item ✅ {\bfseries{Padrão Google Style}} com cpplint 
+\end{DoxyItemize}

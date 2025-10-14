@@ -1,0 +1,80 @@
+mkdir -p docs && cat > docs/mainpage.dox << 'EOF'
+/*! 
+@mainpage Sistema de Backup - Técnicas de Programação 2
+
+@author Rafael Cutrim de Almeida
+@date 2025
+@version 1.0
+
+@section intro_sec Introdução
+
+Sistema de backup e restauração desenvolvido para a disciplina de Técnicas de Programação 2,
+utilizando **TDD (Test-Driven Development)** e seguindo uma **tabela de decisão** fornecida.
+
+@section features_sec Funcionalidades
+
+- Backup de arquivos listados em `Backup.parm`
+- Restauração de arquivos do backup
+- Verificação de integridade dos arquivos
+- Suporte a pendrive ou diretório local
+- Log de operações realizadas
+
+@section tech_sec Tecnologias e Metodologias
+
+- **Linguagem**: C++11
+- **Testes**: Catch2 Framework
+- **Metodologia**: TDD (Test-Driven Development)
+- **Cobertura**: ≥80% (verificado com gcov)
+- **Qualidade**: cppcheck, cpplint, Valgrind
+
+@section tdd_sec Desenvolvimento Orientado a Testes
+
+O sistema foi desenvolvido seguindo rigorosamente a metodologia TDD:
+
+1. **Criar teste** (baseado na tabela de decisão)
+2. **Executar teste** (deve falhar inicialmente)
+3. **Implementar código mínimo** para passar no teste
+4. **Refatorar** o código
+5. **Commit** do ciclo completo
+
+@section structure_sec Estrutura do Projeto
+
+@code
+trabalho2_backup/
+├── src/           # Código fonte
+│   ├── backup.h   # Interface do sistema
+│   └── backup.cpp # Implementação
+├── tests/         # Testes unitários
+│   ├── catch.hpp  # Framework de testes
+│   └── testa_backup.cpp # Casos de teste
+├── docs/          # Documentação
+├── bin/           # Executáveis
+├── build/         # Arquivos objeto
+└── reports/       # Relatórios
+@endcode
+
+@section usage_sec Como Usar
+
+@subsection compile_sec Compilação
+
+@code
+make          # Compilar o projeto
+make test     # Executar testes
+make coverage # Gerar relatório de cobertura
+make doc      # Gerar documentação
+@endcode
+
+@section requirements_sec Requisitos Atendidos
+
+- ✅ **TDD** com 30+ commits
+- ✅ **Tabela de decisão** - 1 teste por coluna
+- ✅ **Assertivas** em todas as funções
+- ✅ **Cobertura** ≥80% com gcov
+- ✅ **Verificação estática** com cppcheck
+- ✅ **Verificação dinâmica** com Valgrind
+- ✅ **Documentação** com Doxygen
+- ✅ **Padrão Google Style** com cpplint
+
+*/
+EOF
+

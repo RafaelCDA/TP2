@@ -1,0 +1,76 @@
+\doxysection{src/backup.h File Reference}
+\hypertarget{backup_8h}{}\label{backup_8h}\index{src/backup.h@{src/backup.h}}
+
+
+Sistema de backup e restauração baseado em TDD.  
+
+
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+Include dependency graph for backup.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{backup_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{backup_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classSistemaBackup}{Sistema\+Backup}}
+\begin{DoxyCompactList}\small\item\em Classe principal do sistema de backup. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{backup_8h_a405fe9e85dd4817611652ec660f2ad33}{verificar\+Dispositivo}} (const std\+::string \&dispositivo)
+\begin{DoxyCompactList}\small\item\em Verifica disponibilidade de dispositivo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Sistema de backup e restauração baseado em TDD. 
+
+Implementa um sistema de backup que segue a tabela de decisão fornecida, desenvolvido com metodologia TDD (Test-\/\+Driven Development).
+
+\begin{DoxyAuthor}{Author}
+Seu Nome 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2024 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+1.\+0
+\end{DoxyVersion}
+\begin{DoxySeeAlso}{See also}
+\href{https://github.com/seu-usuario/tecnicas-programacao-2}{\texttt{ https\+://github.\+com/seu-\/usuario/tecnicas-\/programacao-\/2}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{backup_8h_a405fe9e85dd4817611652ec660f2ad33}\label{backup_8h_a405fe9e85dd4817611652ec660f2ad33} 
+\index{backup.h@{backup.h}!verificarDispositivo@{verificarDispositivo}}
+\index{verificarDispositivo@{verificarDispositivo}!backup.h@{backup.h}}
+\doxysubsubsection{\texorpdfstring{verificarDispositivo()}{verificarDispositivo()}}
+{\footnotesize\ttfamily bool verificar\+Dispositivo (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{dispositivo }\end{DoxyParamCaption})}
+
+
+
+Verifica disponibilidade de dispositivo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dispositivo} & Caminho do dispositivo \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se dispositivo está disponível e tem espaço
+\end{DoxyReturn}
+@assertiva\+\_\+entrada dispositivo não é vazio @assertiva\+\_\+saida Retorna disponibilidade real 

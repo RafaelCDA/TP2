@@ -1,0 +1,135 @@
+\doxysection{Catch\+::Test\+Case Class Reference}
+\hypertarget{classCatch_1_1TestCase}{}\label{classCatch_1_1TestCase}\index{Catch::TestCase@{Catch::TestCase}}
+
+
+{\ttfamily \#include $<$catch.\+hpp$>$}
+
+
+
+Inheritance diagram for Catch\+::Test\+Case\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=193pt]{classCatch_1_1TestCase__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Catch\+::Test\+Case\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{classCatch_1_1TestCase__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCatch_1_1TestCase_aae5709fc1cb68e19ab0ac27e1ffd6a76}{Test\+Case}} (\mbox{\hyperlink{structCatch_1_1ITestInvoker}{ITest\+Invoker}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structCatch_1_1true__given}{test\+Case}}, \mbox{\hyperlink{structCatch_1_1TestCaseInfo}{Test\+Case\+Info}} \&\&\mbox{\hyperlink{structCatch_1_1true__given}{info}})
+\item 
+\mbox{\hyperlink{classCatch_1_1TestCase}{Test\+Case}} \mbox{\hyperlink{classCatch_1_1TestCase_a0812e8a216d09b087d5874687009f0d6}{with\+Name}} (std\+::string \mbox{\hyperlink{structCatch_1_1true__given}{const}} \&\mbox{\hyperlink{structCatch_1_1true__given}{\+\_\+new\+Name}}) \mbox{\hyperlink{structCatch_1_1true__given}{const}}
+\item 
+\mbox{\hyperlink{structCatch_1_1true__given}{void}} \mbox{\hyperlink{classCatch_1_1TestCase_a26f346c8446dded0562fe3818ae71651}{invoke}} () \mbox{\hyperlink{structCatch_1_1true__given}{const}}
+\item 
+\mbox{\hyperlink{structCatch_1_1TestCaseInfo}{Test\+Case\+Info}} \mbox{\hyperlink{structCatch_1_1true__given}{const}} \& \mbox{\hyperlink{classCatch_1_1TestCase_a804d0a6a5dc92b219e724f1390c25c7f}{get\+Test\+Case\+Info}} () \mbox{\hyperlink{structCatch_1_1true__given}{const}}
+\item 
+\mbox{\hyperlink{structCatch_1_1true__given}{bool}} \mbox{\hyperlink{classCatch_1_1TestCase_a5456d03a90f75292835c158f3a3374a1}{operator==}} (\mbox{\hyperlink{classCatch_1_1TestCase}{Test\+Case}} \mbox{\hyperlink{structCatch_1_1true__given}{const}} \&\mbox{\hyperlink{structCatch_1_1true__given}{other}}) \mbox{\hyperlink{structCatch_1_1true__given}{const}}
+\item 
+\mbox{\hyperlink{structCatch_1_1true__given}{bool}} \mbox{\hyperlink{classCatch_1_1TestCase_a030e4b9282e9b32e08c8bd5e5cd6fa98}{operator$<$}} (\mbox{\hyperlink{classCatch_1_1TestCase}{Test\+Case}} \mbox{\hyperlink{structCatch_1_1true__given}{const}} \&\mbox{\hyperlink{structCatch_1_1true__given}{other}}) \mbox{\hyperlink{structCatch_1_1true__given}{const}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{structCatch_1_1TestCaseInfo}{Catch\+::\+Test\+Case\+Info}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structCatch_1_1TestCaseInfo_ad1a6b08b5a83d1c5eb4596b727b5305f}{Test\+Case\+Info}} (std\+::string \mbox{\hyperlink{structCatch_1_1true__given}{const}} \&\mbox{\hyperlink{structCatch_1_1true__given}{\+\_\+name}}, std\+::string \mbox{\hyperlink{structCatch_1_1true__given}{const}} \&\mbox{\hyperlink{structCatch_1_1true__given}{\+\_\+class\+Name}}, std\+::string \mbox{\hyperlink{structCatch_1_1true__given}{const}} \&\mbox{\hyperlink{structCatch_1_1true__given}{\+\_\+description}}, std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{structCatch_1_1true__given}{const}} \&\mbox{\hyperlink{structCatch_1_1true__given}{\+\_\+tags}}, \mbox{\hyperlink{structCatch_1_1SourceLineInfo}{Source\+Line\+Info}} \mbox{\hyperlink{structCatch_1_1true__given}{const}} \&\mbox{\hyperlink{structCatch_1_1true__given}{\+\_\+line\+Info}})
+\item 
+\mbox{\hyperlink{structCatch_1_1true__given}{bool}} \mbox{\hyperlink{structCatch_1_1TestCaseInfo_a934b1a0952700743e99d62ec1731a2e2}{is\+Hidden}} () \mbox{\hyperlink{structCatch_1_1true__given}{const}}
+\item 
+\mbox{\hyperlink{structCatch_1_1true__given}{bool}} \mbox{\hyperlink{structCatch_1_1TestCaseInfo_afc70d4379a2070cc22b693ffe3932c1a}{throws}} () \mbox{\hyperlink{structCatch_1_1true__given}{const}}
+\item 
+\mbox{\hyperlink{structCatch_1_1true__given}{bool}} \mbox{\hyperlink{structCatch_1_1TestCaseInfo_a5f37291295e3a6de2dd85324c941edaf}{ok\+To\+Fail}} () \mbox{\hyperlink{structCatch_1_1true__given}{const}}
+\item 
+\mbox{\hyperlink{structCatch_1_1true__given}{bool}} \mbox{\hyperlink{structCatch_1_1TestCaseInfo_abe33d81233230cdae8afa714688e905b}{expected\+To\+Fail}} () \mbox{\hyperlink{structCatch_1_1true__given}{const}}
+\item 
+std\+::string \mbox{\hyperlink{structCatch_1_1TestCaseInfo_a17506de67fb18e27511c17f8a81119d8}{tags\+As\+String}} () \mbox{\hyperlink{structCatch_1_1true__given}{const}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{structCatch_1_1TestCaseInfo}{Catch\+::\+Test\+Case\+Info}}}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{structCatch_1_1TestCaseInfo_a39b232f74b4a7a6f2183b96759027eac}{Special\+Properties}} \{ \newline
+\mbox{\hyperlink{structCatch_1_1TestCaseInfo_a39b232f74b4a7a6f2183b96759027eacaf94e9de5f8ec1e53b1aa761ec564b31a}{None}} = 0
+, \mbox{\hyperlink{structCatch_1_1TestCaseInfo_a39b232f74b4a7a6f2183b96759027eacaeda53906c14c3973e0980900c132b8f7}{Is\+Hidden}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 1
+, \mbox{\hyperlink{structCatch_1_1TestCaseInfo_a39b232f74b4a7a6f2183b96759027eacaf9002285bccfc343935958f3953f4c01}{Should\+Fail}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 2
+, \mbox{\hyperlink{structCatch_1_1TestCaseInfo_a39b232f74b4a7a6f2183b96759027eacadf1873d3271121cb9f52d7df45b416ca}{May\+Fail}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 3
+, \newline
+\mbox{\hyperlink{structCatch_1_1TestCaseInfo_a39b232f74b4a7a6f2183b96759027eaca4704adf89ed7f7ad653d08f99813a974}{Throws}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 4
+, \mbox{\hyperlink{structCatch_1_1TestCaseInfo_a39b232f74b4a7a6f2183b96759027eaca06472887b53fda9eb8015d74e7fd2cf1}{Non\+Portable}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 5
+, \mbox{\hyperlink{structCatch_1_1TestCaseInfo_a39b232f74b4a7a6f2183b96759027eacad0e25e337246ae34d555fe53baf81c16}{Benchmark}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 6
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{structCatch_1_1TestCaseInfo}{Catch\+::\+Test\+Case\+Info}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{structCatch_1_1TestCaseInfo_a463794e2f5cfead307c93efd134ade36}{name}}
+\item 
+std\+::string \mbox{\hyperlink{structCatch_1_1TestCaseInfo_a1a5e0825132a38d091defdebbf2f8ce9}{class\+Name}}
+\item 
+std\+::string \mbox{\hyperlink{structCatch_1_1TestCaseInfo_a37fe2db9425bc45f6a33893eac31198e}{description}}
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{structCatch_1_1TestCaseInfo_a150a7cbca1dd0c91799ccb14ff822eb0}{tags}}
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{structCatch_1_1TestCaseInfo_a844e3de9baf6e53cadfba9733c236bfe}{lcase\+Tags}}
+\item 
+\mbox{\hyperlink{structCatch_1_1SourceLineInfo}{Source\+Line\+Info}} \mbox{\hyperlink{structCatch_1_1TestCaseInfo_aa9407b7f442655b51a2aad24b3fa2fd3}{line\+Info}}
+\item 
+\mbox{\hyperlink{structCatch_1_1TestCaseInfo_a39b232f74b4a7a6f2183b96759027eac}{Special\+Properties}} \mbox{\hyperlink{structCatch_1_1TestCaseInfo_afc1e84bd7a2e180895a06d9131302af0}{properties}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classCatch_1_1TestCase_aae5709fc1cb68e19ab0ac27e1ffd6a76}\label{classCatch_1_1TestCase_aae5709fc1cb68e19ab0ac27e1ffd6a76} 
+\index{Catch::TestCase@{Catch::TestCase}!TestCase@{TestCase}}
+\index{TestCase@{TestCase}!Catch::TestCase@{Catch::TestCase}}
+\doxysubsubsection{\texorpdfstring{TestCase()}{TestCase()}}
+{\footnotesize\ttfamily Catch\+::\+Test\+Case\+::\+Test\+Case (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCatch_1_1ITestInvoker}{ITest\+Invoker}} \texorpdfstring{$\ast$}{*}}]{test\+Case,  }\item[{\mbox{\hyperlink{structCatch_1_1TestCaseInfo}{Test\+Case\+Info}} \&\&}]{info }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classCatch_1_1TestCase_a804d0a6a5dc92b219e724f1390c25c7f}\label{classCatch_1_1TestCase_a804d0a6a5dc92b219e724f1390c25c7f} 
+\index{Catch::TestCase@{Catch::TestCase}!getTestCaseInfo@{getTestCaseInfo}}
+\index{getTestCaseInfo@{getTestCaseInfo}!Catch::TestCase@{Catch::TestCase}}
+\doxysubsubsection{\texorpdfstring{getTestCaseInfo()}{getTestCaseInfo()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structCatch_1_1TestCaseInfo}{Test\+Case\+Info}} \mbox{\hyperlink{structCatch_1_1true__given}{const}}  \& Catch\+::\+Test\+Case\+::get\+Test\+Case\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{classCatch_1_1TestCase_a26f346c8446dded0562fe3818ae71651}\label{classCatch_1_1TestCase_a26f346c8446dded0562fe3818ae71651} 
+\index{Catch::TestCase@{Catch::TestCase}!invoke@{invoke}}
+\index{invoke@{invoke}!Catch::TestCase@{Catch::TestCase}}
+\doxysubsubsection{\texorpdfstring{invoke()}{invoke()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structCatch_1_1true__given}{void}} Catch\+::\+Test\+Case\+::invoke (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{classCatch_1_1TestCase_a030e4b9282e9b32e08c8bd5e5cd6fa98}\label{classCatch_1_1TestCase_a030e4b9282e9b32e08c8bd5e5cd6fa98} 
+\index{Catch::TestCase@{Catch::TestCase}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Catch::TestCase@{Catch::TestCase}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structCatch_1_1true__given}{bool}} Catch\+::\+Test\+Case\+::operator$<$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCatch_1_1TestCase}{Test\+Case}} \mbox{\hyperlink{structCatch_1_1true__given}{const}} \&}]{other }\end{DoxyParamCaption}) const}
+
+\Hypertarget{classCatch_1_1TestCase_a5456d03a90f75292835c158f3a3374a1}\label{classCatch_1_1TestCase_a5456d03a90f75292835c158f3a3374a1} 
+\index{Catch::TestCase@{Catch::TestCase}!operator==@{operator==}}
+\index{operator==@{operator==}!Catch::TestCase@{Catch::TestCase}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structCatch_1_1true__given}{bool}} Catch\+::\+Test\+Case\+::operator== (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCatch_1_1TestCase}{Test\+Case}} \mbox{\hyperlink{structCatch_1_1true__given}{const}} \&}]{other }\end{DoxyParamCaption}) const}
+
+\Hypertarget{classCatch_1_1TestCase_a0812e8a216d09b087d5874687009f0d6}\label{classCatch_1_1TestCase_a0812e8a216d09b087d5874687009f0d6} 
+\index{Catch::TestCase@{Catch::TestCase}!withName@{withName}}
+\index{withName@{withName}!Catch::TestCase@{Catch::TestCase}}
+\doxysubsubsection{\texorpdfstring{withName()}{withName()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCatch_1_1TestCase}{Test\+Case}} Catch\+::\+Test\+Case\+::with\+Name (\begin{DoxyParamCaption}\item[{std\+::string \mbox{\hyperlink{structCatch_1_1true__given}{const}} \&}]{\+\_\+new\+Name }\end{DoxyParamCaption}) const}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+tests/\mbox{\hyperlink{catch_8hpp}{catch.\+hpp}}\end{DoxyCompactItemize}
