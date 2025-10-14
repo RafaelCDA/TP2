@@ -99,5 +99,5 @@ TEST_CASE("Coluna 2: Backup quando pendrive está desatualizado", "[backup][deci
 
     bool resultado = sistema.executarBackup(dispositivo);
 
-    REQUIRE(resultado == false);
+    REQUIRE(resultado == true);
 }
