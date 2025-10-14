@@ -1,58 +1,60 @@
 /**
- * @file testa_backup.cpp
- * @brief Testes unitários para o sistema de backup
+ * @file backup.cpp
+ * @brief Implementação do sistema de backup
  *
- * Desenvolvido seguindo TDD baseado na tabela de decisão.
- * Cada TEST_CASE corresponde a uma coluna da tabela.
+ * Contém a implementação das funções declaradas em backup.h,
+ * seguindo a lógica da tabela de decisão fornecida.
  *
- * @author Seu Nome
+ * @author Rafael
  * @date 2024
  * @version 1.0
  *
  * @see backup.h
  */
 
-#define CATCH_CONFIG_MAIN
-#include "catch.hpp"
-#include "../src/backup.h"
+#include "backup.h"
+#include <fstream>
+#include <cstdio>
+
+using namespace std;
 
 /**
- * @test Coluna 1 da tabela de decisão
- * @brief Backup impossível quando não existe backup.parm
+ * @brief Construtor do SistemaBackup
  *
- * Condições:
- * - Tem backup.parm: F (NÃO)
- * - Faz backup: V (SIM)
- * - ArqX ∈ HD: V (SIM)
- * - ArqX ∈ Pen-drive: F (NÃO)
- *
- * Ação esperada: IMPOSSÍVEL
- *
- * @see Tabela de Decisão - Coluna 1
+ * Inicializa o sistema com estado não configurado.
  */
-TEST_CASE("Coluna 1: Backup impossível quando não existe backup.parm", "[backup][decisao]")
+SistemaBackup::SistemaBackup() : configurado_(false)
 {
-    // Arrange - Configurar cenário da coluna 1
-    SistemaBackup sistema;
-    std::string dispositivo = "/mnt/pendrive";
-
-    // Garantir que backup.parm não existe
-    // (implementar remocao se necessário)
-
-    // Act - Tentar executar backup
-    bool resultado = sistema.executarBackup(dispositivo);
-
-    // Assert - Deve retornar falso (impossível)
-    REQUIRE(resultado == false);
 }
 
 /**
- * @test Teste de inicialização do sistema
- * @brief Sistema deve inicializar corretamente
+ * @brief Executa procedimento de backup
+ *
+ * Implementa a lógica baseada na tabela de decisão.
+ * Coluna 1: Se não existe backup.parm → IMPOSSÍVEL
+ *
+ * @param dispositivo Caminho do dispositivo de backup
+ * @return true se backup executado, false se impossível
  */
-TEST_CASE("Sistema deve inicializar corretamente", "[inicializacao]")
+bool SistemaBackup::executarBackup(const std::string &dispositivo)
 {
-    SistemaBackup sistema;
-    // Teste de inicialização básica
-    REQUIRE(sistema.existeConfiguracao() == false); // Inicialmente sem config
+    // Coluna 1: Se não existe backup.parm → IMPOSSÍVEL
+    if (!existeConfiguracao())
+    {
+        return false;
+    }
+
+    // Para outras colunas serão implementadas depois
+    return true;
+}
+
+/**
+ * @brief Verifica existência do arquivo de configuração
+ *
+ * @return true se backup.parm existe, false caso contrário
+ */
+bool SistemaBackup::existeConfiguracao() const
+{
+    ifstream arquivo("Backup.parm");
+    return arquivo.good();
 }
