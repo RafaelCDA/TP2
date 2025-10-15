@@ -58,6 +58,8 @@ public:
      */
     bool deveFazerBackup() const;
 
+    bool executarRestauracao(const std::string &dispositivo);
+
 private:
     bool configurado_;
 };

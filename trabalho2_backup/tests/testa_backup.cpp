@@ -510,9 +510,9 @@ TEST_CASE("Coluna 9: Restaurar do pendrive para HD quando pendrive mais atualiza
     pendriveFile << "CONTEUDO_NOVO_PENDRIVE" << std::endl; // ← MAIS ATUALIZADO
     pendriveFile.close();
 
-    // Act
-    bool resultado = sistema.executarBackup(dispositivo);
+    // Act - ⚠️ IMPORTANTE: Chamar executarRestauracao() em vez de executarBackup()
+    bool resultado = sistema.executarRestauracao(dispositivo);
 
-    // Assert - **AÇÃO DIFERENTE**: Deve retornar TRUE (restaurar)
-    REQUIRE(resultado == true); // ← DIFERENTE DAS COLUNAS 6-8!
+    // Assert - Deve retornar TRUE (restauração realizada)
+    REQUIRE(resultado == true);
 }

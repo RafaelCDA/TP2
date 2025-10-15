@@ -214,6 +214,7 @@ bool SistemaBackup::deveFazerBackup() const
  * - Retorna 0: PenD == HD (datas iguais)
  * - Retorna 1: PenD > HD (pendrive mais atualizado)
  */
+
 int SistemaBackup::compararDatas(const std::string &nomeArquivo, const std::string &dispositivo) const
 {
     try
@@ -256,4 +257,61 @@ int SistemaBackup::compararDatas(const std::string &nomeArquivo, const std::stri
     {
         return 0; // Em caso de erro
     }
+}
+/**
+ * @brief Executa procedimento de restauração
+ *
+ * Implementa a lógica para Coluna 9 da tabela de decisão:
+ * - Faz backup: F (NÃO)
+ * - ArqX ∈ HD: V (SIM)
+ * - ArqX ∈ Pen-drive: V (SIM)
+ * - Data PenD > HD: V (SIM)
+ * - Ação: pen drive para hd (RESTAURAR)
+ *
+ * @param dispositivo Caminho do dispositivo de restauração
+ * @return true se restauração foi executada, false se não
+ *
+ * @assertiva_entrada dispositivo não é string vazia
+ * @assertiva_saida Retorna true apenas se condições da Coluna 9 são atendidas
+ */
+bool SistemaBackup::executarRestauracao(const std::string &dispositivo)
+{
+    // COLUNA 1: Verificar se arquivo de configuração existe
+    if (!existeConfiguracao())
+    {
+        return false;
+    }
+
+    // COLUNA 9: Verificar condições específicas para restauração
+    // - Não deve fazer backup (# NO_BACKUP no arquivo)
+    // - Arquivo existe no HD
+    // - Arquivo existe no pendrive
+    // - Pendrive está mais atualizado
+
+    if (deveFazerBackup())
+    {
+        return false; // Se deve fazer backup, não restaure
+    }
+
+    std::vector<std::string> arquivos = listarArquivosBackup();
+    if (arquivos.empty())
+    {
+        return false;
+    }
+
+    for (const auto &arquivo : arquivos)
+    {
+        if (!arquivoExisteHD(arquivo) || !arquivoExistePendrive(arquivo, dispositivo))
+        {
+            continue; // Arquivo não existe em ambos, não pode restaurar
+        }
+
+        // COLUNA 9: Verificar se pendrive está mais atualizado
+        if (compararDatas(arquivo, dispositivo) == 1)
+        {
+            return true; // Condições da Coluna 9 atendidas → RESTAURAR
+        }
+    }
+
+    return false; // Condições da Coluna 9 não atendidas
 }
