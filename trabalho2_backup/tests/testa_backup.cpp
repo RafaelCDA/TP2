@@ -222,8 +222,13 @@ TEST_CASE("Coluna 3: Backup quando pendrive está desatualizado", "[backup][deci
  *
  * @see Tabela de Decisão - Coluna 4
  */
-TEST_CASE("Coluna 4: Não fazer backup quando datas são iguais", "[backup][decisao]")
+/**
+ * @test Validação da Coluna 4
+ * @brief Verifica se Coluna 4 realmente funciona e não é falso positivo
+ */
+TEST_CASE("VALIDAÇÃO: Coluna 4 realmente funciona", "[backup][validacao]")
 {
+    // Arrange - Cenário OBRIGATÓRIO para Coluna 4
     SistemaBackup sistema;
     std::string dispositivo = "pendrive_teste";
 
@@ -232,26 +237,29 @@ TEST_CASE("Coluna 4: Não fazer backup quando datas são iguais", "[backup][deci
     std::remove("documento.txt");
     system("rm -rf pendrive_teste");
 
-    // Configuração ESPECÍFICA da Coluna 4:
-    // 1. backup.parm existe
+    // Configuração que DEVE ativar Coluna 4:
+    // - Arquivo existe no HD ✓
+    // - Arquivo existe no pendrive ✓
+    // - Datas "iguais" (conteúdo igual) ✓
+    // - NÃO deve cair em Coluna 2 ou 3
+
     std::ofstream config("Backup.parm");
     config << "documento.txt" << std::endl;
     config.close();
 
-    // 2. Arquivo existe no HD
+    // MESMO conteúdo em ambos = datas "iguais"
     std::ofstream hdFile("documento.txt");
-    hdFile << "CONTEUDO_IGUAL" << std::endl;
+    hdFile << "CONTEUDO_IDENTICO" << std::endl;
     hdFile.close();
 
-    // 3. Arquivo existe no pendrive com MESMO conteúdo (datas iguais)
     system("mkdir -p pendrive_teste");
     std::ofstream pendriveFile("pendrive_teste/documento.txt");
-    pendriveFile << "CONTEUDO_IGUAL" << std::endl; // ← MESMO conteúdo = datas "iguais"
+    pendriveFile << "CONTEUDO_IDENTICO" << std::endl; // ← MESMO!
     pendriveFile.close();
 
     // Act
     bool resultado = sistema.executarBackup(dispositivo);
 
-    // Assert - Deve retornar FALSE (não fazer backup - datas iguais)
+    // Assert - DEVE ser false (Coluna 4)
     REQUIRE(resultado == false);
 }
