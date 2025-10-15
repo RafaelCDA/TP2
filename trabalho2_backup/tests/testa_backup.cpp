@@ -464,3 +464,55 @@ TEST_CASE("Coluna 8: Não fazer backup quando configuração proíbe e datas sã
     // Assert - Deve retornar FALSE (não fazer backup)
     REQUIRE(resultado == false);
 }
+/**
+ * @test Coluna 9 da tabela de decisão
+ * @brief Restaurar do pendrive para HD quando pendrive está mais atualizado
+ *
+ * Condições:
+ * - Tem backup.parm: V (SIM)
+ * - Faz backup: F (NÃO)
+ * - ArqX ∈ HD: V (SIM)
+ * - ArqX ∈ Pen-drive: V (SIM)
+ * - Data PenD < HD: F (NÃO)
+ * - Data PenD == HD: F (NÃO)
+ * - Data PenD > HD: V (SIM) ← PENDRIVE MAIS ATUALIZADO
+ *
+ * Ação esperada: pen drive para hd (RESTAURAR)
+ *
+ * @see Tabela de Decisão - Coluna 9
+ */
+TEST_CASE("Coluna 9: Restaurar do pendrive para HD quando pendrive mais atualizado", "[backup][decisao]")
+{
+    // Arrange
+    SistemaBackup sistema;
+    std::string dispositivo = "pendrive_teste";
+
+    // LIMPEZA
+    std::remove("Backup.parm");
+    std::remove("documento.txt");
+    system("rm -rf pendrive_teste");
+
+    // Configuração ESPECÍFICA da Coluna 9:
+    // 1. backup.parm existe MAS indica NÃO fazer backup
+    std::ofstream config("Backup.parm");
+    config << "documento.txt" << std::endl;
+    config << "# NO_BACKUP" << std::endl; // ← NÃO FAZER BACKUP
+    config.close();
+
+    // 2. Arquivo existe no HD (conteúdo ANTIGO)
+    std::ofstream hdFile("documento.txt");
+    hdFile << "CONTEUDO_ANTIGO_HD" << std::endl;
+    hdFile.close();
+
+    // 3. Arquivo existe no pendrive (conteúdo NOVO - mais atualizado)
+    system("mkdir -p pendrive_teste");
+    std::ofstream pendriveFile("pendrive_teste/documento.txt");
+    pendriveFile << "CONTEUDO_NOVO_PENDRIVE" << std::endl; // ← MAIS ATUALIZADO
+    pendriveFile.close();
+
+    // Act
+    bool resultado = sistema.executarBackup(dispositivo);
+
+    // Assert - **AÇÃO DIFERENTE**: Deve retornar TRUE (restaurar)
+    REQUIRE(resultado == true); // ← DIFERENTE DAS COLUNAS 6-8!
+}
