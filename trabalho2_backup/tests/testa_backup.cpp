@@ -320,7 +320,7 @@ TEST_CASE("Coluna 5: Erro quando pendrive está mais atualizado que HD", "[backu
  *
  * Condições:
  * - Tem backup.parm: V (SIM)
- * - Faz backup: F (NÃO) ← CONDIÇÃO NOVA!
+ * - Faz backup: F (NÃO)
  * - ArqX ∈ HD: V (SIM)
  * - ArqX ∈ Pen-drive: F (NÃO)
  *
@@ -353,6 +353,58 @@ TEST_CASE("Coluna 6: Erro quando não deve fazer backup mas condições permitir
 
     // 3. Arquivo NÃO existe no pendrive (condição que permitiria backup na Coluna 2)
     // Mas como Faz backup: F, deve retornar erro
+
+    // Act
+    bool resultado = sistema.executarBackup(dispositivo);
+
+    // Assert - Deve retornar FALSE (erro - não deve fazer backup)
+    REQUIRE(resultado == false);
+}
+/**
+ * @test Coluna 7 da tabela de decisão
+ * @brief Erro quando não deve fazer backup mas pendrive está desatualizado
+ *
+ * Condições:
+ * - Tem backup.parm: V (SIM)
+ * - Faz backup: F (NÃO)
+ * - ArqX ∈ HD: V (SIM)
+ * - ArqX ∈ Pen-drive: V (SIM)
+ * - Data PenD < HD: V (SIM) - pendrive desatualizado
+ * - Data PenD == HD: F (NÃO)
+ * - Data PenD > HD: F (NÃO)
+ *
+ * Ação esperada: erro
+ *
+ * @see Tabela de Decisão - Coluna 7
+ */
+TEST_CASE("Coluna 7: Erro quando não deve fazer backup mas pendrive está desatualizado", "[backup][decisao]")
+{
+    // Arrange
+    SistemaBackup sistema;
+    std::string dispositivo = "pendrive_teste";
+
+    // LIMPEZA
+    std::remove("Backup.parm");
+    std::remove("documento.txt");
+    system("rm -rf pendrive_teste");
+
+    // Configuração ESPECÍFICA da Coluna 7:
+    // 1. backup.parm existe MAS indica NÃO fazer backup
+    std::ofstream config("Backup.parm");
+    config << "documento.txt" << std::endl;
+    config << "# NO_BACKUP" << std::endl; // ← NÃO FAZER BACKUP
+    config.close();
+
+    // 2. Arquivo existe no HD (conteúdo NOVO)
+    std::ofstream hdFile("documento.txt");
+    hdFile << "CONTEUDO_NOVO_HD" << std::endl;
+    hdFile.close();
+
+    // 3. Arquivo existe no pendrive (conteúdo ANTIGO - desatualizado)
+    system("mkdir -p pendrive_teste");
+    std::ofstream pendriveFile("pendrive_teste/documento.txt");
+    pendriveFile << "CONTEUDO_ANTIGO_PENDRIVE" << std::endl; // ← DESATUALIZADO
+    pendriveFile.close();
 
     // Act
     bool resultado = sistema.executarBackup(dispositivo);
