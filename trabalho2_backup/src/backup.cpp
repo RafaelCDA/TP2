@@ -47,48 +47,55 @@ SistemaBackup::SistemaBackup() : configurado_(false)
  */
 bool SistemaBackup::executarBackup(const std::string &dispositivo)
 {
-    // Coluna 1: Verificar se arquivo de configuração existe
+    // COLUNA 1: Verificar se arquivo de configuração existe
     if (!existeConfiguracao())
     {
         return false;
     }
 
-    // Obter lista de arquivos do backup.parm
+    // COLUNA 6: Verificar se deve fazer backup
+    if (!deveFazerBackup())
+    {
+        return false; // Não deve fazer backup → erro
+    }
+
+    // Resto da lógica (Colunas 2-5)
     std::vector<std::string> arquivos = listarArquivosBackup();
     if (arquivos.empty())
     {
         return false;
     }
 
-    // Verificar condições para cada arquivo
     for (const auto &arquivo : arquivos)
     {
-        // Verificar se arquivo existe no HD (condição comum a todas as colunas)
         if (!arquivoExisteHD(arquivo))
         {
             return false;
         }
 
-        // Verificar se arquivo existe no pendrive
         bool existeNoPendrive = arquivoExistePendrive(arquivo, dispositivo);
 
         if (!existeNoPendrive)
         {
-            // COLUNA 2: Arquivo não existe no pendrive → condição atendida
-            continue;
+            continue; // Coluna 2
         }
 
-        // COLUNA 3: Arquivo existe no pendrive → verificar se está desatualizado
         int comparacaoDatas = compararDatas(arquivo, dispositivo);
-        if (comparacaoDatas != -1)
+
+        if (comparacaoDatas == -1)
         {
-            // Pendrive NÃO está desatualizado → não fazer backup
-            return false;
+            continue; // Coluna 3
         }
-        // Se chegou aqui, pendrive está desatualizado → condição da Coluna 3 atendida
+        else if (comparacaoDatas == 0)
+        {
+            return false; // Coluna 4
+        }
+        else if (comparacaoDatas == 1)
+        {
+            return false; // Coluna 5
+        }
     }
 
-    // Se passou por todos os arquivos sem retornar false, condições atendidas
     return true;
 }
 
@@ -174,7 +181,31 @@ bool SistemaBackup::arquivoExistePendrive(const std::string &nomeArquivo, const 
         return false; // Em caso de erro, assumir que não existe
     }
 }
+/**
+ * @brief Verifica se deve fazer backup baseado na configuração
+ *
+ * Analisa o arquivo Backup.parm para ver se há instruções especiais
+ * como # NO_BACKUP que indicam não fazer backup.
+ *
+ * @return true se deve fazer backup, false se não deve
+ */
+bool SistemaBackup::deveFazerBackup() const
+{
+    std::ifstream arquivo("Backup.parm");
+    std::string linha;
 
+    while (std::getline(arquivo, linha))
+    {
+        // Se encontrar # NO_BACKUP, não deve fazer backup
+        if (linha.find("# NO_BACKUP") != std::string::npos)
+        {
+            return false;
+        }
+    }
+
+    // Por padrão, faz backup
+    return true;
+}
 /**
  * @brief Compara datas entre HD e pendrive
  *

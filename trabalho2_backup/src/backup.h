@@ -53,6 +53,10 @@ public:
      * @brief Compara datas entre HD e pendrive
      */
     int compararDatas(const std::string &nomeArquivo, const std::string &dispositivo) const;
+    /**
+     * @brief Verifica se deve fazer backup baseado na configuração
+     */
+    bool deveFazerBackup() const;
 
 private:
     bool configurado_;
