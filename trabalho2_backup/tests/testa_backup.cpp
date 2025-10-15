@@ -412,3 +412,55 @@ TEST_CASE("Coluna 7: Erro quando não deve fazer backup mas pendrive está desat
     // Assert - Deve retornar FALSE (erro - não deve fazer backup)
     REQUIRE(resultado == false);
 }
+/**
+ * @test Coluna 8 da tabela de decisão
+ * @brief Não fazer backup quando configuração proíbe e datas são iguais
+ *
+ * Condições:
+ * - Tem backup.parm: V (SIM)
+ * - Faz backup: F (NÃO) ← CONDIÇÃO PRINCIPAL
+ * - ArqX ∈ HD: V (SIM)
+ * - ArqX ∈ Pen-drive: V (SIM)
+ * - Data PenD < HD: F (NÃO)
+ * - Data PenD == HD: V (SIM)
+ * - Data PenD > HD: F (NÃO)
+ *
+ * Ação esperada: faz nada (não fazer backup)
+ *
+ * @see Tabela de Decisão - Coluna 8
+ */
+TEST_CASE("Coluna 8: Não fazer backup quando configuração proíbe e datas são iguais", "[backup][decisao]")
+{
+    // Arrange
+    SistemaBackup sistema;
+    std::string dispositivo = "pendrive_teste";
+
+    // LIMPEZA
+    std::remove("Backup.parm");
+    std::remove("documento.txt");
+    system("rm -rf pendrive_teste");
+
+    // Configuração ESPECÍFICA da Coluna 8:
+    // 1. backup.parm existe MAS indica NÃO fazer backup
+    std::ofstream config("Backup.parm");
+    config << "documento.txt" << std::endl;
+    config << "# NO_BACKUP" << std::endl; // ← NÃO FAZER BACKUP
+    config.close();
+
+    // 2. Arquivo existe no HD
+    std::ofstream hdFile("documento.txt");
+    hdFile << "CONTEUDO_IGUAL" << std::endl;
+    hdFile.close();
+
+    // 3. Arquivo existe no pendrive com MESMO conteúdo
+    system("mkdir -p pendrive_teste");
+    std::ofstream pendriveFile("pendrive_teste/documento.txt");
+    pendriveFile << "CONTEUDO_IGUAL" << std::endl; // ← DATAS "IGUAIS"
+    pendriveFile.close();
+
+    // Act
+    bool resultado = sistema.executarBackup(dispositivo);
+
+    // Assert - Deve retornar FALSE (não fazer backup)
+    REQUIRE(resultado == false);
+}
