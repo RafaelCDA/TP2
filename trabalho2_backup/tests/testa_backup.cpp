@@ -263,3 +263,54 @@ TEST_CASE("VALIDAÇÃO: Coluna 4 realmente funciona", "[backup][validacao]")
     // Assert - DEVE ser false (Coluna 4)
     REQUIRE(resultado == false);
 }
+/**
+ * @test Coluna 5 da tabela de decisão
+ * @brief Retornar erro quando pendrive está mais atualizado que HD
+ *
+ * Condições:
+ * - Tem backup.parm: V (SIM) - assumido
+ * - Faz backup: V (SIM) - assumido
+ * - ArqX ∈ HD: V (SIM) - assumido
+ * - ArqX ∈ Pen-drive: V (SIM) - assumido
+ * - Data PenD < HD: F (NÃO)
+ * - Data PenD == HD: F (NÃO)
+ * - Data PenD > HD: V (SIM) - implícito
+ *
+ * Ação esperada: erro (não fazer backup)
+ *
+ * @see Tabela de Decisão - Coluna 5
+ */
+TEST_CASE("Coluna 5: Erro quando pendrive está mais atualizado que HD", "[backup][decisao]")
+{
+    // Arrange
+    SistemaBackup sistema;
+    std::string dispositivo = "pendrive_teste";
+
+    // LIMPEZA
+    std::remove("Backup.parm");
+    std::remove("documento.txt");
+    system("rm -rf pendrive_teste");
+
+    // Configuração ESPECÍFICA da Coluna 5:
+    // 1. backup.parm existe
+    std::ofstream config("Backup.parm");
+    config << "documento.txt" << std::endl;
+    config.close();
+
+    // 2. Arquivo existe no HD (conteúdo ANTIGO)
+    std::ofstream hdFile("documento.txt");
+    hdFile << "CONTEUDO_ANTIGO_HD" << std::endl;
+    hdFile.close();
+
+    // 3. Arquivo existe no pendrive com conteúdo MAIS RECENTE
+    system("mkdir -p pendrive_teste");
+    std::ofstream pendriveFile("pendrive_teste/documento.txt");
+    pendriveFile << "CONTEUDO_NOVO_PENDRIVE" << std::endl; // MAIS RECENTE!
+    pendriveFile.close();
+
+    // Act
+    bool resultado = sistema.executarBackup(dispositivo);
+
+    // Assert - Deve retornar FALSE (erro - pendrive mais atualizado)
+    REQUIRE(resultado == false);
+}
