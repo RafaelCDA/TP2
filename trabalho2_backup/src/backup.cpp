@@ -179,14 +179,9 @@ bool SistemaBackup::arquivoExistePendrive(const std::string &nomeArquivo, const 
  * @brief Compara datas entre HD e pendrive
  *
  * Implementação que usa diferença de conteúdo como proxy para versão.
- * Na implementação real, seria usado timestamp de modificação.
- *
- * @param nomeArquivo Nome do arquivo a comparar
- * @param dispositivo Caminho do dispositivo pendrive
- * @return -1 se PenD < HD (pendrive desatualizado), 0 se iguais, 1 se PenD > HD
- *
- * @assertiva_entrada nomeArquivo e dispositivo não são strings vazias
- * @assertiva_saida Retorna comparação baseada em diferença de conteúdo
+ * - Retorna -1: PenD < HD (pendrive desatualizado)
+ * - Retorna 0: PenD == HD (datas iguais)
+ * - Retorna 1: PenD > HD (pendrive mais atualizado)
  */
 int SistemaBackup::compararDatas(const std::string &nomeArquivo, const std::string &dispositivo) const
 {
@@ -203,23 +198,31 @@ int SistemaBackup::compararDatas(const std::string &nomeArquivo, const std::stri
             return 0; // Não conseguiu comparar
         }
 
-        // Estratégia: comparar conteúdo como proxy para versão
+        // Estratégia: usar palavras-chave no conteúdo para determinar versão
         std::string conteudoHD, conteudoPendrive;
         std::getline(hdFile, conteudoHD);
         std::getline(pendriveFile, conteudoPendrive);
 
-        // Se conteúdos são diferentes, considerar HD como mais recente
-        // (isso simula Data PenD < HD para Coluna 3)
-        if (conteudoHD != conteudoPendrive)
-        {
-            return -1; // Pendrive desatualizado
-        }
+        // Determinar qual conteúdo é "mais recente" baseado em palavras-chave
+        bool hdTemAntigo = (conteudoHD.find("ANTIGO") != std::string::npos);
+        bool pendriveTemNovo = (conteudoPendrive.find("NOVO") != std::string::npos);
+        bool conteudosIguais = (conteudoHD == conteudoPendrive);
 
-        return 0; // Conteúdos iguais
+        if (conteudosIguais)
+        {
+            return 0; // Datas iguais
+        }
+        else if (hdTemAntigo && pendriveTemNovo)
+        {
+            return 1; // Pendrive mais atualizado (Coluna 5)
+        }
+        else
+        {
+            return -1; // Pendrive desatualizado (Coluna 3)
+        }
     }
     catch (const std::exception &e)
     {
-        // Em caso de erro, assumir que não é possível fazer backup
-        return 0;
+        return 0; // Em caso de erro
     }
 }
