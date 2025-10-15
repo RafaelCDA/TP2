@@ -2,7 +2,7 @@
  * @file backup.h
  * @brief Sistema de backup e restauração baseado em TDD
  *
- * @author Seu Nome
+ * @author Rafael
  * @date 2024
  * @version 1.0
  */

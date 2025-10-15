@@ -7,6 +7,7 @@ Testes unitários para o sistema de backup.
 
 {\ttfamily \#include "{}catch.\+hpp"{}}\newline
 {\ttfamily \#include "{}../src/backup.\+h"{}}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
 Include dependency graph for testa\+\_\+backup.\+cpp\+:
 \nopagebreak
 \begin{figure}[H]
@@ -24,7 +25,15 @@ Include dependency graph for testa\+\_\+backup.\+cpp\+:
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{testa__backup_8cpp_ab879a4057766a44ca21352ccba1aab0e}{TEST\+\_\+\+CASE}} ("{}Coluna 1\+: Backup impossível quando não existe backup.\+parm"{}, "{}\mbox{[}backup\mbox{]}\mbox{[}decisao\mbox{]}"{})
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Backup impossível quando não existe backup.\+parm. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{testa__backup_8cpp_a948131cabdcff9f5fa1c0ce90f3d8db5}{TEST\+\_\+\+CASE}} ("{}Sistema deve inicializar corretamente"{}, "{}\mbox{[}inicializacao\mbox{]}"{})
+\begin{DoxyCompactList}\small\item\em Sistema deve inicializar corretamente. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{testa__backup_8cpp_a94b597d5b6bcc105f8e06c3e24bb8e10}{TEST\+\_\+\+CASE}} ("{}Coluna 2\+: Backup quando arquivo não existe no pendrive"{}, "{}\mbox{[}backup\mbox{]}\mbox{[}decisao\mbox{]}"{})
+\begin{DoxyCompactList}\small\item\em Backup quando arquivo existe no HD mas NÃO no pendrive. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{testa__backup_8cpp_a23c6d3e24cf63f079cfb546a3db51cd8}{TEST\+\_\+\+CASE}} ("{}Deve listar arquivos do backup.\+parm"{}, "{}\mbox{[}configuracao\mbox{]}"{})
+\begin{DoxyCompactList}\small\item\em Deve listar arquivos do backup.\+parm corretamente. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{testa__backup_8cpp_ada36a398cc8cd7b60718b34152b07e47}{TEST\+\_\+\+CASE}} ("{}Não fazer backup quando pendrive está atualizado"{}, "{}\mbox{[}backup\mbox{]}\mbox{[}decisao\mbox{]}"{})
+\begin{DoxyCompactList}\small\item\em Backup quando arquivo existe em ambos e pendrive está desatualizado. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -33,7 +42,7 @@ Testes unitários para o sistema de backup.
 Desenvolvido seguindo TDD baseado na tabela de decisão. Cada TEST\+\_\+\+CASE corresponde a uma coluna da tabela.
 
 \begin{DoxyAuthor}{Author}
-Seu Nome 
+Rafael 
 \end{DoxyAuthor}
 \begin{DoxyDate}{Date}
 2024 
@@ -59,6 +68,125 @@ Seu Nome
 \Hypertarget{testa__backup_8cpp_ab879a4057766a44ca21352ccba1aab0e}\label{testa__backup_8cpp_ab879a4057766a44ca21352ccba1aab0e} 
 \index{testa\_backup.cpp@{testa\_backup.cpp}!TEST\_CASE@{TEST\_CASE}}
 \index{TEST\_CASE@{TEST\_CASE}!testa\_backup.cpp@{testa\_backup.cpp}}
-\doxysubsubsection{\texorpdfstring{TEST\_CASE()}{TEST\_CASE()}}
+\doxysubsubsection{\texorpdfstring{TEST\_CASE()}{TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
 {\footnotesize\ttfamily TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{"{}Coluna 1\+: Backup impossível quando não existe backup.\+parm"{}}]{,  }\item[{"{}"{}}]{\mbox{[}backup\mbox{]}\mbox{[}decisao\mbox{]} }\end{DoxyParamCaption})}
 
+
+
+Backup impossível quando não existe backup.\+parm. 
+
+\begin{DoxyRefDesc}{Test}
+\item[\mbox{\hyperlink{test__test000001}{Test}}]Coluna 1 da tabela de decisão \end{DoxyRefDesc}
+
+
+Condições\+:
+\begin{DoxyItemize}
+\item Tem backup.\+parm\+: F (NÃO)
+\item Faz backup\+: V (SIM)
+\item ArqX ∈ HD\+: V (SIM)
+\item ArqX ∈ Pen-\/drive\+: F (NÃO)
+\end{DoxyItemize}
+
+Ação esperada\+: IMPOSSÍ\+VEL
+
+\begin{DoxySeeAlso}{See also}
+Tabela de Decisão -\/ Coluna 1 
+\end{DoxySeeAlso}
+\Hypertarget{testa__backup_8cpp_a94b597d5b6bcc105f8e06c3e24bb8e10}\label{testa__backup_8cpp_a94b597d5b6bcc105f8e06c3e24bb8e10} 
+\index{testa\_backup.cpp@{testa\_backup.cpp}!TEST\_CASE@{TEST\_CASE}}
+\index{TEST\_CASE@{TEST\_CASE}!testa\_backup.cpp@{testa\_backup.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_CASE()}{TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{"{}Coluna 2\+: Backup quando arquivo não existe no pendrive"{}}]{,  }\item[{"{}"{}}]{\mbox{[}backup\mbox{]}\mbox{[}decisao\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Backup quando arquivo existe no HD mas NÃO no pendrive. 
+
+\begin{DoxyRefDesc}{Test}
+\item[\mbox{\hyperlink{test__test000003}{Test}}]Coluna 2 da tabela de decisão \end{DoxyRefDesc}
+
+
+Condições\+:
+\begin{DoxyItemize}
+\item Tem backup.\+parm\+: V (SIM)
+\item Faz backup\+: V (SIM)
+\item ArqX ∈ HD\+: V (SIM)
+\item ArqX ∈ Pen-\/drive\+: F (NÃO) // ← DIFERENÇA CHAVE!
+\item Data PenD \texorpdfstring{$<$}{<} HD\+: V (SIM) // ← Irrelevante (arquivo não existe no pendrive)
+\end{DoxyItemize}
+
+Ação esperada\+: HD para Pen-\/drive (fazer backup)
+
+\begin{DoxySeeAlso}{See also}
+Tabela de Decisão -\/ Coluna 2 
+\end{DoxySeeAlso}
+\Hypertarget{testa__backup_8cpp_a23c6d3e24cf63f079cfb546a3db51cd8}\label{testa__backup_8cpp_a23c6d3e24cf63f079cfb546a3db51cd8} 
+\index{testa\_backup.cpp@{testa\_backup.cpp}!TEST\_CASE@{TEST\_CASE}}
+\index{TEST\_CASE@{TEST\_CASE}!testa\_backup.cpp@{testa\_backup.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_CASE()}{TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{"{}Deve listar arquivos do backup.\+parm"{}}]{,  }\item[{"{}"{}}]{\mbox{[}configuracao\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Deve listar arquivos do backup.\+parm corretamente. 
+
+\begin{DoxyRefDesc}{Test}
+\item[\mbox{\hyperlink{test__test000004}{Test}}]Teste de listagem de arquivos \end{DoxyRefDesc}
+\Hypertarget{testa__backup_8cpp_ada36a398cc8cd7b60718b34152b07e47}\label{testa__backup_8cpp_ada36a398cc8cd7b60718b34152b07e47} 
+\index{testa\_backup.cpp@{testa\_backup.cpp}!TEST\_CASE@{TEST\_CASE}}
+\index{TEST\_CASE@{TEST\_CASE}!testa\_backup.cpp@{testa\_backup.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_CASE()}{TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{"{}Não fazer backup quando pendrive está atualizado"{}}]{,  }\item[{"{}"{}}]{\mbox{[}backup\mbox{]}\mbox{[}decisao\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Backup quando arquivo existe em ambos e pendrive está desatualizado. 
+
+\begin{DoxyRefDesc}{Test}
+\item[\mbox{\hyperlink{test__test000005}{Test}}]Coluna 3 da tabela de decisão \end{DoxyRefDesc}
+
+
+Condições\+:
+\begin{DoxyItemize}
+\item Tem backup.\+parm\+: V (SIM)
+\item Faz backup\+: V (SIM)
+\item ArqX ∈ HD\+: V (SIM)
+\item ArqX ∈ Pen-\/drive\+: V (SIM) // ← DIFERENÇ\+A!
+\item Data PenD \texorpdfstring{$<$}{<} HD\+: V (SIM) // ← DIFERENÇ\+A!
+\end{DoxyItemize}
+
+Ação esperada\+: HD para Pen-\/drive (fazer backup)
+
+\begin{DoxySeeAlso}{See also}
+Tabela de Decisão -\/ Coluna 3 
+\end{DoxySeeAlso}
+\begin{DoxyRefDesc}{Test}
+\item[\mbox{\hyperlink{test__test000006}{Test}}]Cenário onde backup NÃO deve ocorrer \end{DoxyRefDesc}
+Não fazer backup quando pendrive está atualizado
+
+Condições\+:
+\begin{DoxyItemize}
+\item Tem backup.\+parm\+: V (SIM)
+\item Faz backup\+: V (SIM)
+\item ArqX ∈ HD\+: V (SIM)
+\item ArqX ∈ Pen-\/drive\+: V (SIM)
+\item Data PenD \texorpdfstring{$>$}{>}= HD\+: V (pendrive atualizado ou igual)
+\end{DoxyItemize}
+
+Ação esperada\+: NÃO fazer backup
+
+\begin{DoxySeeAlso}{See also}
+Tabela de Decisão -\/ Colunas onde backup NÃO ocorre 
+\end{DoxySeeAlso}
+\Hypertarget{testa__backup_8cpp_a948131cabdcff9f5fa1c0ce90f3d8db5}\label{testa__backup_8cpp_a948131cabdcff9f5fa1c0ce90f3d8db5} 
+\index{testa\_backup.cpp@{testa\_backup.cpp}!TEST\_CASE@{TEST\_CASE}}
+\index{TEST\_CASE@{TEST\_CASE}!testa\_backup.cpp@{testa\_backup.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_CASE()}{TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{"{}Sistema deve inicializar corretamente"{}}]{,  }\item[{"{}"{}}]{\mbox{[}inicializacao\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Sistema deve inicializar corretamente. 
+
+\begin{DoxyRefDesc}{Test}
+\item[\mbox{\hyperlink{test__test000002}{Test}}]Teste de inicialização do sistema \end{DoxyRefDesc}

@@ -73,160 +73,43 @@ $(function() {
 </div>
 </div><!-- top -->
 <div class="header">
-  <div class="summary">
-<a href="#define-members">Macros</a> &#124;
-<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">backup.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="catch_8hpp_source.html">catch.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="backup_8h_source.html">../src/backup.h</a>&quot;</code><br />
+
+<p>Implementação do sistema de backup.  
+<a href="#details">More...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="backup_8h_source.html">backup.h</a>&quot;</code><br />
+<code>#include &lt;fstream&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for backup.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="backup_8cpp__incl.png" border="0" usemap="#asrc_2backup_8cpp" alt=""/></div>
 <map name="asrc_2backup_8cpp" id="asrc_2backup_8cpp">
-<area shape="rect" title=" " alt="" coords="317,5,436,31"/>
-<area shape="rect" href="catch_8hpp.html" title=" " alt="" coords="638,79,723,104"/>
-<area shape="poly" title=" " alt="" coords="426,28,625,74,624,80,425,33"/>
-<area shape="rect" href="backup_8h.html" title="Sistema de backup e restauração baseado em TDD." alt="" coords="65,79,179,104"/>
-<area shape="poly" title=" " alt="" coords="336,33,177,78,175,72,335,28"/>
-<area shape="rect" title=" " alt="" coords="881,152,945,177"/>
-<area shape="poly" title=" " alt="" coords="719,101,868,147,867,152,717,107"/>
-<area shape="rect" title=" " alt="" coords="93,152,151,177"/>
-<area shape="poly" title=" " alt="" coords="638,98,437,116,304,132,165,155,164,149,303,127,437,110,638,93"/>
-<area shape="rect" title=" " alt="" coords="969,152,1035,177"/>
-<area shape="poly" title=" " alt="" coords="724,99,956,149,955,154,723,104"/>
-<area shape="rect" title=" " alt="" coords="5,152,68,177"/>
-<area shape="poly" title=" " alt="" coords="638,97,405,114,247,131,82,155,81,150,246,125,404,109,638,92"/>
-<area shape="rect" title=" " alt="" coords="1060,152,1131,177"/>
-<area shape="poly" title=" " alt="" coords="724,96,864,117,1047,149,1046,155,863,122,723,101"/>
-<area shape="rect" title=" " alt="" coords="1155,152,1225,177"/>
-<area shape="poly" title=" " alt="" coords="724,94,902,113,1142,149,1141,155,902,119,723,99"/>
-<area shape="rect" title=" " alt="" coords="1249,152,1341,177"/>
-<area shape="poly" title=" " alt="" coords="724,93,939,113,1236,149,1235,155,939,118,723,99"/>
-<area shape="rect" title=" " alt="" coords="1365,152,1441,177"/>
-<area shape="poly" title=" " alt="" coords="724,92,985,108,1165,125,1352,149,1351,155,1165,130,985,113,723,97"/>
-<area shape="rect" title=" " alt="" coords="175,152,242,177"/>
-<area shape="poly" title=" " alt="" coords="638,100,474,120,256,155,255,149,473,114,637,94"/>
-<area shape="rect" title=" " alt="" coords="266,152,343,177"/>
-<area shape="poly" title=" " alt="" coords="638,103,358,155,357,149,637,97"/>
-<area shape="rect" title=" " alt="" coords="368,152,455,177"/>
-<area shape="poly" title=" " alt="" coords="639,106,468,151,467,146,637,101"/>
-<area shape="rect" title=" " alt="" coords="479,152,565,177"/>
-<area shape="poly" title=" " alt="" coords="656,106,561,149,559,144,654,102"/>
-<area shape="rect" title=" " alt="" coords="590,152,675,177"/>
-<area shape="poly" title=" " alt="" coords="675,106,650,142,646,139,671,103"/>
-<area shape="rect" title=" " alt="" coords="700,152,760,177"/>
-<area shape="poly" title=" " alt="" coords="691,103,716,139,712,142,687,106"/>
-<area shape="rect" title=" " alt="" coords="785,152,857,177"/>
-<area shape="poly" title=" " alt="" coords="704,102,787,143,785,148,702,106"/>
-<area shape="poly" title=" " alt="" coords="125,104,125,138,119,138,119,104"/>
-<area shape="poly" title=" " alt="" coords="110,106,63,145,59,141,107,102"/>
+<area shape="rect" title="Implementação do sistema de backup." alt="" coords="101,5,219,31"/>
+<area shape="rect" href="backup_8h.html" title="Sistema de backup e restauração baseado em TDD." alt="" coords="5,79,85,104"/>
+<area shape="poly" title=" " alt="" coords="143,33,77,74,74,69,140,28"/>
+<area shape="rect" title=" " alt="" coords="91,152,154,177"/>
+<area shape="poly" title=" " alt="" coords="160,32,132,139,126,138,154,30"/>
+<area shape="rect" title=" " alt="" coords="161,79,234,104"/>
+<area shape="poly" title=" " alt="" coords="169,30,187,65,183,68,164,32"/>
+<area shape="rect" title=" " alt="" coords="259,79,339,104"/>
+<area shape="poly" title=" " alt="" coords="183,28,265,70,263,75,181,33"/>
+<area shape="rect" title=" " alt="" coords="8,152,67,177"/>
+<area shape="poly" title=" " alt="" coords="47,105,43,139,37,138,41,104"/>
+<area shape="poly" title=" " alt="" coords="60,102,102,141,98,144,56,106"/>
 </map>
 </div>
-</div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:a656eb5868e824d59f489f910db438420" id="r_a656eb5868e824d59f489f910db438420"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="backup_8cpp.html#a656eb5868e824d59f489f910db438420">CATCH_CONFIG_MAIN</a></td></tr>
-<tr class="separator:a656eb5868e824d59f489f910db438420"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:ab879a4057766a44ca21352ccba1aab0e" id="r_ab879a4057766a44ca21352ccba1aab0e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="backup_8cpp.html#ab879a4057766a44ca21352ccba1aab0e">TEST_CASE</a> (&quot;Coluna 1: Backup impossível quando não existe backup.parm&quot;, &quot;[backup][decisao]&quot;)</td></tr>
-<tr class="memdesc:ab879a4057766a44ca21352ccba1aab0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Backup impossível quando não existe backup.parm.  <br /></td></tr>
-<tr class="separator:ab879a4057766a44ca21352ccba1aab0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a948131cabdcff9f5fa1c0ce90f3d8db5" id="r_a948131cabdcff9f5fa1c0ce90f3d8db5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="backup_8cpp.html#a948131cabdcff9f5fa1c0ce90f3d8db5">TEST_CASE</a> (&quot;Sistema deve inicializar corretamente&quot;, &quot;[inicializacao]&quot;)</td></tr>
-<tr class="memdesc:a948131cabdcff9f5fa1c0ce90f3d8db5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sistema deve inicializar corretamente.  <br /></td></tr>
-<tr class="separator:a948131cabdcff9f5fa1c0ce90f3d8db5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a656eb5868e824d59f489f910db438420" name="a656eb5868e824d59f489f910db438420"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a656eb5868e824d59f489f910db438420">&#9670;&#160;</a></span>CATCH_CONFIG_MAIN</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define CATCH_CONFIG_MAIN</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="ab879a4057766a44ca21352ccba1aab0e" name="ab879a4057766a44ca21352ccba1aab0e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab879a4057766a44ca21352ccba1aab0e">&#9670;&#160;</a></span>TEST_CASE() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">TEST_CASE </td>
-          <td>(</td>
-          <td class="paramtype">&quot;Coluna 1: Backup impossível quando não existe backup.parm&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&quot;&quot;&#160;</td>
-          <td class="paramname">[backup][decisao]&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Backup impossível quando não existe backup.parm. </p>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000001">Test:</a></b></dt><dd>Coluna 1 da tabela de decisão </dd></dl>
-<p>Condições:</p><ul>
-<li>Tem backup.parm: F (NÃO)</li>
-<li>Faz backup: V (SIM)</li>
-<li>ArqX ∈ HD: V (SIM)</li>
-<li>ArqX ∈ Pen-drive: F (NÃO)</li>
-</ul>
-<p>Ação esperada: IMPOSSÍVEL</p>
-<dl class="section see"><dt>See also</dt><dd>Tabela de Decisão - Coluna 1 </dd></dl>
-
-</div>
-</div>
-<a id="a948131cabdcff9f5fa1c0ce90f3d8db5" name="a948131cabdcff9f5fa1c0ce90f3d8db5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a948131cabdcff9f5fa1c0ce90f3d8db5">&#9670;&#160;</a></span>TEST_CASE() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">TEST_CASE </td>
-          <td>(</td>
-          <td class="paramtype">&quot;Sistema deve inicializar corretamente&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&quot;&quot;&#160;</td>
-          <td class="paramname">[inicializacao]&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sistema deve inicializar corretamente. </p>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000002">Test:</a></b></dt><dd>Teste de inicialização do sistema </dd></dl>
-
-</div>
-</div>
-</div><!-- contents -->
+</div><a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Implementação do sistema de backup. </p>
+<p>Contém a implementação das funções declaradas em <a class="el" href="backup_8h.html" title="Sistema de backup e restauração baseado em TDD.">backup.h</a>, seguindo a lógica da tabela de decisão fornecida.</p>
+<dl class="section author"><dt>Author</dt><dd>Rafael </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2024 </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.0</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="backup_8h.html" title="Sistema de backup e restauração baseado em TDD.">backup.h</a> </dd></dl>
+</div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8

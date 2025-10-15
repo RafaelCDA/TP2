@@ -1,75 +1,38 @@
 \doxysection{src/backup.cpp File Reference}
 \hypertarget{backup_8cpp}{}\label{backup_8cpp}\index{src/backup.cpp@{src/backup.cpp}}
-{\ttfamily \#include "{}catch.\+hpp"{}}\newline
-{\ttfamily \#include "{}../src/backup.\+h"{}}\newline
+
+
+Implementação do sistema de backup.  
+
+
+{\ttfamily \#include "{}backup.\+h"{}}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
 Include dependency graph for backup.\+cpp\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{backup_8cpp__incl}
+\includegraphics[width=330pt]{backup_8cpp__incl}
 \end{center}
 \end{figure}
-\doxysubsubsection*{Macros}
-\begin{DoxyCompactItemize}
-\item 
-\#define \mbox{\hyperlink{backup_8cpp_a656eb5868e824d59f489f910db438420}{CATCH\+\_\+\+CONFIG\+\_\+\+MAIN}}
-\end{DoxyCompactItemize}
-\doxysubsubsection*{Functions}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\hyperlink{backup_8cpp_ab879a4057766a44ca21352ccba1aab0e}{TEST\+\_\+\+CASE}} ("{}Coluna 1\+: Backup impossível quando não existe backup.\+parm"{}, "{}\mbox{[}backup\mbox{]}\mbox{[}decisao\mbox{]}"{})
-\begin{DoxyCompactList}\small\item\em Backup impossível quando não existe backup.\+parm. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{backup_8cpp_a948131cabdcff9f5fa1c0ce90f3d8db5}{TEST\+\_\+\+CASE}} ("{}Sistema deve inicializar corretamente"{}, "{}\mbox{[}inicializacao\mbox{]}"{})
-\begin{DoxyCompactList}\small\item\em Sistema deve inicializar corretamente. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\doxysubsection{Macro Definition Documentation}
-\Hypertarget{backup_8cpp_a656eb5868e824d59f489f910db438420}\label{backup_8cpp_a656eb5868e824d59f489f910db438420} 
-\index{backup.cpp@{backup.cpp}!CATCH\_CONFIG\_MAIN@{CATCH\_CONFIG\_MAIN}}
-\index{CATCH\_CONFIG\_MAIN@{CATCH\_CONFIG\_MAIN}!backup.cpp@{backup.cpp}}
-\doxysubsubsection{\texorpdfstring{CATCH\_CONFIG\_MAIN}{CATCH\_CONFIG\_MAIN}}
-{\footnotesize\ttfamily \#define CATCH\+\_\+\+CONFIG\+\_\+\+MAIN}
+\doxysubsection{Detailed Description}
+Implementação do sistema de backup. 
 
+Contém a implementação das funções declaradas em \doxylink{backup_8h}{backup.\+h}, seguindo a lógica da tabela de decisão fornecida.
 
-
-\doxysubsection{Function Documentation}
-\Hypertarget{backup_8cpp_ab879a4057766a44ca21352ccba1aab0e}\label{backup_8cpp_ab879a4057766a44ca21352ccba1aab0e} 
-\index{backup.cpp@{backup.cpp}!TEST\_CASE@{TEST\_CASE}}
-\index{TEST\_CASE@{TEST\_CASE}!backup.cpp@{backup.cpp}}
-\doxysubsubsection{\texorpdfstring{TEST\_CASE()}{TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{"{}Coluna 1\+: Backup impossível quando não existe backup.\+parm"{}}]{,  }\item[{"{}"{}}]{\mbox{[}backup\mbox{]}\mbox{[}decisao\mbox{]} }\end{DoxyParamCaption})}
-
-
-
-Backup impossível quando não existe backup.\+parm. 
-
-\begin{DoxyRefDesc}{Test}
-\item[\mbox{\hyperlink{test__test000001}{Test}}]Coluna 1 da tabela de decisão \end{DoxyRefDesc}
-
-
-Condições\+:
-\begin{DoxyItemize}
-\item Tem backup.\+parm\+: F (NÃO)
-\item Faz backup\+: V (SIM)
-\item ArqX ∈ HD\+: V (SIM)
-\item ArqX ∈ Pen-\/drive\+: F (NÃO)
-\end{DoxyItemize}
-
-Ação esperada\+: IMPOSSÍ\+VEL
-
+\begin{DoxyAuthor}{Author}
+Rafael 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2024 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+1.\+0
+\end{DoxyVersion}
 \begin{DoxySeeAlso}{See also}
-Tabela de Decisão -\/ Coluna 1 
+\doxylink{backup_8h}{backup.\+h} 
 \end{DoxySeeAlso}
-\Hypertarget{backup_8cpp_a948131cabdcff9f5fa1c0ce90f3d8db5}\label{backup_8cpp_a948131cabdcff9f5fa1c0ce90f3d8db5} 
-\index{backup.cpp@{backup.cpp}!TEST\_CASE@{TEST\_CASE}}
-\index{TEST\_CASE@{TEST\_CASE}!backup.cpp@{backup.cpp}}
-\doxysubsubsection{\texorpdfstring{TEST\_CASE()}{TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{"{}Sistema deve inicializar corretamente"{}}]{,  }\item[{"{}"{}}]{\mbox{[}inicializacao\mbox{]} }\end{DoxyParamCaption})}
-
-
-
-Sistema deve inicializar corretamente. 
-
-\begin{DoxyRefDesc}{Test}
-\item[\mbox{\hyperlink{test__test000002}{Test}}]Teste de inicialização do sistema \end{DoxyRefDesc}

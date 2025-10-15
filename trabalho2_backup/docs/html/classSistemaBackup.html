@@ -89,21 +89,24 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8edb551bb70b41403a21d266bb1ac63a" id="r_a8edb551bb70b41403a21d266bb1ac63a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSistemaBackup.html#a8edb551bb70b41403a21d266bb1ac63a">executarBackup</a> (const std::string &amp;dispositivo)</td></tr>
 <tr class="memdesc:a8edb551bb70b41403a21d266bb1ac63a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executa procedimento de backup.  <br /></td></tr>
 <tr class="separator:a8edb551bb70b41403a21d266bb1ac63a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad7126e9a06ce7bf1eda9e67bd42e94a" id="r_aad7126e9a06ce7bf1eda9e67bd42e94a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSistemaBackup.html#aad7126e9a06ce7bf1eda9e67bd42e94a">executarRestauracao</a> (const std::string &amp;dispositivo)</td></tr>
-<tr class="memdesc:aad7126e9a06ce7bf1eda9e67bd42e94a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executa procedimento de restauração.  <br /></td></tr>
-<tr class="separator:aad7126e9a06ce7bf1eda9e67bd42e94a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a579d6b90b0e03f29bbf42ccb1d5fba00" id="r_a579d6b90b0e03f29bbf42ccb1d5fba00"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSistemaBackup.html#a579d6b90b0e03f29bbf42ccb1d5fba00">existeConfiguracao</a> () const</td></tr>
 <tr class="memdesc:a579d6b90b0e03f29bbf42ccb1d5fba00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica existência do arquivo de configuração.  <br /></td></tr>
 <tr class="separator:a579d6b90b0e03f29bbf42ccb1d5fba00"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a06aac2cc27b282e8366af52cb9d11c33" id="r_a06aac2cc27b282e8366af52cb9d11c33"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSistemaBackup.html#a06aac2cc27b282e8366af52cb9d11c33">listarArquivosBackup</a> () const</td></tr>
 <tr class="memdesc:a06aac2cc27b282e8366af52cb9d11c33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lista arquivos configurados para backup.  <br /></td></tr>
 <tr class="separator:a06aac2cc27b282e8366af52cb9d11c33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2d53020689f68ab1a096d7a961f9332" id="r_ae2d53020689f68ab1a096d7a961f9332"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSistemaBackup.html#ae2d53020689f68ab1a096d7a961f9332">arquivoExisteHD</a> (const std::string &amp;nomeArquivo) const</td></tr>
+<tr class="memdesc:ae2d53020689f68ab1a096d7a961f9332"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica se arquivo existe no HD.  <br /></td></tr>
+<tr class="separator:ae2d53020689f68ab1a096d7a961f9332"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acce2e3d1bfe45014f14979fd6f9a82ff" id="r_acce2e3d1bfe45014f14979fd6f9a82ff"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSistemaBackup.html#acce2e3d1bfe45014f14979fd6f9a82ff">arquivoExistePendrive</a> (const std::string &amp;nomeArquivo, const std::string &amp;dispositivo) const</td></tr>
+<tr class="memdesc:acce2e3d1bfe45014f14979fd6f9a82ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica se arquivo existe no pendrive.  <br /></td></tr>
+<tr class="separator:acce2e3d1bfe45014f14979fd6f9a82ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff285b082a435ba495c573e71986db0a" id="r_aff285b082a435ba495c573e71986db0a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSistemaBackup.html#aff285b082a435ba495c573e71986db0a">compararDatas</a> (const std::string &amp;nomeArquivo, const std::string &amp;dispositivo) const</td></tr>
+<tr class="memdesc:aff285b082a435ba495c573e71986db0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compara datas entre HD e pendrive.  <br /></td></tr>
+<tr class="separator:aff285b082a435ba495c573e71986db0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Classe principal do sistema de backup. </p>
-<p>Responsável por gerenciar operações de backup e restauração baseadas na tabela de decisão fornecida no trabalho.</p>
-<p>Desenvolvido seguindo TDD com Catch2 e com cobertura mínima de 80%.</p>
-<p>@assertiva_geral Todas as funções seguem a tabela de decisão </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a516984b3bd9b50b793b5c566587d2287" name="a516984b3bd9b50b793b5c566587d2287"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a516984b3bd9b50b793b5c566587d2287">&#9670;&#160;</a></span>SistemaBackup()</h2>
@@ -121,12 +124,119 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Construtor do sistema de backup. </p>
-<p>Inicializa o sistema verificando a existência do arquivo de configuração Backup.parm.</p>
-<p>@assertiva_entrada Nenhuma @assertiva_saida Sistema pronto para operar </p>
+<p>Construtor do <a class="el" href="classSistemaBackup.html" title="Classe principal do sistema de backup.">SistemaBackup</a>.</p>
+<p>Inicializa o sistema com estado não configurado.</p>
+<p>@assertiva_entrada Nenhuma @assertiva_saida Sistema inicializado com configurado_ = false </p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="ae2d53020689f68ab1a096d7a961f9332" name="ae2d53020689f68ab1a096d7a961f9332"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2d53020689f68ab1a096d7a961f9332">&#9670;&#160;</a></span>arquivoExisteHD()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool SistemaBackup::arquivoExisteHD </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>nomeArquivo</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Verifica se arquivo existe no HD. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nomeArquivo</td><td>Nome do arquivo a verificar </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true se arquivo existe no HD, false caso contrário</dd></dl>
+<p>@assertiva_entrada nomeArquivo não é string vazia @assertiva_saida Retorna existência real do arquivo no sistema </p>
+
+</div>
+</div>
+<a id="acce2e3d1bfe45014f14979fd6f9a82ff" name="acce2e3d1bfe45014f14979fd6f9a82ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acce2e3d1bfe45014f14979fd6f9a82ff">&#9670;&#160;</a></span>arquivoExistePendrive()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool SistemaBackup::arquivoExistePendrive </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>nomeArquivo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>dispositivo</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Verifica se arquivo existe no pendrive. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nomeArquivo</td><td>Nome do arquivo a verificar </td></tr>
+    <tr><td class="paramname">dispositivo</td><td>Caminho do dispositivo pendrive </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true se arquivo existe no pendrive, false caso contrário</dd></dl>
+<p>@assertiva_entrada nomeArquivo e dispositivo não são strings vazias @assertiva_saida Retorna existência real do arquivo no pendrive </p>
+
+</div>
+</div>
+<a id="aff285b082a435ba495c573e71986db0a" name="aff285b082a435ba495c573e71986db0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff285b082a435ba495c573e71986db0a">&#9670;&#160;</a></span>compararDatas()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SistemaBackup::compararDatas </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>nomeArquivo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>dispositivo</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compara datas entre HD e pendrive. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nomeArquivo</td><td>Nome do arquivo a comparar </td></tr>
+    <tr><td class="paramname">dispositivo</td><td>Caminho do dispositivo pendrive </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>-1 se PenD &lt; HD, 0 se iguais, 1 se PenD &gt; HD</dd></dl>
+<p>@assertiva_entrada nomeArquivo e dispositivo não são strings vazias @assertiva_saida Retorna comparação real das datas de modificação </p>
+
+</div>
+</div>
 <a id="a8edb551bb70b41403a21d266bb1ac63a" name="a8edb551bb70b41403a21d266bb1ac63a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8edb551bb70b41403a21d266bb1ac63a">&#9670;&#160;</a></span>executarBackup()</h2>
 
@@ -144,53 +254,18 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Executa procedimento de backup. </p>
-<p>Implementa a lógica da tabela de decisão para determinar se o backup pode ser executado baseado nas condições:</p><ul>
-<li>Existência do backup.parm</li>
-<li>Disponibilidade do dispositivo</li>
-<li>Estado dos arquivos</li>
+<p>Implementa a lógica baseada na tabela de decisão.</p><ul>
+<li>Coluna 1: Se não existe backup.parm → IMPOSSÍVEL</li>
+<li>Coluna 2: Se existe backup.parm e há arquivos → backup possível</li>
 </ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">dispositivo</td><td>Caminho do dispositivo de backup (pendrive/diretório) </td></tr>
+    <tr><td class="paramname">dispositivo</td><td>Caminho do dispositivo de backup </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true se backup foi executado com sucesso </dd>
-<dd>
-false se houve erro ou condição impossível</dd></dl>
-<p>@assertiva_entrada dispositivo não é string vazia @assertiva_saida Retorna true apenas se backup foi realizado conforme tabela</p>
-<dl class="test"><dt><b><a class="el" href="test.html#_test000003">Test:</a></b></dt><dd>Testado em <a class="el" href="testa__backup_8cpp.html" title="Testes unitários para o sistema de backup.">testa_backup.cpp</a> - Coluna 1 da tabela </dd></dl>
-
-</div>
-</div>
-<a id="aad7126e9a06ce7bf1eda9e67bd42e94a" name="aad7126e9a06ce7bf1eda9e67bd42e94a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aad7126e9a06ce7bf1eda9e67bd42e94a">&#9670;&#160;</a></span>executarRestauracao()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool SistemaBackup::executarRestauracao </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>dispositivo</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Executa procedimento de restauração. </p>
-<p>Restaura arquivos do dispositivo de backup para o HD seguindo as regras da tabela de decisão.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">dispositivo</td><td>Caminho do dispositivo de restauração </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>true se restauração foi bem-sucedida </dd>
-<dd>
-false se houve erro na restauração</dd></dl>
-<p>@assertiva_entrada dispositivo contém backup válido @assertiva_saida Arquivos são restaurados mantendo integridade </p>
+<dl class="section return"><dt>Returns</dt><dd>true se backup pode ser executado, false se impossível</dd></dl>
+<p>@assertiva_entrada dispositivo não é string vazia @assertiva_saida Retorna true apenas se condições da tabela são atendidas </p>
 
 </div>
 </div>
@@ -210,10 +285,8 @@ false se houve erro na restauração</dd></dl>
 </div><div class="memdoc">
 
 <p>Verifica existência do arquivo de configuração. </p>
-<dl class="section return"><dt>Returns</dt><dd>true se backup.parm existe e é legível </dd>
-<dd>
-false se arquivo não existe ou não pode ser lido</dd></dl>
-<p>@assertiva_entrada Nenhuma @assertiva_saida Retorna estado atual do arquivo </p>
+<dl class="section return"><dt>Returns</dt><dd>true se backup.parm existe e é legível, false caso contrário</dd></dl>
+<p>@assertiva_entrada Nenhuma @assertiva_saida Retorna estado real do arquivo backup.parm </p>
 
 </div>
 </div>
@@ -233,14 +306,15 @@ false se arquivo não existe ou não pode ser lido</dd></dl>
 </div><div class="memdoc">
 
 <p>Lista arquivos configurados para backup. </p>
-<p>Lê o arquivo Backup.parm e retorna a lista de arquivos que devem ser incluídos no backup.</p>
-<dl class="section return"><dt>Returns</dt><dd>Vector com paths absolutos dos arquivos</dd></dl>
-<p>@assertiva_entrada Arquivo Backup.parm existe @assertiva_saida Retorna lista não vazia se arquivo existe e é válido </p>
+<p>Lê o arquivo Backup.parm linha por linha, ignorando linhas vazias e comentários (linhas começando com #).</p>
+<dl class="section return"><dt>Returns</dt><dd>Vector com paths dos arquivos para backup</dd></dl>
+<p>@assertiva_entrada Arquivo Backup.parm existe @assertiva_saida Retorna lista não vazia se arquivo tem conteúdo válido </p>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/<a class="el" href="backup_8h_source.html">backup.h</a></li>
+<li>src/<a class="el" href="backup_8cpp.html">backup.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

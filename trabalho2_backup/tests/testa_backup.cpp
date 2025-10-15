@@ -15,6 +15,7 @@
 #define CATCH_CONFIG_MAIN
 #include "catch.hpp"
 #include "../src/backup.h"
+#include <fstream>
 
 /**
  * @test Coluna 1 da tabela de decisão
@@ -56,48 +57,152 @@ TEST_CASE("Sistema deve inicializar corretamente", "[inicializacao]")
     // Teste de inicialização básica
     REQUIRE(sistema.existeConfiguracao() == false); // Inicialmente sem config
 }
+
 /**
  * @test Coluna 2 da tabela de decisão
- * @brief Backup quando arquivo existe em ambos mas pendrive está desatualizado
+ * @brief Backup quando arquivo existe no HD mas NÃO no pendrive
  *
  * Condições:
  * - Tem backup.parm: V (SIM)
  * - Faz backup: V (SIM)
  * - ArqX ∈ HD: V (SIM)
- * - ArqX ∈ Pen-drive: V (SIM)
- * - Data PenD < HD: V (SIM) - Pendrive desatualizado
+ * - ArqX ∈ Pen-drive: F (NÃO)  // ← DIFERENÇA CHAVE!
+ * - Data PenD < HD: V (SIM)     // ← Irrelevante (arquivo não existe no pendrive)
  *
  * Ação esperada: HD para Pen-drive (fazer backup)
  *
  * @see Tabela de Decisão - Coluna 2
  */
-/**
- * @test Coluna 2 da tabela de decisão
- * @brief Backup quando arquivo existe em ambos mas pendrive está desatualizado
- *
- * Condições:
- * - Tem backup.parm: V (SIM)
- * - Faz backup: V (SIM)
- * - ArqX ∈ HD: V (SIM)
- * - ArqX ∈ Pen-drive: V (SIM)
- * - Data PenD < HD: V (SIM) - Pendrive desatualizado
- *
- * Ação esperada: HD para Pen-drive (fazer backup)
- *
- * @see Tabela de Decisão - Coluna 2
- */
-TEST_CASE("Coluna 2: Backup quando pendrive está desatualizado", "[backup][decisao]")
+TEST_CASE("Coluna 2: Backup quando arquivo não existe no pendrive", "[backup][decisao]")
 {
     // Arrange
     SistemaBackup sistema;
     std::string dispositivo = "/mnt/pendrive";
 
+    // Garantir que backup.parm não existe inicialmente
+    std::remove("Backup.parm");
+
     // Criar backup.parm
     std::ofstream arquivo("Backup.parm");
-    arquivo << "arquivo.txt" << std::endl;
+    arquivo << "documento.txt" << std::endl;
     arquivo.close();
 
+    // Criar arquivo no HD (condição: ArqX ∈ HD: V)
+    std::ofstream hdFile("documento.txt");
+    hdFile << "conteudo do arquivo" << std::endl;
+    hdFile.close();
+
+    // NÃO criar arquivo no pendrive (condição: ArqX ∈ Pen-drive: F)
+    // Isso simula que o arquivo só existe no HD
+
+    // Act
     bool resultado = sistema.executarBackup(dispositivo);
 
+    // Assert - Deve retornar TRUE (backup realizado)
     REQUIRE(resultado == true);
+}
+
+/**
+ * @test Teste de listagem de arquivos
+ * @brief Deve listar arquivos do backup.parm corretamente
+ */
+TEST_CASE("Deve listar arquivos do backup.parm", "[configuracao]")
+{
+    // Arrange
+    SistemaBackup sistema;
+
+    // Criar backup.parm
+    std::ofstream arquivo("Backup.parm");
+    arquivo << "arquivo1.txt" << std::endl;
+    arquivo << "# comentario" << std::endl;
+    arquivo << "arquivo2.jpg" << std::endl;
+    arquivo << "" << std::endl; // linha vazia
+    arquivo.close();
+
+    // Act
+    auto arquivos = sistema.listarArquivosBackup();
+
+    // Assert - Deve ignorar comentários e linhas vazias
+    REQUIRE(arquivos.size() == 2);
+    REQUIRE(arquivos[0] == "arquivo1.txt");
+    REQUIRE(arquivos[1] == "arquivo2.jpg");
+}
+/**
+ * @test Coluna 3 da tabela de decisão
+ * @brief Backup quando arquivo existe em ambos e pendrive está desatualizado
+ *
+ * Condições:
+ * - Tem backup.parm: V (SIM)
+ * - Faz backup: V (SIM)
+ * - ArqX ∈ HD: V (SIM)
+ * - ArqX ∈ Pen-drive: V (SIM)  // ← DIFERENÇA!
+ * - Data PenD < HD: V (SIM)     // ← DIFERENÇA!
+ *
+ * Ação esperada: HD para Pen-drive (fazer backup)
+ *
+ * @see Tabela de Decisão - Coluna 3
+ */
+/**
+ * @test Cenário onde backup NÃO deve ocorrer
+ * @brief Não fazer backup quando pendrive está atualizado
+ *
+ * Condições:
+ * - Tem backup.parm: V (SIM)
+ * - Faz backup: V (SIM)
+ * - ArqX ∈ HD: V (SIM)
+ * - ArqX ∈ Pen-drive: V (SIM)
+ * - Data PenD >= HD: V (pendrive atualizado ou igual)
+ *
+ * Ação esperada: NÃO fazer backup
+ *
+ * @see Tabela de Decisão - Colunas onde backup NÃO ocorre
+ */
+/**
+ * @test Coluna 3 da tabela de decisão
+ * @brief Backup quando arquivo existe em ambos e pendrive está desatualizado
+ *
+ * Condições ESPECÍFICAS da Coluna 3:
+ * - Tem backup.parm: V (SIM)
+ * - Faz backup: V (SIM)
+ * - ArqX ∈ HD: V (SIM)
+ * - ArqX ∈ Pen-drive: V (SIM)  // ← DIFERENÇA da Coluna 2!
+ * - Data PenD < HD: V (SIM)     // ← CONDIÇÃO NÃO IMPLEMENTADA!
+ *
+ * Ação esperada: HD para Pen-drive (fazer backup)
+ *
+ * @see Tabela de Decisão - Coluna 3
+ */
+TEST_CASE("Coluna 3: Backup quando pendrive está desatualizado", "[backup][decisao]")
+{
+    // Arrange - Usando diretório local em vez de /mnt/pendrive
+    SistemaBackup sistema;
+    std::string dispositivo = "pendrive_teste"; // ← DIRETÓRIO LOCAL
+
+    // LIMPEZA TOTAL
+    std::remove("Backup.parm");
+    std::remove("documento.txt");
+    system("rm -rf pendrive_teste"); // ← Limpa diretório local
+
+    // Configuração ESPECÍFICA da Coluna 3:
+    // 1. backup.parm existe
+    std::ofstream config("Backup.parm");
+    config << "documento.txt" << std::endl;
+    config.close();
+
+    // 2. Arquivo existe no HD (conteúdo ATUALIZADO)
+    std::ofstream hdFile("documento.txt");
+    hdFile << "CONTEUDO_NOVO_HD" << std::endl; // Versão NOVA
+    hdFile.close();
+
+    // 3. Arquivo existe no "pendrive" (diretório local com conteúdo ANTIGO)
+    system("mkdir -p pendrive_teste"); // ← Diretório local
+    std::ofstream pendriveFile("pendrive_teste/documento.txt");
+    pendriveFile << "CONTEUDO_ANTIGO_PENDRIVE" << std::endl; // Versão ANTIGA
+    pendriveFile.close();
+
+    // Act
+    bool resultado = sistema.executarBackup(dispositivo);
+
+    // Assert - Use FALSE para forçar implementação real
+    REQUIRE(resultado == false); // ← DEVE FALHAR até implementarmos datas
 }

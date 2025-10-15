@@ -62,6 +62,11 @@ check: | $(REPORT_DIR)
 doc:
 	doxygen Doxyfile
 
+# Abrir documentação
+view-doc: doc
+	xdg-open docs/html/index.html 2>/dev/null || \
+	echo "Abra manualmente: docs/html/index.html"
+
 # Limpeza TOTAL (exceto documentação)
 clean:
 	rm -rf $(BUILD_DIR) $(BIN_DIR) $(REPORT_DIR) *.gcov *.gcda *.gcno

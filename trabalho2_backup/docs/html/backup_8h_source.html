@@ -82,46 +82,44 @@ $(document).ready(function() { init_codefold(0); });
 </div><!--header-->
 <div class="contents">
 <a href="backup_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#ifndef BACKUP_H</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#define BACKUP_H</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="foldopen" id="foldopen00031" data-start="{" data-end="};">
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="classSistemaBackup.html">   31</a></span><span class="keyword">class </span><a class="code hl_class" href="classSistemaBackup.html">SistemaBackup</a></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>{</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="classSistemaBackup.html#a516984b3bd9b50b793b5c566587d2287">   43</a></span>    <a class="code hl_function" href="classSistemaBackup.html#a516984b3bd9b50b793b5c566587d2287">SistemaBackup</a>();</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="classSistemaBackup.html#a8edb551bb70b41403a21d266bb1ac63a">   63</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classSistemaBackup.html#a8edb551bb70b41403a21d266bb1ac63a">executarBackup</a>(<span class="keyword">const</span> std::string &amp;dispositivo);</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="classSistemaBackup.html#aad7126e9a06ce7bf1eda9e67bd42e94a">   78</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classSistemaBackup.html#aad7126e9a06ce7bf1eda9e67bd42e94a">executarRestauracao</a>(<span class="keyword">const</span> std::string &amp;dispositivo);</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="classSistemaBackup.html#a579d6b90b0e03f29bbf42ccb1d5fba00">   89</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classSistemaBackup.html#a579d6b90b0e03f29bbf42ccb1d5fba00">existeConfiguracao</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="classSistemaBackup.html#a06aac2cc27b282e8366af52cb9d11c33">  102</a></span>    std::vector&lt;std::string&gt; <a class="code hl_function" href="classSistemaBackup.html#a06aac2cc27b282e8366af52cb9d11c33">listarArquivosBackup</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    <span class="keywordtype">bool</span> arquivoExiste(<span class="keyword">const</span> std::string &amp;caminho) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    std::vector&lt;std::string&gt; arquivosBackup_; </div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <span class="keywordtype">bool</span> configurado_;                        </div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>};</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#ifndef BACKUP_H</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#define BACKUP_H</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="foldopen" id="foldopen00019" data-start="{" data-end="};">
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="classSistemaBackup.html">   19</a></span><span class="keyword">class </span><a class="code hl_class" href="classSistemaBackup.html">SistemaBackup</a></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>{</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <a class="code hl_function" href="classSistemaBackup.html#a516984b3bd9b50b793b5c566587d2287">SistemaBackup</a>();</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classSistemaBackup.html#a8edb551bb70b41403a21d266bb1ac63a">executarBackup</a>(<span class="keyword">const</span> std::string &amp;dispositivo);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classSistemaBackup.html#a579d6b90b0e03f29bbf42ccb1d5fba00">existeConfiguracao</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    std::vector&lt;std::string&gt; <a class="code hl_function" href="classSistemaBackup.html#a06aac2cc27b282e8366af52cb9d11c33">listarArquivosBackup</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classSistemaBackup.html#ae2d53020689f68ab1a096d7a961f9332">arquivoExisteHD</a>(<span class="keyword">const</span> std::string &amp;nomeArquivo) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classSistemaBackup.html#acce2e3d1bfe45014f14979fd6f9a82ff">arquivoExistePendrive</a>(<span class="keyword">const</span> std::string &amp;nomeArquivo, <span class="keyword">const</span> std::string &amp;dispositivo) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="classSistemaBackup.html#aff285b082a435ba495c573e71986db0a">compararDatas</a>(<span class="keyword">const</span> std::string &amp;nomeArquivo, <span class="keyword">const</span> std::string &amp;dispositivo) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordtype">bool</span> configurado_;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>};</div>
 </div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span><span class="comment">// Funções auxiliares (se necessário)</span></div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno"><a class="line" href="backup_8h.html#a405fe9e85dd4817611652ec660f2ad33">  131</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="backup_8h.html#a405fe9e85dd4817611652ec660f2ad33">verificarDispositivo</a>(<span class="keyword">const</span> std::string &amp;dispositivo);</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="abackup_8h_html_a405fe9e85dd4817611652ec660f2ad33"><div class="ttname"><a href="backup_8h.html#a405fe9e85dd4817611652ec660f2ad33">verificarDispositivo</a></div><div class="ttdeci">bool verificarDispositivo(const std::string &amp;dispositivo)</div><div class="ttdoc">Verifica disponibilidade de dispositivo.</div></div>
-<div class="ttc" id="aclassSistemaBackup_html"><div class="ttname"><a href="classSistemaBackup.html">SistemaBackup</a></div><div class="ttdoc">Classe principal do sistema de backup.</div><div class="ttdef"><b>Definition</b> backup.h:32</div></div>
-<div class="ttc" id="aclassSistemaBackup_html_a06aac2cc27b282e8366af52cb9d11c33"><div class="ttname"><a href="classSistemaBackup.html#a06aac2cc27b282e8366af52cb9d11c33">SistemaBackup::listarArquivosBackup</a></div><div class="ttdeci">std::vector&lt; std::string &gt; listarArquivosBackup() const</div><div class="ttdoc">Lista arquivos configurados para backup.</div></div>
-<div class="ttc" id="aclassSistemaBackup_html_a516984b3bd9b50b793b5c566587d2287"><div class="ttname"><a href="classSistemaBackup.html#a516984b3bd9b50b793b5c566587d2287">SistemaBackup::SistemaBackup</a></div><div class="ttdeci">SistemaBackup()</div><div class="ttdoc">Construtor do sistema de backup.</div></div>
-<div class="ttc" id="aclassSistemaBackup_html_a579d6b90b0e03f29bbf42ccb1d5fba00"><div class="ttname"><a href="classSistemaBackup.html#a579d6b90b0e03f29bbf42ccb1d5fba00">SistemaBackup::existeConfiguracao</a></div><div class="ttdeci">bool existeConfiguracao() const</div><div class="ttdoc">Verifica existência do arquivo de configuração.</div></div>
-<div class="ttc" id="aclassSistemaBackup_html_a8edb551bb70b41403a21d266bb1ac63a"><div class="ttname"><a href="classSistemaBackup.html#a8edb551bb70b41403a21d266bb1ac63a">SistemaBackup::executarBackup</a></div><div class="ttdeci">bool executarBackup(const std::string &amp;dispositivo)</div><div class="ttdoc">Executa procedimento de backup.</div></div>
-<div class="ttc" id="aclassSistemaBackup_html_aad7126e9a06ce7bf1eda9e67bd42e94a"><div class="ttname"><a href="classSistemaBackup.html#aad7126e9a06ce7bf1eda9e67bd42e94a">SistemaBackup::executarRestauracao</a></div><div class="ttdeci">bool executarRestauracao(const std::string &amp;dispositivo)</div><div class="ttdoc">Executa procedimento de restauração.</div></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclassSistemaBackup_html"><div class="ttname"><a href="classSistemaBackup.html">SistemaBackup</a></div><div class="ttdoc">Classe principal do sistema de backup.</div><div class="ttdef"><b>Definition</b> backup.h:20</div></div>
+<div class="ttc" id="aclassSistemaBackup_html_a06aac2cc27b282e8366af52cb9d11c33"><div class="ttname"><a href="classSistemaBackup.html#a06aac2cc27b282e8366af52cb9d11c33">SistemaBackup::listarArquivosBackup</a></div><div class="ttdeci">std::vector&lt; std::string &gt; listarArquivosBackup() const</div><div class="ttdoc">Lista arquivos configurados para backup.</div><div class="ttdef"><b>Definition</b> backup.cpp:92</div></div>
+<div class="ttc" id="aclassSistemaBackup_html_a516984b3bd9b50b793b5c566587d2287"><div class="ttname"><a href="classSistemaBackup.html#a516984b3bd9b50b793b5c566587d2287">SistemaBackup::SistemaBackup</a></div><div class="ttdeci">SistemaBackup()</div><div class="ttdoc">Construtor do sistema de backup.</div><div class="ttdef"><b>Definition</b> backup.cpp:30</div></div>
+<div class="ttc" id="aclassSistemaBackup_html_a579d6b90b0e03f29bbf42ccb1d5fba00"><div class="ttname"><a href="classSistemaBackup.html#a579d6b90b0e03f29bbf42ccb1d5fba00">SistemaBackup::existeConfiguracao</a></div><div class="ttdeci">bool existeConfiguracao() const</div><div class="ttdoc">Verifica existência do arquivo de configuração.</div><div class="ttdef"><b>Definition</b> backup.cpp:75</div></div>
+<div class="ttc" id="aclassSistemaBackup_html_a8edb551bb70b41403a21d266bb1ac63a"><div class="ttname"><a href="classSistemaBackup.html#a8edb551bb70b41403a21d266bb1ac63a">SistemaBackup::executarBackup</a></div><div class="ttdeci">bool executarBackup(const std::string &amp;dispositivo)</div><div class="ttdoc">Executa procedimento de backup.</div><div class="ttdef"><b>Definition</b> backup.cpp:47</div></div>
+<div class="ttc" id="aclassSistemaBackup_html_acce2e3d1bfe45014f14979fd6f9a82ff"><div class="ttname"><a href="classSistemaBackup.html#acce2e3d1bfe45014f14979fd6f9a82ff">SistemaBackup::arquivoExistePendrive</a></div><div class="ttdeci">bool arquivoExistePendrive(const std::string &amp;nomeArquivo, const std::string &amp;dispositivo) const</div><div class="ttdoc">Verifica se arquivo existe no pendrive.</div><div class="ttdef"><b>Definition</b> backup.cpp:136</div></div>
+<div class="ttc" id="aclassSistemaBackup_html_ae2d53020689f68ab1a096d7a961f9332"><div class="ttname"><a href="classSistemaBackup.html#ae2d53020689f68ab1a096d7a961f9332">SistemaBackup::arquivoExisteHD</a></div><div class="ttdeci">bool arquivoExisteHD(const std::string &amp;nomeArquivo) const</div><div class="ttdoc">Verifica se arquivo existe no HD.</div><div class="ttdef"><b>Definition</b> backup.cpp:119</div></div>
+<div class="ttc" id="aclassSistemaBackup_html_aff285b082a435ba495c573e71986db0a"><div class="ttname"><a href="classSistemaBackup.html#aff285b082a435ba495c573e71986db0a">SistemaBackup::compararDatas</a></div><div class="ttdeci">int compararDatas(const std::string &amp;nomeArquivo, const std::string &amp;dispositivo) const</div><div class="ttdoc">Compara datas entre HD e pendrive.</div><div class="ttdef"><b>Definition</b> backup.cpp:153</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

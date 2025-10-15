@@ -7,7 +7,7 @@ var searchData=
   ['catch_5fconfig_5fcpp11_5fto_5fstring_4',['CATCH_CONFIG_CPP11_TO_STRING',['../catch_8hpp.html#a5e8669f07e3db1e9e1604508689bc28a',1,'catch.hpp']]],
   ['catch_5fconfig_5fdisable_5fexceptions_5',['CATCH_CONFIG_DISABLE_EXCEPTIONS',['../catch_8hpp.html#a893712b2ba6e7400136a0a023b12e9db',1,'catch.hpp']]],
   ['catch_5fconfig_5fglobal_5fnextafter_6',['CATCH_CONFIG_GLOBAL_NEXTAFTER',['../catch_8hpp.html#a3271a306c531fd4a2c6c6180e4903fd9',1,'catch.hpp']]],
-  ['catch_5fconfig_5fmain_7',['catch_config_main',['../backup_8cpp.html#a656eb5868e824d59f489f910db438420',1,'CATCH_CONFIG_MAIN:&#160;backup.cpp'],['../testa__backup_8cpp.html#a656eb5868e824d59f489f910db438420',1,'CATCH_CONFIG_MAIN:&#160;testa_backup.cpp']]],
+  ['catch_5fconfig_5fmain_7',['CATCH_CONFIG_MAIN',['../testa__backup_8cpp.html#a656eb5868e824d59f489f910db438420',1,'testa_backup.cpp']]],
   ['catch_5fconfig_5fposix_5fsignals_8',['CATCH_CONFIG_POSIX_SIGNALS',['../catch_8hpp.html#ac5eee4f90512985d2043f971c6f08707',1,'catch.hpp']]],
   ['catch_5fconfig_5fwchar_9',['CATCH_CONFIG_WCHAR',['../catch_8hpp.html#ac6675f48ca221c1b9124ea02fe88324b',1,'catch.hpp']]],
   ['catch_5fdefer_10',['CATCH_DEFER',['../catch_8hpp.html#a83c1ab15f3d715f25fe504c114cf6144',1,'catch.hpp']]],

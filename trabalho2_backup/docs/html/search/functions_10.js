@@ -32,7 +32,7 @@ var searchData=
   ['split_29',['Split',['../classcpplint_1_1FileInfo.html#a5e303a91249d059740177b183888e89a',1,'cpplint::FileInfo']]],
   ['splitstringref_30',['splitStringRef',['../namespaceCatch.html#a678e3c779388970bb3ec5802245f93d7',1,'Catch']]],
   ['start_31',['start',['../classCatch_1_1Timer.html#a0a56e879e43f36c102bf9ea8b5fc8b72',1,'Catch::Timer']]],
-  ['startswith_32',['startswith',['../namespaceCatch.html#acad23751846ac23d0f379e34f5adebb1',1,'Catch::startsWith(std::string const &amp;s, char prefix)'],['../namespaceCatch.html#a695f62327be0676e046291eeaae15110',1,'Catch::startsWith(std::string const &amp;s, std::string const &amp;prefix)'],['../namespaceCatch_1_1Matchers.html#a97c9ee09a70378ca7e8c6f9f01b0d6d1',1,'Catch::Matchers::StartsWith()']]],
+  ['startswith_32',['startswith',['../namespaceCatch_1_1Matchers.html#a97c9ee09a70378ca7e8c6f9f01b0d6d1',1,'Catch::Matchers::StartsWith()'],['../namespaceCatch.html#acad23751846ac23d0f379e34f5adebb1',1,'Catch::startsWith(std::string const &amp;s, char prefix)'],['../namespaceCatch.html#a695f62327be0676e046291eeaae15110',1,'Catch::startsWith(std::string const &amp;s, std::string const &amp;prefix)']]],
   ['startswithmatcher_33',['StartsWithMatcher',['../structCatch_1_1Matchers_1_1StdString_1_1StartsWithMatcher.html#a7b86f258bdbd131a6e7bcd94a8977325',1,'Catch::Matchers::StdString::StartsWithMatcher']]],
   ['str_34',['str',['../classCatch_1_1ReusableStringStream.html#a0e9ecf260b2a5d35f4886ef0d51f6270',1,'Catch::ReusableStringStream']]],
   ['stream_35',['stream',['../structCatch_1_1IStream.html#ad1cee80a31407d09aa0627a531f26b07',1,'Catch::IStream']]],
