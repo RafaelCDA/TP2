@@ -314,3 +314,49 @@ TEST_CASE("Coluna 5: Erro quando pendrive está mais atualizado que HD", "[backu
     // Assert - Deve retornar FALSE (erro - pendrive mais atualizado)
     REQUIRE(resultado == false);
 }
+/**
+ * @test Coluna 6 da tabela de decisão
+ * @brief Erro quando configuração diz para não fazer backup mas condições permitiriam
+ *
+ * Condições:
+ * - Tem backup.parm: V (SIM)
+ * - Faz backup: F (NÃO) ← CONDIÇÃO NOVA!
+ * - ArqX ∈ HD: V (SIM)
+ * - ArqX ∈ Pen-drive: F (NÃO)
+ *
+ * Ação esperada: erro
+ *
+ * @see Tabela de Decisão - Coluna 6
+ */
+TEST_CASE("Coluna 6: Erro quando não deve fazer backup mas condições permitiriam", "[backup][decisao]")
+{
+    // Arrange
+    SistemaBackup sistema;
+    std::string dispositivo = "pendrive_teste";
+
+    // LIMPEZA
+    std::remove("Backup.parm");
+    std::remove("documento.txt");
+    system("rm -rf pendrive_teste");
+
+    // Configuração ESPECÍFICA da Coluna 6:
+    // 1. backup.parm existe MAS indica NÃO fazer backup
+    std::ofstream config("Backup.parm");
+    config << "documento.txt" << std::endl;
+    config << "# NO_BACKUP" << std::endl; // ← INDICA NÃO FAZER BACKUP
+    config.close();
+
+    // 2. Arquivo existe no HD
+    std::ofstream hdFile("documento.txt");
+    hdFile << "conteudo" << std::endl;
+    hdFile.close();
+
+    // 3. Arquivo NÃO existe no pendrive (condição que permitiria backup na Coluna 2)
+    // Mas como Faz backup: F, deve retornar erro
+
+    // Act
+    bool resultado = sistema.executarBackup(dispositivo);
+
+    // Assert - Deve retornar FALSE (erro - não deve fazer backup)
+    REQUIRE(resultado == false);
+}
