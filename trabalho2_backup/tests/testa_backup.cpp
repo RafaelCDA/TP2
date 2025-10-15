@@ -203,6 +203,5 @@ TEST_CASE("Coluna 3: Backup quando pendrive está desatualizado", "[backup][deci
     // Act
     bool resultado = sistema.executarBackup(dispositivo);
 
-    // Assert - Use FALSE para forçar implementação real
-    REQUIRE(resultado == false); // ← DEVE FALHAR até implementarmos datas
+    REQUIRE(resultado == true);
 }
