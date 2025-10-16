@@ -1,0 +1,7 @@
+<map id="SistemaBackup::deveFazerBackup" name="SistemaBackup::deveFazerBackup">
+<area shape="rect" id="Node000001" title="Verifica se deve fazer backup baseado na configuração." alt="" coords="320,23,516,63"/>
+<area shape="rect" id="Node000002" href="$classSistemaBackup.html#a8edb551bb70b41403a21d266bb1ac63a" title="Executa procedimento de backup." alt="" coords="22,5,255,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="306,36,255,31,256,26,307,31"/>
+<area shape="rect" id="Node000003" href="$classSistemaBackup.html#aad7126e9a06ce7bf1eda9e67bd42e94a" title="Executa procedimento de restauração." alt="" coords="5,55,272,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="307,56,272,59,272,53,306,50"/>
+</map>

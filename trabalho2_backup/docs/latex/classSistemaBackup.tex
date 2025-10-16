@@ -1,4 +1,4 @@
-\doxysection{Sistema\+Backup Class Reference}
+\doxysection{Referência à classe Sistema\+Backup}
 \hypertarget{classSistemaBackup}{}\label{classSistemaBackup}\index{SistemaBackup@{SistemaBackup}}
 
 
@@ -9,7 +9,7 @@ Classe principal do sistema de backup.
 
 {\ttfamily \#include $<$backup.\+h$>$}
 
-\doxysubsubsection*{Public Member Functions}
+\doxysubsubsection*{Membros públicos}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classSistemaBackup_a516984b3bd9b50b793b5c566587d2287}{Sistema\+Backup}} ()
@@ -25,13 +25,22 @@ bool \mbox{\hyperlink{classSistemaBackup_ae2d53020689f68ab1a096d7a961f9332}{arqu
 bool \mbox{\hyperlink{classSistemaBackup_acce2e3d1bfe45014f14979fd6f9a82ff}{arquivo\+Existe\+Pendrive}} (const std\+::string \&nome\+Arquivo, const std\+::string \&dispositivo) const
 \begin{DoxyCompactList}\small\item\em Verifica se arquivo existe no pendrive. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{classSistemaBackup_aff285b082a435ba495c573e71986db0a}{comparar\+Datas}} (const std\+::string \&nome\+Arquivo, const std\+::string \&dispositivo) const
-\begin{DoxyCompactList}\small\item\em Compara datas entre HD e pendrive. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Compara datas entre HD e pendrive. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classSistemaBackup_a5589fa5a114394a18b7d65cce16a0b25}{deve\+Fazer\+Backup}} () const
+\begin{DoxyCompactList}\small\item\em Verifica se deve fazer backup baseado na configuração. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classSistemaBackup_aad7126e9a06ce7bf1eda9e67bd42e94a}{executar\+Restauracao}} (const std\+::string \&dispositivo)
+\begin{DoxyCompactList}\small\item\em Executa procedimento de restauração. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos Privados}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classSistemaBackup_ae7e698b26708534355c11e23c0963903}{configurado\+\_\+}}
+\end{DoxyCompactItemize}
 
 
-\doxysubsection{Detailed Description}
+\doxysubsection{Descrição detalhada}
 Classe principal do sistema de backup. 
 
-\doxysubsection{Constructor \& Destructor Documentation}
+\doxysubsection{Documentação dos Construtores \& Destrutor}
 \Hypertarget{classSistemaBackup_a516984b3bd9b50b793b5c566587d2287}\label{classSistemaBackup_a516984b3bd9b50b793b5c566587d2287} 
 \index{SistemaBackup@{SistemaBackup}!SistemaBackup@{SistemaBackup}}
 \index{SistemaBackup@{SistemaBackup}!SistemaBackup@{SistemaBackup}}
@@ -48,7 +57,7 @@ Inicializa o sistema com estado não configurado.
 
 @assertiva\+\_\+entrada Nenhuma @assertiva\+\_\+saida Sistema inicializado com configurado\+\_\+ = false 
 
-\doxysubsection{Member Function Documentation}
+\doxysubsection{Documentação das funções}
 \Hypertarget{classSistemaBackup_ae2d53020689f68ab1a096d7a961f9332}\label{classSistemaBackup_ae2d53020689f68ab1a096d7a961f9332} 
 \index{SistemaBackup@{SistemaBackup}!arquivoExisteHD@{arquivoExisteHD}}
 \index{arquivoExisteHD@{arquivoExisteHD}!SistemaBackup@{SistemaBackup}}
@@ -60,14 +69,21 @@ Inicializa o sistema com estado não configurado.
 Verifica se arquivo existe no HD. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Parâmetros}
 {\em nome\+Arquivo} & Nome do arquivo a verificar \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Retorna}
 true se arquivo existe no HD, false caso contrário
 \end{DoxyReturn}
-@assertiva\+\_\+entrada nome\+Arquivo não é string vazia @assertiva\+\_\+saida Retorna existência real do arquivo no sistema \Hypertarget{classSistemaBackup_acce2e3d1bfe45014f14979fd6f9a82ff}\label{classSistemaBackup_acce2e3d1bfe45014f14979fd6f9a82ff} 
+@assertiva\+\_\+entrada nome\+Arquivo não é string vazia @assertiva\+\_\+saida Retorna existência real do arquivo no sistema Este é o diagrama das funções que utilizam esta função\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSistemaBackup_ae2d53020689f68ab1a096d7a961f9332_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSistemaBackup_acce2e3d1bfe45014f14979fd6f9a82ff}\label{classSistemaBackup_acce2e3d1bfe45014f14979fd6f9a82ff} 
 \index{SistemaBackup@{SistemaBackup}!arquivoExistePendrive@{arquivoExistePendrive}}
 \index{arquivoExistePendrive@{arquivoExistePendrive}!SistemaBackup@{SistemaBackup}}
 \doxysubsubsection{\texorpdfstring{arquivoExistePendrive()}{arquivoExistePendrive()}}
@@ -78,16 +94,23 @@ true se arquivo existe no HD, false caso contrário
 Verifica se arquivo existe no pendrive. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Parâmetros}
 {\em nome\+Arquivo} & Nome do arquivo a verificar \\
 \hline
 {\em dispositivo} & Caminho do dispositivo pendrive \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Retorna}
 true se arquivo existe no pendrive, false caso contrário
 \end{DoxyReturn}
-@assertiva\+\_\+entrada nome\+Arquivo e dispositivo não são strings vazias @assertiva\+\_\+saida Retorna existência real do arquivo no pendrive \Hypertarget{classSistemaBackup_aff285b082a435ba495c573e71986db0a}\label{classSistemaBackup_aff285b082a435ba495c573e71986db0a} 
+@assertiva\+\_\+entrada nome\+Arquivo e dispositivo não são strings vazias @assertiva\+\_\+saida Retorna existência real do arquivo no pendrive Este é o diagrama das funções que utilizam esta função\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSistemaBackup_acce2e3d1bfe45014f14979fd6f9a82ff_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSistemaBackup_aff285b082a435ba495c573e71986db0a}\label{classSistemaBackup_aff285b082a435ba495c573e71986db0a} 
 \index{SistemaBackup@{SistemaBackup}!compararDatas@{compararDatas}}
 \index{compararDatas@{compararDatas}!SistemaBackup@{SistemaBackup}}
 \doxysubsubsection{\texorpdfstring{compararDatas()}{compararDatas()}}
@@ -97,17 +120,53 @@ true se arquivo existe no pendrive, false caso contrário
 
 Compara datas entre HD e pendrive. 
 
+Implementação que usa diferença de conteúdo como proxy para versão.
+\begin{DoxyItemize}
+\item Retorna -\/1\+: PenD \texorpdfstring{$<$}{<} HD (pendrive desatualizado)
+\item Retorna 0\+: PenD == HD (datas iguais)
+\item Retorna 1\+: PenD \texorpdfstring{$>$}{>} HD (pendrive mais atualizado)
+\end{DoxyItemize}
 
-\begin{DoxyParams}{Parameters}
+
+\begin{DoxyParams}{Parâmetros}
 {\em nome\+Arquivo} & Nome do arquivo a comparar \\
 \hline
 {\em dispositivo} & Caminho do dispositivo pendrive \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
--\/1 se PenD \texorpdfstring{$<$}{<} HD, 0 se iguais, 1 se PenD \texorpdfstring{$>$}{>} HD
+\begin{DoxyReturn}{Retorna}
+-\/1, 0 ou 1 conforme a comparação
 \end{DoxyReturn}
-@assertiva\+\_\+entrada nome\+Arquivo e dispositivo não são strings vazias @assertiva\+\_\+saida Retorna comparação real das datas de modificação \Hypertarget{classSistemaBackup_a8edb551bb70b41403a21d266bb1ac63a}\label{classSistemaBackup_a8edb551bb70b41403a21d266bb1ac63a} 
+@assertiva\+\_\+entrada nome\+Arquivo e dispositivo não são strings vazias @assertiva\+\_\+saida Retorna sempre -\/1, 0 ou 1 Este é o diagrama das funções que utilizam esta função\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSistemaBackup_aff285b082a435ba495c573e71986db0a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSistemaBackup_a5589fa5a114394a18b7d65cce16a0b25}\label{classSistemaBackup_a5589fa5a114394a18b7d65cce16a0b25} 
+\index{SistemaBackup@{SistemaBackup}!deveFazerBackup@{deveFazerBackup}}
+\index{deveFazerBackup@{deveFazerBackup}!SistemaBackup@{SistemaBackup}}
+\doxysubsubsection{\texorpdfstring{deveFazerBackup()}{deveFazerBackup()}}
+{\footnotesize\ttfamily bool Sistema\+Backup\+::deve\+Fazer\+Backup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Verifica se deve fazer backup baseado na configuração. 
+
+Analisa o arquivo Backup.\+parm para ver se há instruções especiais como \# NO\+\_\+\+BACKUP que indicam não fazer backup.
+
+\begin{DoxyReturn}{Retorna}
+true se deve fazer backup, false se não deve
+\end{DoxyReturn}
+@assertiva\+\_\+entrada Arquivo Backup.\+parm existe @assertiva\+\_\+saida Retorna false apenas se \# NO\+\_\+\+BACKUP estiver presente Este é o diagrama das funções que utilizam esta função\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSistemaBackup_a5589fa5a114394a18b7d65cce16a0b25_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSistemaBackup_a8edb551bb70b41403a21d266bb1ac63a}\label{classSistemaBackup_a8edb551bb70b41403a21d266bb1ac63a} 
 \index{SistemaBackup@{SistemaBackup}!executarBackup@{executarBackup}}
 \index{executarBackup@{executarBackup}!SistemaBackup@{SistemaBackup}}
 \doxysubsubsection{\texorpdfstring{executarBackup()}{executarBackup()}}
@@ -118,20 +177,50 @@ Compara datas entre HD e pendrive.
 Executa procedimento de backup. 
 
 Implementa a lógica baseada na tabela de decisão.
-\begin{DoxyItemize}
-\item Coluna 1\+: Se não existe backup.\+parm → IMPOSSÍ\+VEL
-\item Coluna 2\+: Se existe backup.\+parm e há arquivos → backup possível
-\end{DoxyItemize}
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Parâmetros}
 {\em dispositivo} & Caminho do dispositivo de backup \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Retorna}
 true se backup pode ser executado, false se impossível
 \end{DoxyReturn}
-@assertiva\+\_\+entrada dispositivo não é string vazia @assertiva\+\_\+saida Retorna true apenas se condições da tabela são atendidas \Hypertarget{classSistemaBackup_a579d6b90b0e03f29bbf42ccb1d5fba00}\label{classSistemaBackup_a579d6b90b0e03f29bbf42ccb1d5fba00} 
+@assertiva\+\_\+entrada dispositivo não é string vazia @assertiva\+\_\+saida Retorna true apenas se condições da tabela são atendidas Grafo de chamadas desta função\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSistemaBackup_a8edb551bb70b41403a21d266bb1ac63a_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSistemaBackup_aad7126e9a06ce7bf1eda9e67bd42e94a}\label{classSistemaBackup_aad7126e9a06ce7bf1eda9e67bd42e94a} 
+\index{SistemaBackup@{SistemaBackup}!executarRestauracao@{executarRestauracao}}
+\index{executarRestauracao@{executarRestauracao}!SistemaBackup@{SistemaBackup}}
+\doxysubsubsection{\texorpdfstring{executarRestauracao()}{executarRestauracao()}}
+{\footnotesize\ttfamily bool Sistema\+Backup\+::executar\+Restauracao (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{dispositivo }\end{DoxyParamCaption})}
+
+
+
+Executa procedimento de restauração. 
+
+Implementa a lógica para restauração baseada na tabela de decisão.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em dispositivo} & Caminho do dispositivo de restauração \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+true se restauração foi executada, false se não
+\end{DoxyReturn}
+@assertiva\+\_\+entrada dispositivo não é string vazia @assertiva\+\_\+saida Retorna true apenas se condições para restauração são atendidas Grafo de chamadas desta função\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSistemaBackup_aad7126e9a06ce7bf1eda9e67bd42e94a_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSistemaBackup_a579d6b90b0e03f29bbf42ccb1d5fba00}\label{classSistemaBackup_a579d6b90b0e03f29bbf42ccb1d5fba00} 
 \index{SistemaBackup@{SistemaBackup}!existeConfiguracao@{existeConfiguracao}}
 \index{existeConfiguracao@{existeConfiguracao}!SistemaBackup@{SistemaBackup}}
 \doxysubsubsection{\texorpdfstring{existeConfiguracao()}{existeConfiguracao()}}
@@ -141,10 +230,17 @@ true se backup pode ser executado, false se impossível
 
 Verifica existência do arquivo de configuração. 
 
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Retorna}
 true se backup.\+parm existe e é legível, false caso contrário
 \end{DoxyReturn}
-@assertiva\+\_\+entrada Nenhuma @assertiva\+\_\+saida Retorna estado real do arquivo backup.\+parm \Hypertarget{classSistemaBackup_a06aac2cc27b282e8366af52cb9d11c33}\label{classSistemaBackup_a06aac2cc27b282e8366af52cb9d11c33} 
+@assertiva\+\_\+entrada Nenhuma @assertiva\+\_\+saida Retorna estado real do arquivo backup.\+parm Este é o diagrama das funções que utilizam esta função\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSistemaBackup_a579d6b90b0e03f29bbf42ccb1d5fba00_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSistemaBackup_a06aac2cc27b282e8366af52cb9d11c33}\label{classSistemaBackup_a06aac2cc27b282e8366af52cb9d11c33} 
 \index{SistemaBackup@{SistemaBackup}!listarArquivosBackup@{listarArquivosBackup}}
 \index{listarArquivosBackup@{listarArquivosBackup}!SistemaBackup@{SistemaBackup}}
 \doxysubsubsection{\texorpdfstring{listarArquivosBackup()}{listarArquivosBackup()}}
@@ -156,12 +252,28 @@ Lista arquivos configurados para backup.
 
 Lê o arquivo Backup.\+parm linha por linha, ignorando linhas vazias e comentários (linhas começando com \#).
 
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Retorna}
 Vector com paths dos arquivos para backup
 \end{DoxyReturn}
-@assertiva\+\_\+entrada Arquivo Backup.\+parm existe @assertiva\+\_\+saida Retorna lista não vazia se arquivo tem conteúdo válido 
+@assertiva\+\_\+entrada Arquivo Backup.\+parm existe @assertiva\+\_\+saida Retorna lista não vazia se arquivo tem conteúdo válido Este é o diagrama das funções que utilizam esta função\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSistemaBackup_a06aac2cc27b282e8366af52cb9d11c33_icgraph}
+\end{center}
+\end{figure}
 
-The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+
+\doxysubsection{Documentação dos dados membro}
+\Hypertarget{classSistemaBackup_ae7e698b26708534355c11e23c0963903}\label{classSistemaBackup_ae7e698b26708534355c11e23c0963903} 
+\index{SistemaBackup@{SistemaBackup}!configurado\_@{configurado\_}}
+\index{configurado\_@{configurado\_}!SistemaBackup@{SistemaBackup}}
+\doxysubsubsection{\texorpdfstring{configurado\_}{configurado\_}}
+{\footnotesize\ttfamily bool Sistema\+Backup\+::configurado\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+A documentação para esta classe foi gerada a partir dos seguintes ficheiros\+:\begin{DoxyCompactItemize}
 \item 
 src/\mbox{\hyperlink{backup_8h}{backup.\+h}}\item 
 src/\mbox{\hyperlink{backup_8cpp}{backup.\+cpp}}\end{DoxyCompactItemize}

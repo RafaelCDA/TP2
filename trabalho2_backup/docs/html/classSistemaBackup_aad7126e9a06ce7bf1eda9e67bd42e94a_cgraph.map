@@ -1,0 +1,15 @@
+<map id="SistemaBackup::executarRestauracao" name="SistemaBackup::executarRestauracao">
+<area shape="rect" id="Node000001" title="Executa procedimento de restauração." alt="" coords="5,149,272,175"/>
+<area shape="rect" id="Node000002" href="$classSistemaBackup.html#ae2d53020689f68ab1a096d7a961f9332" title="Verifica se arquivo existe no HD." alt="" coords="328,5,567,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="154,147,222,95,269,66,319,41,346,32,347,37,321,46,272,70,225,99,157,151"/>
+<area shape="rect" id="Node000003" href="$classSistemaBackup.html#acce2e3d1bfe45014f14979fd6f9a82ff" title="Verifica se arquivo existe no pendrive." alt="" coords="338,55,557,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="179,147,319,105,351,96,352,101,321,110,181,152"/>
+<area shape="rect" id="Node000004" href="$classSistemaBackup.html#aff285b082a435ba495c573e71986db0a" title="Compara datas entre HD e pendrive." alt="" coords="332,120,563,145"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="272,147,318,142,318,148,273,152"/>
+<area shape="rect" id="Node000005" href="$classSistemaBackup.html#a5589fa5a114394a18b7d65cce16a0b25" title="Verifica se deve fazer backup baseado na configuração." alt="" coords="349,170,545,210"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="273,171,336,177,335,183,272,177"/>
+<area shape="rect" id="Node000006" href="$classSistemaBackup.html#a579d6b90b0e03f29bbf42ccb1d5fba00" title="Verifica existência do arquivo de configuração." alt="" coords="320,235,575,260"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="175,172,242,196,321,219,362,229,361,234,319,225,240,201,173,177"/>
+<area shape="rect" id="Node000007" href="$classSistemaBackup.html#a06aac2cc27b282e8366af52cb9d11c33" title="Lista arquivos configurados para backup." alt="" coords="337,285,557,325"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="159,173,228,219,273,246,321,269,345,278,343,283,319,274,271,250,225,224,156,177"/>
+</map>

@@ -179,3 +179,39 @@ check-tools:
 	@which valgrind || echo "⚠️  valgrind não instalado"
 	@which gcov || echo "⚠️  gcov não instalado"
 	@echo "=== VERIFICAÇÃO CONCLUÍDA ==="
+	# Configuração do Doxygen
+DOXYFILE = Doxyfile
+
+# Gerar configuração inicial do Doxygen
+doxygen-init:
+	doxygen -g
+
+# Gerar documentação
+doc:
+	doxygen $(DOXYFILE)
+
+# Abrir documentação no navegador
+view-doc: doc
+	@if command -v xdg-open > /dev/null; then \
+		xdg-open docs/html/index.html; \
+	elif command -v open > /dev/null; then \
+		open docs/html/index.html; \
+	else \
+		echo "Abra manualmente: docs/html/index.html"; \
+	fi
+
+# Limpar documentação
+clean-doc:
+	rm -rf docs/html docs/latex
+
+# Configuração rápida do Doxygen
+setup-doxygen: doxygen-init
+	@echo "Configurando Doxygen..."
+	@sed -i 's/^PROJECT_NAME.*/PROJECT_NAME           = "Sistema de Backup"/' $(DOXYFILE)
+	@sed -i 's/^PROJECT_NUMBER.*/PROJECT_NUMBER         = 1.0/' $(DOXYFILE)
+	@sed -i 's/^OUTPUT_DIRECTORY.*/OUTPUT_DIRECTORY       = docs/' $(DOXYFILE)
+	@sed -i 's/^RECURSIVE.*/RECURSIVE              = YES/' $(DOXYFILE)
+	@sed -i 's/^EXTRACT_ALL.*/EXTRACT_ALL            = YES/' $(DOXYFILE)
+	@sed -i 's/^INPUT.*/INPUT                  = src\/ tests\//' $(DOXYFILE)
+	@sed -i 's/^EXCLUDE.*/EXCLUDE                = catch.hpp gtest/' $(DOXYFILE)
+	@echo "Doxygen configurado!"

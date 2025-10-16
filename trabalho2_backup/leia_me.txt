@@ -1,0 +1,8 @@
+﻿Compilação: make
+Testes:     make test
+Cobertura:  make coverage (gera .gcov)
+Lint:       make lint
+Static:     make static
+Valgrind:   make valgrind
+Depuração:  gdb --args ./build/tests
+visualização do doxygen:   make view-doc  
