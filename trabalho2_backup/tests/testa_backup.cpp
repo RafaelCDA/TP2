@@ -557,3 +557,49 @@ TEST_CASE("Coluna: Erro quando arquivo não existe no HD", "[backup][decisao]")
     // Assert - Deve retornar FALSE (erro - arquivo não existe no HD)
     REQUIRE(resultado == false);
 }
+
+/**
+ * @test Coluna da tabela de decisão: Faz nada quando arquivo não existe no HD mas existe no pendrive
+ *
+ * Condições:
+ * - Tem backup.parm: V (SIM)
+ * - Faz backup: V (SIM)
+ * - ArqX ∈ HD: F (NÃO)
+ * - ArqX ∈ Pen-drive: V (SIM)
+ *
+ * Ação esperada: faz nada (não faz backup)
+ *
+ * @see Tabela de Decisão - Coluna com ArqX ∈ HD: F e ArqX ∈ Pen-drive: V
+ */
+TEST_CASE("Coluna: Faz nada quando arquivo não existe no HD mas existe no pendrive", "[backup][decisao]")
+{
+    // Arrange
+    SistemaBackup sistema;
+    std::string dispositivo = "pendrive_teste";
+
+    // LIMPEZA
+    std::remove("Backup.parm");
+    std::remove("documento_inexistente_hd.txt"); // Garante que NÃO existe no HD
+    system("rm -rf pendrive_teste");
+
+    // Configuração ESPECÍFICA:
+    // 1. backup.parm existe
+    std::ofstream config("Backup.parm");
+    config << "documento_inexistente_hd.txt" << std::endl; // Arquivo que NÃO existe no HD
+    config.close();
+
+    // 2. Arquivo NÃO existe no HD (condição principal: ArqX ∈ HD: F)
+    // Não criamos o arquivo "documento_inexistente_hd.txt" no HD
+
+    // 3. Arquivo EXISTE no pendrive (ArqX ∈ Pen-drive: V)
+    system("mkdir -p pendrive_teste");
+    std::ofstream pendriveFile("pendrive_teste/documento_inexistente_hd.txt");
+    pendriveFile << "CONTEUDO_NO_PENDRIVE" << std::endl; // Existe apenas no pendrive
+    pendriveFile.close();
+
+    // Act
+    bool resultado = sistema.executarBackup(dispositivo);
+
+    // Assert - Deve retornar FALSE (faz nada - não faz backup)
+    REQUIRE(resultado == false);
+}
