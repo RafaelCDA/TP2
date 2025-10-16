@@ -646,3 +646,47 @@ TEST_CASE("Coluna: Tem Backup.parm:V, Faz backup:F, ArqX∈HD:F, ArqX∈Pen-driv
     // Assert - Ação: erro (retorna false)
     REQUIRE(resultado == false);
 }
+/**
+ * @test Coluna da tabela de decisão: Restaurar quando arquivo só existe no pendrive
+ *
+ * Condições EXATAS da coluna:
+ * - Tem backup.parm: V (SIM)
+ * - Faz backup: F (NÃO)
+ * - ArqX ∈ HD: F (NÃO)
+ * - ArqX ∈ Pen-drive: V (SIM)
+ *
+ * Ação esperada: pen-drive para hd (RESTAURAR)
+ *
+ * @see Tabela de Decisão - 13
+ */
+TEST_CASE("Coluna: Tem Backup.parm:V, Faz backup:F, ArqX∈HD:F, ArqX∈Pen-drive:V → Pen-drive para HD", "[backup][decisao]")
+{
+    // Arrange - Configurar EXATAMENTE as condições da coluna
+    SistemaBackup sistema;
+    std::string dispositivo = "pendrive_teste";
+
+    // LIMPEZA COMPLETA
+    std::remove("Backup.parm");
+    std::remove("arquivo_restaurar.txt"); // Garantir que não existe no HD
+    system("rm -rf pendrive_teste");
+
+    // CONDIÇÃO 1: Tem Backup.parm: V (SIM)
+    std::ofstream config("Backup.parm");
+    config << "arquivo_restaurar.txt" << std::endl;
+    config << "# NO_BACKUP" << std::endl; // CONDIÇÃO 2: Faz backup: F (NÃO)
+    config.close();
+
+    // CONDIÇÃO 3: ArqX ∈ HD: F (NÃO) - NÃO criar arquivo no HD
+
+    // CONDIÇÃO 4: ArqX ∈ Pen-drive: V (SIM) - Criar arquivo APENAS no pendrive
+    system("mkdir -p pendrive_teste");
+    std::ofstream pendriveFile("pendrive_teste/arquivo_restaurar.txt");
+    pendriveFile << "conteudo_para_restaurar" << std::endl;
+    pendriveFile.close();
+
+    // Act - Executar RESTAURAÇÃO (não backup!)
+    bool resultado = sistema.executarRestauracao(dispositivo);
+
+    // Assert - Ação: pen-drive para hd (RESTAURAR) - deve retornar true
+    REQUIRE(resultado == true);
+}
