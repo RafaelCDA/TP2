@@ -16,6 +16,8 @@
 #include <fstream>
 #include <vector>
 #include <iostream>
+#include <cassert>
+#include <filesystem>
 
 using namespace std;
 
@@ -35,9 +37,6 @@ SistemaBackup::SistemaBackup() : configurado_(false)
  * @brief Executa procedimento de backup
  *
  * Implementa a lógica baseada na tabela de decisão.
- * - Coluna 1: Se não existe backup.parm → IMPOSSÍVEL
- * - Coluna 2: Se arquivo existe no HD mas NÃO no pendrive → backup realizado
- * - Coluna 3: Se arquivo existe em ambos MAS pendrive desatualizado → backup realizado
  *
  * @param dispositivo Caminho do dispositivo de backup
  * @return true se backup pode ser executado, false se impossível
@@ -47,6 +46,9 @@ SistemaBackup::SistemaBackup() : configurado_(false)
  */
 bool SistemaBackup::executarBackup(const std::string &dispositivo)
 {
+    // Assertiva de entrada
+    assert(!dispositivo.empty());
+
     // COLUNA 1: Verificar se arquivo de configuração existe
     if (!existeConfiguracao())
     {
@@ -59,7 +61,84 @@ bool SistemaBackup::executarBackup(const std::string &dispositivo)
         return false; // Não deve fazer backup → erro
     }
 
-    // Resto da lógica (Colunas 2-5)
+    // Obter lista de arquivos para backup
+    std::vector<std::string> arquivos = listarArquivosBackup();
+    if (arquivos.empty())
+    {
+        return false;
+    }
+
+    // Verificar condições para cada arquivo
+    for (const auto &arquivo : arquivos)
+    {
+        // COLUNAS 2-5: Verificar condições de backup
+        bool existeHD = arquivoExisteHD(arquivo);
+        bool existePendrive = arquivoExistePendrive(arquivo, dispositivo);
+
+        if (!existeHD)
+        {
+            // Arquivo não existe no HD → erro (faz nada)
+            return false;
+        }
+
+        if (!existePendrive)
+        {
+            // COLUNA 2: Arquivo existe no HD mas não no pendrive → pode fazer backup
+            continue;
+        }
+
+        // Arquivo existe em ambos, verificar versões
+        int comparacao = compararDatas(arquivo, dispositivo);
+
+        if (comparacao == -1)
+        {
+            // COLUNA 3: Pendrive desatualizado → pode fazer backup
+            continue;
+        }
+        else if (comparacao == 0)
+        {
+            // COLUNA 4: Datas iguais → não faz backup
+            return false;
+        }
+        else if (comparacao == 1)
+        {
+            // COLUNA 5: Pendrive mais atualizado → erro
+            return false;
+        }
+    }
+
+    // Se chegou aqui, todas as condições para backup são atendidas
+    return true;
+}
+
+/**
+ * @brief Executa procedimento de restauração
+ *
+ * Implementa a lógica para restauração baseada na tabela de decisão.
+ *
+ * @param dispositivo Caminho do dispositivo de restauração
+ * @return true se restauração foi executada, false se não
+ *
+ * @assertiva_entrada dispositivo não é string vazia
+ * @assertiva_saida Retorna true apenas se condições para restauração são atendidas
+ */
+bool SistemaBackup::executarRestauracao(const std::string &dispositivo)
+{
+    // Assertiva de entrada
+    assert(!dispositivo.empty());
+
+    // COLUNA 1: Verificar se arquivo de configuração existe
+    if (!existeConfiguracao())
+    {
+        return false;
+    }
+
+    // Para restauração, NÃO deve fazer backup
+    if (deveFazerBackup())
+    {
+        return false;
+    }
+
     std::vector<std::string> arquivos = listarArquivosBackup();
     if (arquivos.empty())
     {
@@ -68,35 +147,27 @@ bool SistemaBackup::executarBackup(const std::string &dispositivo)
 
     for (const auto &arquivo : arquivos)
     {
-        if (!arquivoExisteHD(arquivo))
+        bool existeHD = arquivoExisteHD(arquivo);
+        bool existePendrive = arquivoExistePendrive(arquivo, dispositivo);
+
+        // COLUNA 9: Restaurar quando pendrive está mais atualizado
+        if (existeHD && existePendrive)
         {
-            return false;
+            int comparacao = compararDatas(arquivo, dispositivo);
+            if (comparacao == 1)
+            {
+                return true; // Pendrive mais atualizado → RESTAURAR
+            }
         }
 
-        bool existeNoPendrive = arquivoExistePendrive(arquivo, dispositivo);
-
-        if (!existeNoPendrive)
+        // NOVA COLUNA: Restaurar quando arquivo não existe no HD mas existe no pendrive
+        if (!existeHD && existePendrive)
         {
-            continue; // Coluna 2
-        }
-
-        int comparacaoDatas = compararDatas(arquivo, dispositivo);
-
-        if (comparacaoDatas == -1)
-        {
-            continue; // Coluna 3
-        }
-        else if (comparacaoDatas == 0)
-        {
-            return false; // Coluna 4
-        }
-        else if (comparacaoDatas == 1)
-        {
-            return false; // Coluna 5
+            return true; // Pen-drive para HD → RESTAURAR
         }
     }
 
-    return true;
+    return false;
 }
 
 /**
@@ -153,6 +224,9 @@ std::vector<std::string> SistemaBackup::listarArquivosBackup() const
  */
 bool SistemaBackup::arquivoExisteHD(const std::string &nomeArquivo) const
 {
+    // Assertiva de entrada
+    assert(!nomeArquivo.empty());
+
     // Verificação REAL se arquivo existe no HD
     ifstream arquivo(nomeArquivo);
     return arquivo.good();
@@ -170,6 +244,10 @@ bool SistemaBackup::arquivoExisteHD(const std::string &nomeArquivo) const
  */
 bool SistemaBackup::arquivoExistePendrive(const std::string &nomeArquivo, const std::string &dispositivo) const
 {
+    // Assertiva de entrada
+    assert(!nomeArquivo.empty());
+    assert(!dispositivo.empty());
+
     try
     {
         std::string caminhoCompleto = dispositivo + "/" + nomeArquivo;
@@ -181,6 +259,7 @@ bool SistemaBackup::arquivoExistePendrive(const std::string &nomeArquivo, const 
         return false; // Em caso de erro, assumir que não existe
     }
 }
+
 /**
  * @brief Verifica se deve fazer backup baseado na configuração
  *
@@ -188,6 +267,9 @@ bool SistemaBackup::arquivoExistePendrive(const std::string &nomeArquivo, const 
  * como # NO_BACKUP que indicam não fazer backup.
  *
  * @return true se deve fazer backup, false se não deve
+ *
+ * @assertiva_entrada Arquivo Backup.parm existe
+ * @assertiva_saida Retorna false apenas se # NO_BACKUP estiver presente
  */
 bool SistemaBackup::deveFazerBackup() const
 {
@@ -206,6 +288,7 @@ bool SistemaBackup::deveFazerBackup() const
     // Por padrão, faz backup
     return true;
 }
+
 /**
  * @brief Compara datas entre HD e pendrive
  *
@@ -213,10 +296,20 @@ bool SistemaBackup::deveFazerBackup() const
  * - Retorna -1: PenD < HD (pendrive desatualizado)
  * - Retorna 0: PenD == HD (datas iguais)
  * - Retorna 1: PenD > HD (pendrive mais atualizado)
+ *
+ * @param nomeArquivo Nome do arquivo a comparar
+ * @param dispositivo Caminho do dispositivo pendrive
+ * @return -1, 0 ou 1 conforme a comparação
+ *
+ * @assertiva_entrada nomeArquivo e dispositivo não são strings vazias
+ * @assertiva_saida Retorna sempre -1, 0 ou 1
  */
-
 int SistemaBackup::compararDatas(const std::string &nomeArquivo, const std::string &dispositivo) const
 {
+    // Assertiva de entrada
+    assert(!nomeArquivo.empty());
+    assert(!dispositivo.empty());
+
     try
     {
         std::string caminhoPendrive = dispositivo + "/" + nomeArquivo;
@@ -246,72 +339,15 @@ int SistemaBackup::compararDatas(const std::string &nomeArquivo, const std::stri
         }
         else if (hdTemAntigo && pendriveTemNovo)
         {
-            return 1; // Pendrive mais atualizado (Coluna 5)
+            return 1; // Pendrive mais atualizado
         }
         else
         {
-            return -1; // Pendrive desatualizado (Coluna 3)
+            return -1; // Pendrive desatualizado
         }
     }
     catch (const std::exception &e)
     {
         return 0; // Em caso de erro
     }
-}
-/**
- * @brief Executa procedimento de restauração
- *
- * Implementa a lógica para Coluna 9 da tabela de decisão:
- * - Faz backup: F (NÃO)
- * - ArqX ∈ HD: V (SIM)
- * - ArqX ∈ Pen-drive: V (SIM)
- * - Data PenD > HD: V (SIM)
- * - Ação: pen drive para hd (RESTAURAR)
- *
- * @param dispositivo Caminho do dispositivo de restauração
- * @return true se restauração foi executada, false se não
- *
- * @assertiva_entrada dispositivo não é string vazia
- * @assertiva_saida Retorna true apenas se condições da Coluna 9 são atendidas
- */
-bool SistemaBackup::executarRestauracao(const std::string &dispositivo)
-{
-    // COLUNA 1: Verificar se arquivo de configuração existe
-    if (!existeConfiguracao())
-    {
-        return false;
-    }
-
-    // COLUNA 9: Verificar condições específicas para restauração
-    // - Não deve fazer backup (# NO_BACKUP no arquivo)
-    // - Arquivo existe no HD
-    // - Arquivo existe no pendrive
-    // - Pendrive está mais atualizado
-
-    if (deveFazerBackup())
-    {
-        return false; // Se deve fazer backup, não restaure
-    }
-
-    std::vector<std::string> arquivos = listarArquivosBackup();
-    if (arquivos.empty())
-    {
-        return false;
-    }
-
-    for (const auto &arquivo : arquivos)
-    {
-        if (!arquivoExisteHD(arquivo) || !arquivoExistePendrive(arquivo, dispositivo))
-        {
-            continue; // Arquivo não existe em ambos, não pode restaurar
-        }
-
-        // COLUNA 9: Verificar se pendrive está mais atualizado
-        if (compararDatas(arquivo, dispositivo) == 1)
-        {
-            return true; // Condições da Coluna 9 atendidas → RESTAURAR
-        }
-    }
-
-    return false; // Condições da Coluna 9 não atendidas
 }
